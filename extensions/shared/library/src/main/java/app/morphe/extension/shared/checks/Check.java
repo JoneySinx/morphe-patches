@@ -34,7 +34,7 @@ abstract class Check {
     private static final int SECONDS_BEFORE_SHOWING_IGNORE_BUTTON = 15;
     private static final int SECONDS_BEFORE_SHOWING_WEBSITE_BUTTON = 10;
 
-    private static final Uri GOOD_SOURCE = Uri.parse("https://revanced.app");
+    private static final Uri GOOD_SOURCE = Uri.parse("https://morphe.software");
 
     /**
      * @return If the check conclusively passed or failed. A null value indicates it neither passed nor failed.
@@ -88,7 +88,7 @@ abstract class Check {
         reasons.append("</ul>");
 
         var message = Html.fromHtml(
-                str("revanced_check_environment_failed_message", reasons.toString()),
+                str("morphe_check_environment_failed_message", reasons.toString()),
                 FROM_HTML_MODE_COMPACT
         );
 
@@ -96,10 +96,10 @@ abstract class Check {
             // Create the custom dialog.
             Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(
                     activity,
-                    str("revanced_check_environment_failed_title"), // Title.
+                    str("morphe_check_environment_failed_title"), // Title.
                     message, // Message.
                     null,    // No EditText.
-                    str("revanced_check_environment_dialog_open_official_source_button"), // OK button text.
+                    str("morphe_check_environment_dialog_open_official_source_button"), // OK button text.
                     () -> {
                         // Action for the OK (website) button.
                         final var intent = new Intent(Intent.ACTION_VIEW, GOOD_SOURCE);
@@ -112,7 +112,7 @@ abstract class Check {
                         System.exit(0);
                     },
                     null, // No cancel button.
-                    str("revanced_check_environment_dialog_ignore_button"), // Neutral button text.
+                    str("morphe_check_environment_dialog_ignore_button"), // Neutral button text.
                     () -> {
                         // Neutral button action.
                         // Cleanup data if the user incorrectly imported a huge negative number.
@@ -129,7 +129,7 @@ abstract class Check {
             // Add icon to the dialog.
             ImageView iconView = new ImageView(activity);
             iconView.setImageResource(Utils.getResourceIdentifierOrThrow(
-                    ResourceType.DRAWABLE, "revanced_ic_dialog_alert"));
+                    ResourceType.DRAWABLE, "morphe_ic_dialog_alert"));
             iconView.setColorFilter(Utils.getAppForegroundColor(), PorterDuff.Mode.SRC_IN);
             iconView.setPadding(0, 0, 0, 0);
             LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(

@@ -53,21 +53,21 @@ public class SearchHistoryManager {
     private static final int ID_SEARCH_HISTORY_HEADER = getResourceIdentifierOrThrow(
             ResourceType.ID, "search_history_header");
     private static final int ID_SEARCH_TIPS_SUMMARY = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_settings_search_tips_summary");
-    private static final int LAYOUT_REVANCED_PREFERENCE_SEARCH_HISTORY_SCREEN = getResourceIdentifierOrThrow(
-            ResourceType.LAYOUT, "revanced_preference_search_history_screen");
-    private static final int LAYOUT_REVANCED_PREFERENCE_SEARCH_HISTORY_ITEM = getResourceIdentifierOrThrow(
-            ResourceType.LAYOUT, "revanced_preference_search_history_item");
+            ResourceType.ID, "morphe_settings_search_tips_summary");
+    private static final int LAYOUT_MORPHE_PREFERENCE_SEARCH_HISTORY_SCREEN = getResourceIdentifierOrThrow(
+            ResourceType.LAYOUT, "morphe_preference_search_history_screen");
+    private static final int LAYOUT_MORPHE_PREFERENCE_SEARCH_HISTORY_ITEM = getResourceIdentifierOrThrow(
+            ResourceType.LAYOUT, "morphe_preference_search_history_item");
     private static final int ID_SEARCH_HISTORY_LIST = getResourceIdentifierOrThrow(
             ResourceType.ID, "search_history_list");
     private static final int ID_SEARCH_REMOVE_ICON = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_search_remove");
+            ResourceType.DRAWABLE, "morphe_settings_search_remove");
     private static final int ID_SEARCH_REMOVE_ICON_BOLD = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_search_remove_bold");
+            ResourceType.DRAWABLE, "morphe_settings_search_remove_bold");
     private static final int ID_SEARCH_ARROW_TIME_ICON = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_arrow_time");
+            ResourceType.DRAWABLE, "morphe_settings_arrow_time");
     private static final int ID_SEARCH_ARROW_TIME_ICON_BOLD = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_arrow_time_bold");
+            ResourceType.DRAWABLE, "morphe_settings_arrow_time_bold");
 
     private final Deque<String> searchHistory;
     private final Activity activity;
@@ -109,7 +109,7 @@ public class SearchHistoryManager {
 
         // Inflate search history layout.
         LayoutInflater inflater = LayoutInflater.from(activity);
-        View historyView = inflater.inflate(LAYOUT_REVANCED_PREFERENCE_SEARCH_HISTORY_SCREEN,
+        View historyView = inflater.inflate(LAYOUT_MORPHE_PREFERENCE_SEARCH_HISTORY_SCREEN,
                 searchHistoryContainer, false);
         searchHistoryContainer.addView(historyView, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
@@ -135,14 +135,14 @@ public class SearchHistoryManager {
         // Set up clear history button.
         TextView clearHistoryButton = searchHistoryContainer.findViewById(ID_CLEAR_HISTORY_BUTTON);
         clearHistoryButton.setOnClickListener(v -> createAndShowDialog(
-                str("revanced_settings_search_clear_history"),
-                str("revanced_settings_search_clear_history_message"),
+                str("morphe_settings_search_clear_history"),
+                str("morphe_settings_search_clear_history_message"),
                 this::clearAllSearchHistory
         ));
 
         // Set up search tips summary.
         CharSequence text = BulletPointPreference.formatIntoBulletPoints(
-                str("revanced_settings_search_tips_summary"));
+                str("morphe_settings_search_tips_summary"));
         TextView tipsSummary = historyView.findViewById(ID_SEARCH_TIPS_SUMMARY);
         tipsSummary.setText(text);
     }
@@ -252,9 +252,9 @@ public class SearchHistoryManager {
      */
     protected void showEmptyHistoryViews(TextView emptyTitle, TextView emptySummary) {
         emptyTitle.setVisibility(View.VISIBLE);
-        emptyTitle.setText(str("revanced_settings_search_empty_history_title"));
+        emptyTitle.setText(str("morphe_settings_search_empty_history_title"));
         emptySummary.setVisibility(View.VISIBLE);
-        emptySummary.setText(str("revanced_settings_search_empty_history_summary"));
+        emptySummary.setText(str("morphe_settings_search_empty_history_summary"));
     }
 
     /**
@@ -333,7 +333,7 @@ public class SearchHistoryManager {
         public void notifyDataSetChanged() {
             container.removeAllViews();
             for (String query : history) {
-                View view = inflater.inflate(LAYOUT_REVANCED_PREFERENCE_SEARCH_HISTORY_ITEM,
+                View view = inflater.inflate(LAYOUT_MORPHE_PREFERENCE_SEARCH_HISTORY_ITEM,
                         container, false);
                 // Set click listener for main item (select query).
                 view.setOnClickListener(v -> onSelectHistoryItemListener.onSelectHistoryItem(query));
@@ -358,7 +358,7 @@ public class SearchHistoryManager {
 
                 deleteIcon.setOnClickListener(v -> createAndShowDialog(
                         query,
-                        str("revanced_settings_search_remove_message"),
+                        str("morphe_settings_search_remove_message"),
                         () -> {
                             removeSearchQuery(query);
                             remove(query);

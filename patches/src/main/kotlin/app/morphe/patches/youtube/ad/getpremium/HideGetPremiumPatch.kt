@@ -37,7 +37,7 @@ val hideGetPremiumPatch = bytecodePatch(
         addResources("youtube", "ad.getpremium.hideGetPremiumPatch")
 
         PreferenceScreen.ADS.addPreferences(
-            SwitchPreference("revanced_hide_get_premium"),
+            SwitchPreference("morphe_hide_get_premium"),
         )
 
         getPremiumViewFingerprint.method.apply {

@@ -15,7 +15,7 @@ private const val EXTENSION_CLASS_DESCRIPTOR =
 val announcementsPatch = bytecodePatch(
     // FIXME: Change this to an "Update is available" patch
     //name = "Announcements",
-    description = "Adds an option to show announcements from ReVanced on app startup.",
+    description = "Adds an option to show announcements from Morphe on app startup.",
 ) {
     dependsOn(
         settingsPatch,
@@ -36,7 +36,7 @@ val announcementsPatch = bytecodePatch(
         addResources("youtube", "misc.announcements.announcementsPatch")
 
         PreferenceScreen.MISC.addPreferences(
-            SwitchPreference("revanced_announcements"),
+            SwitchPreference("morphe_announcements"),
         )
 
         mainActivityOnCreateFingerprint.method.addInstruction(

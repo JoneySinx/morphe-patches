@@ -23,16 +23,16 @@ private val copyVideoUrlResourcePatch = resourcePatch {
         addResources("youtube", "interaction.copyvideourl.copyVideoUrlResourcePatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_copy_video_url"),
-            SwitchPreference("revanced_copy_video_url_timestamp"),
+            SwitchPreference("morphe_copy_video_url"),
+            SwitchPreference("morphe_copy_video_url_timestamp"),
         )
 
         copyResources(
             "copyvideourl",
             ResourceGroup(
                 resourceDirectoryName = "drawable",
-                "revanced_yt_copy.xml",
-                "revanced_yt_copy_timestamp.xml",
+                "morphe_yt_copy.xml",
+                "morphe_yt_copy_timestamp.xml",
             ),
         )
 

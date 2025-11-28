@@ -65,7 +65,7 @@ public class ResettableEditTextPreference extends EditTextPreference {
             editText.setSelection(initialValue.length()); // Move cursor to end.
 
             // Create custom dialog.
-            String neutralButtonText = (setting != null) ? str("revanced_settings_reset") : null;
+            String neutralButtonText = (setting != null) ? str("morphe_settings_reset") : null;
             Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(
                     context,
                     getTitle() != null ? getTitle().toString() : "", // Title.

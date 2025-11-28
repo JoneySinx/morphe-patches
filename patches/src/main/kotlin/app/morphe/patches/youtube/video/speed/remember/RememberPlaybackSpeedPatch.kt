@@ -33,14 +33,14 @@ internal val rememberPlaybackSpeedPatch = bytecodePatch {
         settingsMenuVideoSpeedGroup.addAll(
             listOf(
                 ListPreference(
-                    key = "revanced_playback_speed_default",
+                    key = "morphe_playback_speed_default",
                     // Entries and values are set by the extension code based on the actual speeds available.
                     entriesKey = null,
                     entryValuesKey = null,
                     tag = "app.morphe.extension.youtube.settings.preference.CustomVideoSpeedListPreference"
                 ),
-                SwitchPreference("revanced_remember_playback_speed_last_selected"),
-                SwitchPreference("revanced_remember_playback_speed_last_selected_toast")
+                SwitchPreference("morphe_remember_playback_speed_last_selected"),
+                SwitchPreference("morphe_remember_playback_speed_last_selected_toast")
             )
         )
 

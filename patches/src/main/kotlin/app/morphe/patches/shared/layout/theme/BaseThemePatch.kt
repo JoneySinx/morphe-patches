@@ -106,7 +106,7 @@ internal fun baseThemeResourcePatch(
 ) = resourcePatch {
 
     execute {
-        // After patch option validators are fixed https://github.com/ReVanced/revanced-patcher/issues/372
+        // Patch validators don't work here for unknown reason.
         // This should changed to a patch option validator.
         val darkColor by darkThemeBackgroundColorOption
         if (!validateColorName(darkColor!!)) {

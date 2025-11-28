@@ -25,14 +25,14 @@ import app.morphe.extension.shared.ui.Dim;
 @SuppressWarnings({"deprecation", "NewApi"})
 public abstract class BaseActivityHook extends Activity {
 
-    private static final int ID_REVANCED_SETTINGS_FRAGMENTS =
-            getResourceIdentifierOrThrow(ResourceType.ID, "revanced_settings_fragments");
-    private static final int ID_REVANCED_TOOLBAR_PARENT =
-            getResourceIdentifierOrThrow(ResourceType.ID, "revanced_toolbar_parent");
-    public static final int LAYOUT_REVANCED_SETTINGS_WITH_TOOLBAR =
-            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "revanced_settings_with_toolbar");
-    private static final int STRING_REVANCED_SETTINGS_TITLE =
-            getResourceIdentifierOrThrow(ResourceType.STRING, "revanced_settings_title");
+    private static final int ID_MORPHE_SETTINGS_FRAGMENTS =
+            getResourceIdentifierOrThrow(ResourceType.ID, "morphe_settings_fragments");
+    private static final int ID_MORPHE_TOOLBAR_PARENT =
+            getResourceIdentifierOrThrow(ResourceType.ID, "morphe_toolbar_parent");
+    public static final int LAYOUT_MORPHE_SETTINGS_WITH_TOOLBAR =
+            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "morphe_settings_with_toolbar");
+    private static final int STRING_MORPHE_SETTINGS_TITLE =
+            getResourceIdentifierOrThrow(ResourceType.STRING, "morphe_settings_title");
 
     /**
      * Layout parameters for the toolbar, extracted from the dummy toolbar.
@@ -58,7 +58,7 @@ public abstract class BaseActivityHook extends Activity {
 
             // Sanity check.
             String dataString = activity.getIntent().getDataString();
-            if (!"revanced_settings_intent".equals(dataString)) {
+            if (!"morphe_settings_intent".equals(dataString)) {
                 Logger.printException(() -> "Unknown intent: " + dataString);
                 return;
             }
@@ -68,7 +68,7 @@ public abstract class BaseActivityHook extends Activity {
 
             activity.getFragmentManager()
                     .beginTransaction()
-                    .replace(ID_REVANCED_SETTINGS_FRAGMENTS, fragment)
+                    .replace(ID_MORPHE_SETTINGS_FRAGMENTS, fragment)
                     .commit();
         } catch (Exception ex) {
             Logger.printException(() -> "initialize failure", ex);
@@ -77,11 +77,11 @@ public abstract class BaseActivityHook extends Activity {
 
     /**
      * Injection point.
-     * Overrides the ReVanced settings language.
+     * Overrides the Morphe settings language.
      */
     @SuppressWarnings("unused")
     public static Context getAttachBaseContext(Context original) {
-        AppLanguage language = BaseSettings.REVANCED_LANGUAGE.get();
+        AppLanguage language = BaseSettings.MORPHE_LANGUAGE.get();
         if (language == AppLanguage.DEFAULT) {
             return original;
         }
@@ -96,8 +96,8 @@ public abstract class BaseActivityHook extends Activity {
     protected void createToolbar(Activity activity, PreferenceFragment fragment) {
         // Replace dummy placeholder toolbar.
         // This is required to fix submenu title alignment issue with Android ASOP 15+
-        ViewGroup toolBarParent = activity.findViewById(ID_REVANCED_TOOLBAR_PARENT);
-        ViewGroup dummyToolbar = Utils.getChildViewByResourceName(toolBarParent, "revanced_toolbar");
+        ViewGroup toolBarParent = activity.findViewById(ID_MORPHE_TOOLBAR_PARENT);
+        ViewGroup dummyToolbar = Utils.getChildViewByResourceName(toolBarParent, "morphe_toolbar");
         toolbarLayoutParams = dummyToolbar.getLayoutParams();
         toolBarParent.removeView(dummyToolbar);
 
@@ -108,7 +108,7 @@ public abstract class BaseActivityHook extends Activity {
         toolbar.setBackgroundColor(getToolbarBackgroundColor());
         toolbar.setNavigationIcon(getNavigationIcon());
         toolbar.setNavigationOnClickListener(getNavigationClickListener(activity));
-        toolbar.setTitle(STRING_REVANCED_SETTINGS_TITLE);
+        toolbar.setTitle(STRING_MORPHE_SETTINGS_TITLE);
 
         toolbar.setTitleMarginStart(Dim.dp16);
         toolbar.setTitleMarginEnd(Dim.dp16);
@@ -128,7 +128,7 @@ public abstract class BaseActivityHook extends Activity {
      * Returns the resource ID for the content view layout.
      */
     protected int getContentViewResourceId() {
-        return LAYOUT_REVANCED_SETTINGS_WITH_TOOLBAR;
+        return LAYOUT_MORPHE_SETTINGS_WITH_TOOLBAR;
     }
 
     /**

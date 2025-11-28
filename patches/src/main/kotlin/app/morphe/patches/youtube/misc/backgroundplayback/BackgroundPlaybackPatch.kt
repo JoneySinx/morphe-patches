@@ -59,7 +59,7 @@ val backgroundPlaybackPatch = bytecodePatch(
         addResources("youtube", "misc.backgroundplayback.backgroundPlaybackPatch")
 
         PreferenceScreen.SHORTS.addPreferences(
-            SwitchPreference("revanced_shorts_disable_background_playback")
+            SwitchPreference("morphe_shorts_disable_background_playback")
         )
 
         prefBackgroundAndOfflineCategoryId = getResourceId(

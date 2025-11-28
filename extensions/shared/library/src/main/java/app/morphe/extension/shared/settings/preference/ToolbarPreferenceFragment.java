@@ -137,8 +137,8 @@ public class ToolbarPreferenceFragment extends AbstractPreferenceFragment {
     public static Drawable getBackButtonDrawable() {
         final int backButtonResource = Utils.getResourceIdentifierOrThrow(ResourceType.DRAWABLE,
                 Utils.appIsUsingBoldIcons()
-                        ? "revanced_settings_toolbar_arrow_left_bold"
-                        : "revanced_settings_toolbar_arrow_left");
+                        ? "morphe_settings_toolbar_arrow_left_bold"
+                        : "morphe_settings_toolbar_arrow_left");
         Drawable drawable = Utils.getContext().getResources().getDrawable(backButtonResource);
         customizeBackButtonDrawable(drawable);
         return drawable;

@@ -53,23 +53,23 @@ private val sponsorBlockResourcePatch = resourcePatch {
             // SB setting is old code with lots of custom preferences and updating behavior.
             // Added as a preference group and not a fragment so the preferences are searchable.
             PreferenceCategory(
-                key = "revanced_settings_screen_10_sponsorblock",
+                key = "morphe_settings_screen_10_sponsorblock",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = emptySet(), // Preferences are added by custom class at runtime.
                 tag = "app.morphe.extension.youtube.sponsorblock.ui.SponsorBlockPreferenceGroup"
             ),
             PreferenceCategory(
-                key = "revanced_sb_stats",
+                key = "morphe_sb_stats",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = emptySet(), // Preferences are added by custom class at runtime.
                 tag = "app.morphe.extension.youtube.sponsorblock.ui.SponsorBlockStatsPreferenceCategory"
             ),
             PreferenceCategory(
-                key = "revanced_sb_about",
+                key = "morphe_sb_about",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = setOf(
                     NonInteractivePreference(
-                        key = "revanced_sb_about_api",
+                        key = "morphe_sb_about_api",
                         tag = "app.morphe.extension.youtube.sponsorblock.ui.SponsorBlockAboutPreference",
                         selectable = true,
                     )
@@ -80,21 +80,21 @@ private val sponsorBlockResourcePatch = resourcePatch {
         arrayOf(
             ResourceGroup(
                 "layout",
-                "revanced_sb_inline_sponsor_overlay.xml",
-                "revanced_sb_new_segment.xml",
-                "revanced_sb_skip_sponsor_button.xml",
+                "morphe_sb_inline_sponsor_overlay.xml",
+                "morphe_sb_new_segment.xml",
+                "morphe_sb_skip_sponsor_button.xml",
             ),
             ResourceGroup(
                 "drawable",
-                "revanced_sb_adjust.xml",
-                "revanced_sb_backward.xml",
-                "revanced_sb_compare.xml",
-                "revanced_sb_edit.xml",
-                "revanced_sb_forward.xml",
-                "revanced_sb_logo.xml",
-                "revanced_sb_logo_bold.xml",
-                "revanced_sb_publish.xml",
-                "revanced_sb_voting.xml",
+                "morphe_sb_adjust.xml",
+                "morphe_sb_backward.xml",
+                "morphe_sb_compare.xml",
+                "morphe_sb_edit.xml",
+                "morphe_sb_forward.xml",
+                "morphe_sb_logo.xml",
+                "morphe_sb_logo_bold.xml",
+                "morphe_sb_publish.xml",
+                "morphe_sb_voting.xml",
             )
         ).forEach { resourceGroup ->
             copyResources("sponsorblock", resourceGroup)

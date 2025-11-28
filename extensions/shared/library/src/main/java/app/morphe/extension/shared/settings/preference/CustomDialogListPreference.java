@@ -31,18 +31,18 @@ import app.morphe.extension.shared.ui.CustomDialog;
 @SuppressWarnings({"unused", "deprecation"})
 public class CustomDialogListPreference extends ListPreference {
 
-    public static final int ID_REVANCED_CHECK_ICON = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_check_icon");
-    public static final int ID_REVANCED_CHECK_ICON_PLACEHOLDER = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_check_icon_placeholder");
-    public static final int ID_REVANCED_ITEM_TEXT = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_item_text");
-    public static final int LAYOUT_REVANCED_CUSTOM_LIST_ITEM_CHECKED = getResourceIdentifierOrThrow(
-            ResourceType.LAYOUT, "revanced_custom_list_item_checked");
+    public static final int ID_MORPHE_CHECK_ICON = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_check_icon");
+    public static final int ID_MORPHE_CHECK_ICON_PLACEHOLDER = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_check_icon_placeholder");
+    public static final int ID_MORPHE_ITEM_TEXT = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_item_text");
+    public static final int LAYOUT_MORPHE_CUSTOM_LIST_ITEM_CHECKED = getResourceIdentifierOrThrow(
+            ResourceType.LAYOUT, "morphe_custom_list_item_checked");
     public static final int DRAWABLE_CHECKMARK = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_custom_checkmark");
+            ResourceType.DRAWABLE, "morphe_settings_custom_checkmark");
     public static final int DRAWABLE_CHECKMARK_BOLD = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_custom_checkmark_bold");
+            ResourceType.DRAWABLE, "morphe_settings_custom_checkmark_bold");
 
     private String staticSummary = null;
     private CharSequence[] highlightedEntriesForDialog = null;
@@ -130,9 +130,9 @@ public class CustomDialogListPreference extends ListPreference {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 view = inflater.inflate(layoutResourceId, parent, false);
                 holder = new SubViewDataContainer();
-                holder.placeholder = view.findViewById(ID_REVANCED_CHECK_ICON_PLACEHOLDER);
-                holder.itemText = view.findViewById(ID_REVANCED_ITEM_TEXT);
-                holder.checkIcon = view.findViewById(ID_REVANCED_CHECK_ICON);
+                holder.placeholder = view.findViewById(ID_MORPHE_CHECK_ICON_PLACEHOLDER);
+                holder.itemText = view.findViewById(ID_MORPHE_ITEM_TEXT);
+                holder.checkIcon = view.findViewById(ID_MORPHE_CHECK_ICON);
                 holder.checkIcon.setImageResource(Utils.appIsUsingBoldIcons()
                         ? DRAWABLE_CHECKMARK_BOLD
                         : DRAWABLE_CHECKMARK
@@ -192,7 +192,7 @@ public class CustomDialogListPreference extends ListPreference {
         // Create custom adapter for the ListView.
         ListPreferenceArrayAdapter adapter = new ListPreferenceArrayAdapter(
                 context,
-                LAYOUT_REVANCED_CUSTOM_LIST_ITEM_CHECKED,
+                LAYOUT_MORPHE_CUSTOM_LIST_ITEM_CHECKED,
                 entriesToShow,
                 entryValues,
                 getValue()

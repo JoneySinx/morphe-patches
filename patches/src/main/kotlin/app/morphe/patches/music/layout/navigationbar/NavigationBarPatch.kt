@@ -70,17 +70,17 @@ val navigationBarPatch = bytecodePatch(
 
         PreferenceScreen.GENERAL.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_music_navigation_bar_screen",
+                key = "morphe_music_navigation_bar_screen",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = setOf(
-                    SwitchPreference("revanced_music_hide_navigation_bar_home_button"),
-                    SwitchPreference("revanced_music_hide_navigation_bar_samples_button"),
-                    SwitchPreference("revanced_music_hide_navigation_bar_explore_button"),
-                    SwitchPreference("revanced_music_hide_navigation_bar_library_button"),
-                    SwitchPreference("revanced_music_hide_navigation_bar_upgrade_button"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_home_button"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_samples_button"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_explore_button"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_library_button"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_upgrade_button"),
 
-                    SwitchPreference("revanced_music_hide_navigation_bar"),
-                    SwitchPreference("revanced_music_hide_navigation_bar_labels"),
+                    SwitchPreference("morphe_music_hide_navigation_bar"),
+                    SwitchPreference("morphe_music_hide_navigation_bar_labels"),
                 )
             )
         )

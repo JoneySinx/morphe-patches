@@ -105,68 +105,68 @@ val miniplayerPatch = bytecodePatch(
 
         preferences +=
             if (is_20_37_or_greater) {
-                ListPreference("revanced_miniplayer_type")
+                ListPreference("morphe_miniplayer_type")
             } else if (is_20_03_or_greater) {
                 ListPreference(
-                    key = "revanced_miniplayer_type",
-                    entriesKey = "revanced_miniplayer_type_legacy_20_03_entries",
-                    entryValuesKey = "revanced_miniplayer_type_legacy_20_03_entry_values"
+                    key = "morphe_miniplayer_type",
+                    entriesKey = "morphe_miniplayer_type_legacy_20_03_entries",
+                    entryValuesKey = "morphe_miniplayer_type_legacy_20_03_entry_values"
                 )
             } else if (is_19_43_or_greater) {
                 ListPreference(
-                    key = "revanced_miniplayer_type",
-                    entriesKey = "revanced_miniplayer_type_legacy_19_43_entries",
-                    entryValuesKey = "revanced_miniplayer_type_legacy_19_43_entry_values"
+                    key = "morphe_miniplayer_type",
+                    entriesKey = "morphe_miniplayer_type_legacy_19_43_entries",
+                    entryValuesKey = "morphe_miniplayer_type_legacy_19_43_entry_values"
                 )
             } else {
                 ListPreference(
-                    key = "revanced_miniplayer_type",
-                    entriesKey = "revanced_miniplayer_type_legacy_19_16_entries",
-                    entryValuesKey = "revanced_miniplayer_type_legacy_19_16_entry_values"
+                    key = "morphe_miniplayer_type",
+                    entriesKey = "morphe_miniplayer_type_legacy_19_16_entries",
+                    entryValuesKey = "morphe_miniplayer_type_legacy_19_16_entry_values"
                 )
             }
 
         if (is_19_25_or_greater) {
             if (!is_19_29_or_greater) {
-                preferences += SwitchPreference("revanced_miniplayer_double_tap_action")
+                preferences += SwitchPreference("morphe_miniplayer_double_tap_action")
             }
-            preferences += SwitchPreference("revanced_miniplayer_disable_drag_and_drop")
+            preferences += SwitchPreference("morphe_miniplayer_disable_drag_and_drop")
         }
 
         if (is_19_43_or_greater) {
-            preferences += SwitchPreference("revanced_miniplayer_disable_horizontal_drag")
+            preferences += SwitchPreference("morphe_miniplayer_disable_horizontal_drag")
         }
 
         if (is_19_36_or_greater) {
-            preferences += SwitchPreference("revanced_miniplayer_disable_rounded_corners")
+            preferences += SwitchPreference("morphe_miniplayer_disable_rounded_corners")
         }
 
-        preferences += SwitchPreference("revanced_miniplayer_hide_subtext")
+        preferences += SwitchPreference("morphe_miniplayer_hide_subtext")
 
         preferences += if (is_19_26_or_greater) {
-            SwitchPreference("revanced_miniplayer_hide_overlay_buttons")
+            SwitchPreference("morphe_miniplayer_hide_overlay_buttons")
         } else {
             SwitchPreference(
-                key = "revanced_miniplayer_hide_overlay_buttons",
-                titleKey = "revanced_miniplayer_hide_overlay_buttons_legacy_title",
-                summaryOnKey = "revanced_miniplayer_hide_overlay_buttons_legacy_summary_on",
-                summaryOffKey = "revanced_miniplayer_hide_overlay_buttons_legacy_summary_off",
+                key = "morphe_miniplayer_hide_overlay_buttons",
+                titleKey = "morphe_miniplayer_hide_overlay_buttons_legacy_title",
+                summaryOnKey = "morphe_miniplayer_hide_overlay_buttons_legacy_summary_on",
+                summaryOffKey = "morphe_miniplayer_hide_overlay_buttons_legacy_summary_off",
             )
         }
 
         if (!is_19_26_or_greater) {
-            preferences += SwitchPreference("revanced_miniplayer_hide_rewind_forward")
+            preferences += SwitchPreference("morphe_miniplayer_hide_rewind_forward")
         }
 
         if (is_19_26_or_greater) {
-            preferences += TextPreference("revanced_miniplayer_width_dip", inputType = InputType.NUMBER)
+            preferences += TextPreference("morphe_miniplayer_width_dip", inputType = InputType.NUMBER)
         }
 
-        preferences += TextPreference("revanced_miniplayer_opacity", inputType = InputType.NUMBER)
+        preferences += TextPreference("morphe_miniplayer_opacity", inputType = InputType.NUMBER)
 
         PreferenceScreen.PLAYER.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_miniplayer_screen",
+                key = "morphe_miniplayer_screen",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = preferences,
             ),

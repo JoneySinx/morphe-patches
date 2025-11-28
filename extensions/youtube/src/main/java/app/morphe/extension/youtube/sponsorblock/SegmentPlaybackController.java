@@ -778,7 +778,7 @@ public class SegmentPlaybackController {
                 }
                 String message = toastNumberOfSegmentsSkipped == 1
                         ? toastSegmentSkipped.getSkippedToastText()
-                        : str("revanced_sb_skipped_multiple_segments");
+                        : str("morphe_sb_skipped_multiple_segments");
 
                 showAutoSkipToast(message, undoAutoSkipRangeToast);
             } finally {

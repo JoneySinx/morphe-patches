@@ -39,7 +39,7 @@ val customPlayerOverlayOpacityPatch = bytecodePatch(
         addResources("youtube", "layout.player.overlay.customPlayerOverlayOpacityResourcePatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            TextPreference("revanced_player_overlay_opacity", inputType = InputType.NUMBER),
+            TextPreference("morphe_player_overlay_opacity", inputType = InputType.NUMBER),
         )
 
         createPlayerOverviewFingerprint.let {

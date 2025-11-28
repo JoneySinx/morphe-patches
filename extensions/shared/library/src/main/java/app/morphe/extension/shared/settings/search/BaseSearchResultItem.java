@@ -39,12 +39,12 @@ public abstract class BaseSearchResultItem {
         // Get the corresponding layout resource ID.
         public int getLayoutResourceId() {
             return switch (this) {
-                case REGULAR, URL_LINK ->   getResourceIdentifier("revanced_preference_search_result_regular");
-                case SWITCH ->              getResourceIdentifier("revanced_preference_search_result_switch");
-                case LIST   ->              getResourceIdentifier("revanced_preference_search_result_list");
-                case COLOR_PICKER ->        getResourceIdentifier("revanced_preference_search_result_color");
-                case GROUP_HEADER ->        getResourceIdentifier("revanced_preference_search_result_group_header");
-                case NO_RESULTS   ->        getResourceIdentifier("revanced_preference_search_no_result");
+                case REGULAR, URL_LINK ->   getResourceIdentifier("morphe_preference_search_result_regular");
+                case SWITCH ->              getResourceIdentifier("morphe_preference_search_result_switch");
+                case LIST   ->              getResourceIdentifier("morphe_preference_search_result_list");
+                case COLOR_PICKER ->        getResourceIdentifier("morphe_preference_search_result_color");
+                case GROUP_HEADER ->        getResourceIdentifier("morphe_preference_search_result_group_header");
+                case NO_RESULTS   ->        getResourceIdentifier("morphe_preference_search_no_result");
             };
         }
 
@@ -198,10 +198,10 @@ public abstract class BaseSearchResultItem {
             String key = pref.getKey();
             String normalizedKey = "";
             if (key != null) {
-                // Normalize preference key by removing the common "revanced_" prefix
+                // Normalize preference key by removing the common "morphe_" prefix
                 // so that users can search by the meaningful part only.
-                normalizedKey = key.startsWith("revanced_")
-                        ? key.substring("revanced_".length())
+                normalizedKey = key.startsWith("morphe_")
+                        ? key.substring("morphe_".length())
                         : key;
             }
             appendText(searchBuilder, normalizedKey);

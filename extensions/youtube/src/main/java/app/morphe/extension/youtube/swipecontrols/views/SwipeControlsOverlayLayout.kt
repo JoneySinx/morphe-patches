@@ -41,15 +41,15 @@ class SwipeControlsOverlayLayout(
     constructor(context: Context) : this(context, SwipeControlsConfigurationProvider())
 
     // Drawable icons for brightness and volume.
-    private val autoBrightnessIcon: Drawable = getDrawable("revanced_ic_sc_brightness_auto")
-    private val lowBrightnessIcon: Drawable = getDrawable("revanced_ic_sc_brightness_low")
-    private val mediumBrightnessIcon: Drawable = getDrawable("revanced_ic_sc_brightness_medium")
-    private val highBrightnessIcon: Drawable = getDrawable("revanced_ic_sc_brightness_high")
-    private val fullBrightnessIcon: Drawable = getDrawable("revanced_ic_sc_brightness_full")
-    private val mutedVolumeIcon: Drawable = getDrawable("revanced_ic_sc_volume_mute")
-    private val lowVolumeIcon: Drawable = getDrawable("revanced_ic_sc_volume_low")
-    private val normalVolumeIcon: Drawable = getDrawable("revanced_ic_sc_volume_normal")
-    private val fullVolumeIcon: Drawable = getDrawable("revanced_ic_sc_volume_high")
+    private val autoBrightnessIcon: Drawable = getDrawable("morphe_ic_sc_brightness_auto")
+    private val lowBrightnessIcon: Drawable = getDrawable("morphe_ic_sc_brightness_low")
+    private val mediumBrightnessIcon: Drawable = getDrawable("morphe_ic_sc_brightness_medium")
+    private val highBrightnessIcon: Drawable = getDrawable("morphe_ic_sc_brightness_high")
+    private val fullBrightnessIcon: Drawable = getDrawable("morphe_ic_sc_brightness_full")
+    private val mutedVolumeIcon: Drawable = getDrawable("morphe_ic_sc_volume_mute")
+    private val lowVolumeIcon: Drawable = getDrawable("morphe_ic_sc_volume_low")
+    private val normalVolumeIcon: Drawable = getDrawable("morphe_ic_sc_volume_normal")
+    private val fullVolumeIcon: Drawable = getDrawable("morphe_ic_sc_volume_high")
 
     // Function to retrieve drawable resources by name.
     private fun getDrawable(name: String): Drawable {
@@ -205,7 +205,7 @@ class SwipeControlsOverlayLayout(
     override fun onBrightnessChanged(brightness: Double) {
         if (config.shouldLowestValueEnableAutoBrightness && brightness <= 0) {
             val displayText = if (config.overlayStyle.isVertical) "А"
-            else str("revanced_swipe_lowest_value_enable_auto_brightness_overlay_text")
+            else str("morphe_swipe_lowest_value_enable_auto_brightness_overlay_text")
             showFeedbackView(displayText, 0, 100, autoBrightnessIcon, isBrightness = true)
         } else {
             val brightnessValue = round(brightness).toInt()

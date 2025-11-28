@@ -31,9 +31,9 @@ public class PlaybackSpeedDialogButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_playback_speed_dialog_button_container",
-                    "revanced_playback_speed_dialog_button",
-                    "revanced_playback_speed_dialog_button_text",
+                    "morphe_playback_speed_dialog_button_container",
+                    "morphe_playback_speed_dialog_button",
+                    "morphe_playback_speed_dialog_button_text",
                     Settings.PLAYBACK_SPEED_DIALOG_BUTTON::get,
                     view -> {
                         try {

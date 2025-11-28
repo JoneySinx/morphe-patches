@@ -17,8 +17,8 @@ public class CreateSegmentButton {
 
     private static final int DRAWABLE_SB_LOGO = Utils.getResourceIdentifierOrThrow(
             ResourceType.DRAWABLE, Utils.appIsUsingBoldIcons()
-                    ? "revanced_sb_logo_bold"
-                    : "revanced_sb_logo"
+                    ? "morphe_sb_logo_bold"
+                    : "morphe_sb_logo"
     );
 
     @Nullable
@@ -35,7 +35,7 @@ public class CreateSegmentButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_sb_create_segment_button",
+                    "morphe_sb_create_segment_button",
                     null,
                     CreateSegmentButton::isButtonEnabled,
                     v -> SponsorBlockViewController.toggleNewSegmentLayoutVisibility(),
@@ -45,7 +45,7 @@ public class CreateSegmentButton {
             // FIXME: Bold YT player icons are currently forced off.
             //        Enable this logic when the new player icons are not forced off.
             ImageView icon = Utils.getChildViewByResourceName(controlsView,
-                    "revanced_sb_create_segment_button");
+                    "morphe_sb_create_segment_button");
             if (false) {
                 icon.setImageResource(DRAWABLE_SB_LOGO);
             }

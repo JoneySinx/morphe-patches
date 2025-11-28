@@ -24,7 +24,7 @@ public final class CustomVideoSpeedListPreference extends CustomDialogListPrefer
         String[] preferenceListEntryValues = new String[numberOfEntries];
 
         // Auto speed (same behavior as unpatched).
-        preferenceListEntries[0] = sf("revanced_custom_playback_speeds_auto").toString();
+        preferenceListEntries[0] = sf("morphe_custom_playback_speeds_auto").toString();
         preferenceListEntryValues[0] = String.valueOf(Settings.PLAYBACK_SPEED_DEFAULT.defaultValue);
 
         int i = 1;

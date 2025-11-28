@@ -39,7 +39,7 @@ val bypassImageRegionRestrictionsPatch = bytecodePatch(
         addResources("youtube", "layout.thumbnails.bypassImageRegionRestrictionsPatch")
 
         PreferenceScreen.MISC.addPreferences(
-            SwitchPreference("revanced_bypass_image_region_restrictions"),
+            SwitchPreference("morphe_bypass_image_region_restrictions"),
         )
 
         // A priority hook is not needed, as the image urls of interest are not modified

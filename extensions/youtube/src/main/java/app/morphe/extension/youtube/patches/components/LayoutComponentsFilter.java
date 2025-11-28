@@ -164,7 +164,7 @@ public final class LayoutComponentsFilter extends Filter {
         // Previously this was a setting to show/hide the player button.
         // But it was decided it's simpler to always hide this button because:
         // - the button is rare
-        // - always hiding makes the ReVanced settings simpler and easier to understand
+        // - always hiding makes the Morphe settings simpler and easier to understand
         // - nobody is going to notice the redundant button is always hidden
         final var audioTrackButton = new StringFilterGroup(
                 null,
@@ -321,7 +321,6 @@ public final class LayoutComponentsFilter extends Filter {
     boolean isFiltered(String identifier, String path, byte[] buffer,
                        StringFilterGroup matchedGroup, FilterContentType contentType, int contentIndex) {
         // This identifier is used not only in players but also in search results:
-        // https://github.com/ReVanced/revanced-patches/issues/3245
         // Until 2024, medical information panels such as Covid 19 also used this identifier and were shown in the search results.
         // From 2025, the medical information panel is no longer shown in the search results.
         // Therefore, this identifier does not filter when the search bar is activated.

@@ -36,14 +36,14 @@ private val targetResourceDirectoryNames = mapOf(
  * Header logos built into this patch.
  */
 private val logoResourceNames = arrayOf(
-    "revanced_header_minimal",
-    "revanced_header_rounded",
+    "morphe_header_minimal",
+    "morphe_header_rounded",
 )
 
 /**
  * Custom header resource/file name.
  */
-private const val CUSTOM_HEADER_RESOURCE_NAME = "revanced_header_custom"
+private const val CUSTOM_HEADER_RESOURCE_NAME = "morphe_header_custom"
 
 /**
  * Custom header resource/file names.
@@ -131,12 +131,12 @@ val changeHeaderPatch = resourcePatch(
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
             if (custom == null) {
-                ListPreference("revanced_header_logo")
+                ListPreference("morphe_header_logo")
             } else {
                 ListPreference(
-                    key = "revanced_header_logo",
-                    entriesKey = "revanced_header_logo_custom_entries",
-                    entryValuesKey = "revanced_header_logo_custom_entry_values"
+                    key = "morphe_header_logo",
+                    entriesKey = "morphe_header_logo_custom_entries",
+                    entryValuesKey = "morphe_header_logo_custom_entry_values"
                 )
             }
         )

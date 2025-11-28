@@ -33,13 +33,13 @@ private val downloadsResourcePatch = resourcePatch {
 
         PreferenceScreen.PLAYER.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_external_downloader_screen",
+                key = "morphe_external_downloader_screen",
                 sorting = Sorting.UNSORTED,
                 preferences = setOf(
-                    SwitchPreference("revanced_external_downloader"),
-                    SwitchPreference("revanced_external_downloader_action_button"),
+                    SwitchPreference("morphe_external_downloader"),
+                    SwitchPreference("morphe_external_downloader_action_button"),
                     TextPreference(
-                        "revanced_external_downloader_name",
+                        "morphe_external_downloader_name",
                         tag = "app.morphe.extension.youtube.settings.preference.ExternalDownloaderPreference",
                     ),
                 ),
@@ -48,7 +48,7 @@ private val downloadsResourcePatch = resourcePatch {
 
         copyResources(
             "downloads",
-            ResourceGroup("drawable", "revanced_yt_download_button.xml"),
+            ResourceGroup("drawable", "morphe_yt_download_button.xml"),
         )
 
         addBottomControl("downloads")

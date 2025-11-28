@@ -21,7 +21,7 @@ private var lightThemeColor : String? = null
 private var darkThemeColor : String? = null
 
 /**
- * Sets the default theme colors used in various ReVanced specific settings menus.
+ * Sets the default theme colors used in various Morphe specific settings menus.
  * By default these colors are white and black, but instead can be set to the
  * same color the target app uses for it's own settings.
  */
@@ -46,7 +46,7 @@ private val settingsColorPatch = bytecodePatch {
  *
  * @param rootPreferences List of intent preferences and the name of the fragment file to add it to.
  *                        File names that do not exist are ignored and not processed.
- * @param preferences A set of preferences to add to the ReVanced fragment.
+ * @param preferences A set of preferences to add to the Morphe fragment.
  */
 fun settingsPatch (
     rootPreferences: List<Pair<BasePreference, String>>? = null,
@@ -62,43 +62,43 @@ fun settingsPatch (
         copyResources(
             "settings",
             ResourceGroup("xml",
-                "revanced_prefs.xml",
-                "revanced_prefs_icons.xml",
-                "revanced_prefs_icons_bold.xml"
+                "morphe_prefs.xml",
+                "morphe_prefs_icons.xml",
+                "morphe_prefs_icons_bold.xml"
             ),
             ResourceGroup("menu",
-                "revanced_search_menu.xml"
+                "morphe_search_menu.xml"
             ),
             ResourceGroup("drawable",
                 // CustomListPreference resources.
-                "revanced_ic_dialog_alert.xml",
+                "morphe_ic_dialog_alert.xml",
                 // Search resources.
-                "revanced_settings_arrow_time.xml",
-                "revanced_settings_arrow_time_bold.xml",
-                "revanced_settings_custom_checkmark.xml",
-                "revanced_settings_custom_checkmark_bold.xml",
-                "revanced_settings_search_icon.xml",
-                "revanced_settings_search_icon_bold.xml",
-                "revanced_settings_search_remove.xml",
-                "revanced_settings_search_remove_bold.xml",
-                "revanced_settings_toolbar_arrow_left.xml",
-                "revanced_settings_toolbar_arrow_left_bold.xml",
+                "morphe_settings_arrow_time.xml",
+                "morphe_settings_arrow_time_bold.xml",
+                "morphe_settings_custom_checkmark.xml",
+                "morphe_settings_custom_checkmark_bold.xml",
+                "morphe_settings_search_icon.xml",
+                "morphe_settings_search_icon_bold.xml",
+                "morphe_settings_search_remove.xml",
+                "morphe_settings_search_remove_bold.xml",
+                "morphe_settings_toolbar_arrow_left.xml",
+                "morphe_settings_toolbar_arrow_left_bold.xml",
             ),
             ResourceGroup("layout",
-                "revanced_custom_list_item_checked.xml",
+                "morphe_custom_list_item_checked.xml",
                 // Color picker.
-                "revanced_color_dot_widget.xml",
-                "revanced_color_picker.xml",
+                "morphe_color_dot_widget.xml",
+                "morphe_color_picker.xml",
                 // Search.
-                "revanced_preference_search_history_item.xml",
-                "revanced_preference_search_history_screen.xml",
-                "revanced_preference_search_no_result.xml",
-                "revanced_preference_search_result_color.xml",
-                "revanced_preference_search_result_group_header.xml",
-                "revanced_preference_search_result_list.xml",
-                "revanced_preference_search_result_regular.xml",
-                "revanced_preference_search_result_switch.xml",
-                "revanced_settings_with_toolbar.xml"
+                "morphe_preference_search_history_item.xml",
+                "morphe_preference_search_history_screen.xml",
+                "morphe_preference_search_no_result.xml",
+                "morphe_preference_search_result_color.xml",
+                "morphe_preference_search_result_group_header.xml",
+                "morphe_preference_search_result_list.xml",
+                "morphe_preference_search_result_regular.xml",
+                "morphe_preference_search_result_switch.xml",
+                "morphe_settings_with_toolbar.xml"
             )
         )
 
@@ -133,10 +133,10 @@ fun settingsPatch (
             if (!modified) throw PatchException("No declared preference files exists: $rootPreferences")
         }
 
-        // Add all preferences to the ReVanced fragment.
-        document("res/xml/revanced_prefs_icons.xml").use { document ->
-            val revancedPreferenceScreenNode = document.getNode("PreferenceScreen")
-            preferences.forEach { revancedPreferenceScreenNode.addPreference(it) }
+        // Add all preferences to the Morphe fragment.
+        document("res/xml/morphe_prefs_icons.xml").use { document ->
+            val morphePreferenceScreenNode = document.getNode("PreferenceScreen")
+            preferences.forEach { morphePreferenceScreenNode.addPreference(it) }
         }
 
         // Because the icon preferences require declaring a layout resource,
@@ -161,16 +161,16 @@ fun settingsPatch (
 
         // Bold icons.
         removeIconsAndLayout(preferences, false)
-        document("res/xml/revanced_prefs_icons_bold.xml").use { document ->
-            val revancedPreferenceScreenNode = document.getNode("PreferenceScreen")
-            preferences.forEach { revancedPreferenceScreenNode.addPreference(it) }
+        document("res/xml/morphe_prefs_icons_bold.xml").use { document ->
+            val morphePreferenceScreenNode = document.getNode("PreferenceScreen")
+            preferences.forEach { morphePreferenceScreenNode.addPreference(it) }
         }
 
         removeIconsAndLayout(preferences, true)
 
-        document("res/xml/revanced_prefs.xml").use { document ->
-            val revancedPreferenceScreenNode = document.getNode("PreferenceScreen")
-            preferences.forEach { revancedPreferenceScreenNode.addPreference(it) }
+        document("res/xml/morphe_prefs.xml").use { document ->
+            val morphePreferenceScreenNode = document.getNode("PreferenceScreen")
+            preferences.forEach { morphePreferenceScreenNode.addPreference(it) }
         }
     }
 }

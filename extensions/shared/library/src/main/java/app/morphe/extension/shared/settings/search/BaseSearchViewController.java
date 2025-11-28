@@ -49,7 +49,7 @@ import app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory
 import app.morphe.extension.shared.ui.Dim;
 
 /**
- * Abstract controller for managing the overlay search view in ReVanced settings.
+ * Abstract controller for managing the overlay search view in Morphe settings.
  * Subclasses must implement app-specific preference handling.
  */
 @SuppressWarnings("deprecation")
@@ -72,28 +72,28 @@ public abstract class BaseSearchViewController {
 
     protected static final int MAX_SEARCH_RESULTS = 50; // Maximum number of search results displayed.
 
-    protected static final int ID_REVANCED_SEARCH_VIEW = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_search_view");
-    protected static final int ID_REVANCED_SEARCH_VIEW_CONTAINER = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_search_view_container");
+    protected static final int ID_MORPHE_SEARCH_VIEW = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_search_view");
+    protected static final int ID_MORPHE_SEARCH_VIEW_CONTAINER = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_search_view_container");
     protected static final int ID_ACTION_SEARCH = getResourceIdentifierOrThrow(
             ResourceType.ID, "action_search");
-    protected static final int ID_REVANCED_SETTINGS_FRAGMENTS = getResourceIdentifierOrThrow(
-            ResourceType.ID, "revanced_settings_fragments");
-    private static final int DRAWABLE_REVANCED_SETTINGS_SEARCH_ICON = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_search_icon");
-    private static final int DRAWABLE_REVANCED_SETTINGS_SEARCH_ICON_BOLD = getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_settings_search_icon_bold");
-    protected static final int MENU_REVANCED_SEARCH_MENU = getResourceIdentifierOrThrow(
-            ResourceType.MENU, "revanced_search_menu");
+    protected static final int ID_MORPHE_SETTINGS_FRAGMENTS = getResourceIdentifierOrThrow(
+            ResourceType.ID, "morphe_settings_fragments");
+    private static final int DRAWABLE_MORPHE_SETTINGS_SEARCH_ICON = getResourceIdentifierOrThrow(
+            ResourceType.DRAWABLE, "morphe_settings_search_icon");
+    private static final int DRAWABLE_MORPHE_SETTINGS_SEARCH_ICON_BOLD = getResourceIdentifierOrThrow(
+            ResourceType.DRAWABLE, "morphe_settings_search_icon_bold");
+    protected static final int MENU_MORPHE_SEARCH_MENU = getResourceIdentifierOrThrow(
+            ResourceType.MENU, "morphe_search_menu");
 
     /**
-     * @return The search icon, either bold or not bold, depending on the ReVanced UI setting.
+     * @return The search icon, either bold or not bold, depending on the Morphe UI setting.
      */
     public static int getSearchIcon() {
         return Utils.appIsUsingBoldIcons()
-                ? DRAWABLE_REVANCED_SETTINGS_SEARCH_ICON_BOLD
-                : DRAWABLE_REVANCED_SETTINGS_SEARCH_ICON;
+                ? DRAWABLE_MORPHE_SETTINGS_SEARCH_ICON_BOLD
+                : DRAWABLE_MORPHE_SETTINGS_SEARCH_ICON;
     }
 
     /**
@@ -127,17 +127,17 @@ public abstract class BaseSearchViewController {
      */
     private void initializeSearchView() {
         // Retrieve SearchView and container from XML.
-        searchView = activity.findViewById(ID_REVANCED_SEARCH_VIEW);
+        searchView = activity.findViewById(ID_MORPHE_SEARCH_VIEW);
         EditText searchEditText = searchView.findViewById(Utils.getResourceIdentifierOrThrow(
                 null, "android:id/search_src_text"));
         // Disable fullscreen keyboard mode.
         searchEditText.setImeOptions(searchEditText.getImeOptions() | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
 
-        searchContainer = activity.findViewById(ID_REVANCED_SEARCH_VIEW_CONTAINER);
+        searchContainer = activity.findViewById(ID_MORPHE_SEARCH_VIEW_CONTAINER);
 
         // Set background and query hint.
         searchView.setBackground(createBackgroundDrawable());
-        searchView.setQueryHint(str("revanced_settings_search_hint"));
+        searchView.setQueryHint(str("morphe_settings_search_hint"));
 
         // Set text size.
         searchEditText.setTextSize(16);
@@ -148,7 +148,7 @@ public abstract class BaseSearchViewController {
         }
 
         // Configure RTL support based on app language.
-        AppLanguage appLanguage = BaseSettings.REVANCED_LANGUAGE.get();
+        AppLanguage appLanguage = BaseSettings.MORPHE_LANGUAGE.get();
         if (Utils.isRightToLeftLocale(appLanguage.getLocale())) {
             searchView.setTextDirection(View.TEXT_DIRECTION_RTL);
             searchView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
@@ -205,7 +205,7 @@ public abstract class BaseSearchViewController {
                 FrameLayout.LayoutParams.MATCH_PARENT));
 
         // Add overlay to the main content container.
-        FrameLayout mainContainer = activity.findViewById(ID_REVANCED_SETTINGS_FRAGMENTS);
+        FrameLayout mainContainer = activity.findViewById(ID_MORPHE_SETTINGS_FRAGMENTS);
         if (mainContainer != null) {
             FrameLayout.LayoutParams overlayParams = new FrameLayout.LayoutParams(
                     FrameLayout.LayoutParams.MATCH_PARENT,
@@ -257,7 +257,7 @@ public abstract class BaseSearchViewController {
      * Sets up the toolbar menu for the search action.
      */
     protected void setupToolbarMenu() {
-        toolbar.inflateMenu(MENU_REVANCED_SEARCH_MENU);
+        toolbar.inflateMenu(MENU_MORPHE_SEARCH_MENU);
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == ID_ACTION_SEARCH && !isSearchActive) {
                 openSearch();
@@ -542,8 +542,8 @@ public abstract class BaseSearchViewController {
         if (filteredSearchItems.isEmpty()) {
             Preference noResultsPreference = new Preference(activity);
             noResultsPreference.setKey("no_results_placeholder");
-            noResultsPreference.setTitle(str("revanced_settings_search_no_results_title", query));
-            noResultsPreference.setSummary(str("revanced_settings_search_no_results_summary"));
+            noResultsPreference.setTitle(str("morphe_settings_search_no_results_title", query));
+            noResultsPreference.setSummary(str("morphe_settings_search_no_results_summary"));
             noResultsPreference.setSelectable(false);
             noResultsPreference.setIcon(getSearchIcon());
             filteredSearchItems.add(new BaseSearchResultItem.PreferenceSearchItem(noResultsPreference, "", Collections.emptyList()));

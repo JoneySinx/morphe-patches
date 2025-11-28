@@ -38,9 +38,9 @@ public final class CheckEnvironmentPatch {
          */
         ADB((String) null),
         ROOT_MOUNT_ON_APP_STORE("com.android.vending"),
-        MANAGER("app.revanced.manager.flutter",
-                "app.revanced.manager",
-                "app.revanced.manager.debug");
+        MANAGER("app.morphe.manager.flutter",
+                "app.morphe.manager",
+                "app.morphe.manager.debug");
 
         @Nullable
         static InstallationType installTypeFromPackageName(@Nullable String packageName) {
@@ -70,7 +70,7 @@ public final class CheckEnvironmentPatch {
      * <br>
      * Does not conclusively
      * If the app is installed by the manager or the app store, it is likely, the app was patched using the manager,
-     * or installed manually via ADB (in the case of ReVanced CLI for example).
+     * or installed manually via ADB (in the case of Morphe CLI for example).
      * <br>
      * If the app is not installed by the manager or the app store, then the app was likely downloaded pre-patched
      * and installed by the browser or another unknown app.
@@ -101,7 +101,7 @@ public final class CheckEnvironmentPatch {
 
         @Override
         protected String failureReason() {
-            return str("revanced_check_environment_manager_not_expected_installer");
+            return str("morphe_check_environment_manager_not_expected_installer");
         }
 
         @Override
@@ -156,7 +156,7 @@ public final class CheckEnvironmentPatch {
 
         @Override
         protected String failureReason() {
-            return str("revanced_check_environment_not_same_patching_device");
+            return str("morphe_check_environment_not_same_patching_device");
         }
 
         @Override
@@ -218,7 +218,7 @@ public final class CheckEnvironmentPatch {
             if (durationBetweenPatchingAndInstallation < 0) {
                 // Could happen if the user has their device clock incorrectly set in the past,
                 // but assume that isn't the case and the apk was patched on a device with the wrong system time.
-                return str("revanced_check_environment_not_near_patch_time_invalid");
+                return str("morphe_check_environment_not_near_patch_time_invalid");
             }
 
             // If patched over 1 day ago, show how old this pre-patched apk is.
@@ -226,10 +226,10 @@ public final class CheckEnvironmentPatch {
             final long oneDay = 24 * 60 * 60 * 1000;
             final long daysSincePatching = durationBetweenPatchingAndInstallation / oneDay;
             if (daysSincePatching > 1) { // Use over 1 day to avoid singular vs plural strings.
-                return str("revanced_check_environment_not_near_patch_time_days", daysSincePatching);
+                return str("morphe_check_environment_not_near_patch_time_days", daysSincePatching);
             }
 
-            return str("revanced_check_environment_not_near_patch_time");
+            return str("morphe_check_environment_not_near_patch_time");
         }
 
         @Override

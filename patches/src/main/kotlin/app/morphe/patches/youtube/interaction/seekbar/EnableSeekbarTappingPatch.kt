@@ -30,7 +30,7 @@ val enableSeekbarTappingPatch = bytecodePatch(
         addResources("youtube", "interaction.seekbar.enableSeekbarTappingPatch")
 
         PreferenceScreen.SEEKBAR.addPreferences(
-            SwitchPreference("revanced_seekbar_tapping"),
+            SwitchPreference("morphe_seekbar_tapping"),
         )
 
         // Find the required methods to tap the seekbar.

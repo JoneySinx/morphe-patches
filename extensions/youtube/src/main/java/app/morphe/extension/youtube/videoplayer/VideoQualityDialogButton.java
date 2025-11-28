@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.morphe.extension.shared.Logger;
-import app.morphe.extension.shared.ResourceType;
 import app.morphe.extension.shared.Utils;
 import app.morphe.extension.youtube.patches.VideoInformation;
 import app.morphe.extension.youtube.patches.playback.quality.RememberVideoQualityPatch;
@@ -66,9 +65,9 @@ public class VideoQualityDialogButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_video_quality_dialog_button_container",
-                    "revanced_video_quality_dialog_button",
-                    "revanced_video_quality_dialog_button_text",
+                    "morphe_video_quality_dialog_button_container",
+                    "morphe_video_quality_dialog_button",
+                    "morphe_video_quality_dialog_button_text",
                     Settings.VIDEO_QUALITY_DIALOG_BUTTON::get,
                     view -> {
                         try {
@@ -347,14 +346,14 @@ public class VideoQualityDialogButton {
 
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(
-                        LAYOUT_REVANCED_CUSTOM_LIST_ITEM_CHECKED,
+                        LAYOUT_MORPHE_CUSTOM_LIST_ITEM_CHECKED,
                         parent,
                         false
                 );
                 viewHolder = new ViewHolder();
-                viewHolder.checkIcon = convertView.findViewById(ID_REVANCED_CHECK_ICON);
-                viewHolder.placeholder = convertView.findViewById(ID_REVANCED_CHECK_ICON_PLACEHOLDER);
-                viewHolder.textView = convertView.findViewById(ID_REVANCED_ITEM_TEXT);
+                viewHolder.checkIcon = convertView.findViewById(ID_MORPHE_CHECK_ICON);
+                viewHolder.placeholder = convertView.findViewById(ID_MORPHE_CHECK_ICON_PLACEHOLDER);
+                viewHolder.textView = convertView.findViewById(ID_MORPHE_ITEM_TEXT);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();

@@ -50,7 +50,7 @@ internal val exitFullscreenPatch = bytecodePatch(
         addResources("youtube", "layout.player.fullscreen.exitFullscreenPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            ListPreference("revanced_exit_fullscreen")
+            ListPreference("morphe_exit_fullscreen")
         )
 
         videoEndMethod.apply {

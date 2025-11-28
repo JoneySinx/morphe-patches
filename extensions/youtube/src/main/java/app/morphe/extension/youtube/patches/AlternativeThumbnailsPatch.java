@@ -270,8 +270,8 @@ public final class AlternativeThumbnailsPatch {
             timeToResumeDeArrowAPICalls = now + DEARROW_FAILURE_API_BACKOFF_MILLISECONDS;
             if (Settings.ALT_THUMBNAIL_DEARROW_CONNECTION_TOAST.get()) {
                 String toastMessage = (statusCode != 0)
-                        ? str("revanced_alt_thumbnail_dearrow_error", statusCode)
-                        : str("revanced_alt_thumbnail_dearrow_error_generic");
+                        ? str("morphe_alt_thumbnail_dearrow_error", statusCode)
+                        : str("morphe_alt_thumbnail_dearrow_error_generic");
                 Utils.showToastLong(toastMessage);
             }
         }

@@ -67,7 +67,7 @@ public class SponsorBlockViewController {
             layout.setLayoutParams(new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
             LayoutInflater.from(context).inflate(getResourceIdentifierOrThrow(
-                    ResourceType.LAYOUT, "revanced_sb_inline_sponsor_overlay"), layout);
+                    ResourceType.LAYOUT, "morphe_sb_inline_sponsor_overlay"), layout);
             inlineSponsorOverlayRef = new WeakReference<>(layout);
 
             viewGroup.addView(layout);
@@ -87,13 +87,13 @@ public class SponsorBlockViewController {
             youtubeOverlaysLayoutRef = new WeakReference<>(viewGroup);
 
             skipHighlightButtonRef = new WeakReference<>(Objects.requireNonNull(layout.findViewById(
-                    getResourceIdentifier(ResourceType.ID, "revanced_sb_skip_highlight_button"))));
+                    getResourceIdentifier(ResourceType.ID, "morphe_sb_skip_highlight_button"))));
 
             skipSponsorButtonRef = new WeakReference<>(Objects.requireNonNull(layout.findViewById(
-                    getResourceIdentifier(ResourceType.ID, "revanced_sb_skip_sponsor_button"))));
+                    getResourceIdentifier(ResourceType.ID, "morphe_sb_skip_sponsor_button"))));
 
             NewSegmentLayout newSegmentLayout = Objects.requireNonNull(layout.findViewById(
-                    getResourceIdentifier(ResourceType.ID, "revanced_sb_new_segment_view")));
+                    getResourceIdentifier(ResourceType.ID, "morphe_sb_new_segment_view")));
             newSegmentLayoutRef = new WeakReference<>(newSegmentLayout);
             newSegmentLayout.updateLayout();
 

@@ -34,7 +34,7 @@ val hideVideoAdsPatch = bytecodePatch(
         addResources("music", "ad.video.hideVideoAdsPatch")
 
         PreferenceScreen.ADS.addPreferences(
-            SwitchPreference("revanced_music_hide_video_ads"),
+            SwitchPreference("morphe_music_hide_video_ads"),
         )
 
         navigate(showVideoAdsParentFingerprint.originalMethod)

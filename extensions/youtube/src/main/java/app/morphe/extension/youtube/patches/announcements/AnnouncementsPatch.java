@@ -45,7 +45,7 @@ public final class AnnouncementsPatch {
                     return true;
 
                 Settings.ANNOUNCEMENT_LAST_ID.resetToDefault();
-                Utils.showToastLong(str("revanced_announcements_connection_failed"));
+                Utils.showToastLong(str("morphe_announcements_connection_failed"));
 
                 return true;
             }
@@ -134,7 +134,7 @@ public final class AnnouncementsPatch {
                             null,                                 // OK button text.
                             () -> Settings.ANNOUNCEMENT_LAST_ID.save(finalId), // OK button action.
                             () -> {},                             // Cancel button action (dismiss only).
-                            str("revanced_announcements_dialog_dismiss"), // Neutral button text.
+                            str("morphe_announcements_dialog_dismiss"), // Neutral button text.
                             () -> {},                             // Neutral button action (dismiss only).
                             true                                  // Dismiss dialog when onNeutralClick.
                     );

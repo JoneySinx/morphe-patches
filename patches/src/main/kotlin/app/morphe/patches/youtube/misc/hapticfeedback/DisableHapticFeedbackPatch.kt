@@ -39,12 +39,12 @@ val disableHapticFeedbackPatch = bytecodePatch(
 
         PreferenceScreen.PLAYER.addPreferences(
             PreferenceScreenPreference(
-                "revanced_disable_haptic_feedback",
+                "morphe_disable_haptic_feedback",
                 preferences = setOf(
-                    SwitchPreference("revanced_disable_haptic_feedback_chapters"),
-                    SwitchPreference("revanced_disable_haptic_feedback_precise_seeking"),
-                    SwitchPreference("revanced_disable_haptic_feedback_seek_undo"),
-                    SwitchPreference("revanced_disable_haptic_feedback_zoom"),
+                    SwitchPreference("morphe_disable_haptic_feedback_chapters"),
+                    SwitchPreference("morphe_disable_haptic_feedback_precise_seeking"),
+                    SwitchPreference("morphe_disable_haptic_feedback_seek_undo"),
+                    SwitchPreference("morphe_disable_haptic_feedback_zoom"),
                 )
             )
         )

@@ -136,7 +136,7 @@ public abstract class Setting<T> {
     /**
      * Preference all instances are saved to.
      */
-    public static final SharedPrefCategory preferences = new SharedPrefCategory("revanced_prefs");
+    public static final SharedPrefCategory preferences = new SharedPrefCategory("morphe_prefs");
 
     @Nullable
     public static Setting<?> getSettingFromPath(String str) {
@@ -419,14 +419,14 @@ public abstract class Setting<T> {
     /**
      * If a setting path has this prefix, then remove it before importing/exporting.
      */
-    private static final String OPTIONAL_REVANCED_SETTINGS_PREFIX = "revanced_";
+    private static final String OPTIONAL_MORPHE_SETTINGS_PREFIX = "morphe_";
 
     /**
-     * The path, minus any 'revanced' prefix to keep json concise.
+     * The path, minus any 'morphe' prefix to keep json concise.
      */
     private String getImportExportKey() {
-        if (key.startsWith(OPTIONAL_REVANCED_SETTINGS_PREFIX)) {
-            return key.substring(OPTIONAL_REVANCED_SETTINGS_PREFIX.length());
+        if (key.startsWith(OPTIONAL_MORPHE_SETTINGS_PREFIX)) {
+            return key.substring(OPTIONAL_MORPHE_SETTINGS_PREFIX.length());
         }
         return key;
     }
@@ -522,13 +522,13 @@ public abstract class Setting<T> {
             // Use a delay, otherwise the toast can move about on screen from the dismissing dialog.
             final int numberOfSettingsImportedFinal = numberOfSettingsImported;
             Utils.runOnMainThreadDelayed(() -> Utils.showToastLong(numberOfSettingsImportedFinal == 0
-                            ? str("revanced_settings_import_reset")
-                            : str("revanced_settings_import_success", numberOfSettingsImportedFinal)),
+                            ? str("morphe_settings_import_reset")
+                            : str("morphe_settings_import_success", numberOfSettingsImportedFinal)),
                     150);
 
             return rebootSettingChanged;
         } catch (JSONException | IllegalArgumentException ex) {
-            Utils.showToastLong(str("revanced_settings_import_failure_parse", ex.getMessage()));
+            Utils.showToastLong(str("morphe_settings_import_failure_parse", ex.getMessage()));
             Logger.printInfo(() -> "", ex);
         } catch (Exception ex) {
             Logger.printException(() -> "Import failure: " + ex.getMessage(), ex); // should never happen

@@ -68,7 +68,7 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
         TUBULAR("Tubular",
                 "org.polymorphicshade.tubular",
                 "https://github.com/polymorphicshade/Tubular/releases/latest"),
-        OTHER(sf("revanced_external_downloader_other_item").toString(),
+        OTHER(sf("morphe_external_downloader_other_item").toString(),
                 null,
                 null,
                 true);
@@ -178,7 +178,7 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
         // Ignore calls to set the summary.
         // Summary is always the description of the category.
         //
-        // This is required otherwise the ReVanced preference fragment
+        // This is required otherwise the Morphe preference fragment
         // sets all ListPreference summaries to show the current selection.
     }
 
@@ -207,7 +207,7 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
         final boolean usingCustomDownloader = Downloader.findByPackageName(packageName) == null;
         adapter = new CustomDialogListPreference.ListPreferenceArrayAdapter(
                 context,
-                LAYOUT_REVANCED_CUSTOM_LIST_ITEM_CHECKED,
+                LAYOUT_MORPHE_CUSTOM_LIST_ITEM_CHECKED,
                 getEntries(),
                 getEntryValues(),
                 usingCustomDownloader
@@ -281,8 +281,8 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
                         // Show dialog if EditText is empty.
                         CustomDialog.create(
                                 context,
-                                str("revanced_external_downloader_name_title"),
-                                str("revanced_external_downloader_empty_warning"),
+                                str("morphe_external_downloader_name_title"),
+                                str("morphe_external_downloader_empty_warning"),
                                 null,
                                 null,
                                 () -> {}, // OK button does nothing (dismiss only).
@@ -304,7 +304,7 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
                     }
                 },
                 () -> {}, // Cancel button action (dismiss only).
-                str("revanced_settings_reset"),
+                str("morphe_settings_reset"),
                 () -> { // Reset action.
                     String defaultValue = Settings.EXTERNAL_DOWNLOADER_PACKAGE_NAME.defaultValue;
                     editText.setText(defaultValue);
@@ -342,7 +342,7 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
         EditText editText = new EditText(context);
         editText.setText(initialPackageName);
         editText.setSelection(initialPackageName.length());
-        editText.setHint(str("revanced_external_downloader_other_item_hint"));
+        editText.setHint(str("morphe_external_downloader_other_item_hint"));
         editText.setSingleLine(true);
         editText.setTextSize(16);
         editText.setEnabled(isCustom);
@@ -388,12 +388,12 @@ public class ExternalDownloaderPreference extends CustomDialogListPreference {
                 : null; // Ok.
         // Show a dialog if the recommended app is not installed or if the custom package cannot be found.
         String message = downloader != null
-                ? str("revanced_external_downloader_not_installed_warning", downloader.name)
-                : str("revanced_external_downloader_package_not_found_warning", packageName);
+                ? str("morphe_external_downloader_not_installed_warning", downloader.name)
+                : str("morphe_external_downloader_package_not_found_warning", packageName);
 
         CustomDialog.create(
                 context,
-                str("revanced_external_downloader_not_found_title"),
+                str("morphe_external_downloader_not_found_title"),
                 message,
                 null,
                 okButtonText,

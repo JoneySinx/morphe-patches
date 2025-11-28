@@ -20,7 +20,7 @@ public class CopyVideoUrlButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_copy_video_url_button",
+                    "morphe_copy_video_url_button",
                     null,
                     Settings.COPY_VIDEO_URL::get,
                     view -> CopyVideoUrlPatch.copyUrl(false),

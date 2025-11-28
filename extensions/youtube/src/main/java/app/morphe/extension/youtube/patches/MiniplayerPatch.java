@@ -100,7 +100,7 @@ public final class MiniplayerPatch {
         int dipWidth = Settings.MINIPLAYER_WIDTH_DIP.get();
 
         if (dipWidth < WIDTH_DIP_MIN || dipWidth > WIDTH_DIP_MAX) {
-            Utils.showToastLong(str("revanced_miniplayer_width_dip_invalid_toast",
+            Utils.showToastLong(str("morphe_miniplayer_width_dip_invalid_toast",
                     WIDTH_DIP_MIN, WIDTH_DIP_MAX));
 
             // Instead of resetting, clamp the size at the bounds.
@@ -164,7 +164,7 @@ public final class MiniplayerPatch {
         int opacity = Settings.MINIPLAYER_OPACITY.get();
 
         if (opacity < 0 || opacity > 100) {
-            Utils.showToastLong(str("revanced_miniplayer_opacity_invalid_toast"));
+            Utils.showToastLong(str("morphe_miniplayer_opacity_invalid_toast"));
             opacity = Settings.MINIPLAYER_OPACITY.resetToDefault();
         }
 

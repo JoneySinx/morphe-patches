@@ -48,7 +48,7 @@ val changeMiniplayerColor = bytecodePatch(
         addResources("music", "layout.miniplayercolor.changeMiniplayerColor")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_music_change_miniplayer_color"),
+            SwitchPreference("morphe_music_change_miniplayer_color"),
         )
 
         switchToggleColorFingerprint.match(miniPlayerConstructorFingerprint.classDef).let {

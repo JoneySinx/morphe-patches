@@ -41,7 +41,7 @@ val disableRollingNumberAnimationPatch = bytecodePatch(
         addResources("youtube", "layout.hide.rollingnumber.disableRollingNumberAnimationPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_disable_rolling_number_animations"),
+            SwitchPreference("morphe_disable_rolling_number_animations"),
         )
 
         // Animations are disabled by preventing an Image from being applied to the text span,

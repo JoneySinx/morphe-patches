@@ -35,29 +35,29 @@ val rememberVideoQualityPatch = bytecodePatch {
 
         settingsMenuVideoQualityGroup.addAll(listOf(
             ListPreference(
-                key = "revanced_video_quality_default_mobile",
-                entriesKey = "revanced_video_quality_default_entries",
-                entryValuesKey = "revanced_video_quality_default_entry_values"
+                key = "morphe_video_quality_default_mobile",
+                entriesKey = "morphe_video_quality_default_entries",
+                entryValuesKey = "morphe_video_quality_default_entry_values"
             ),
             ListPreference(
-                key = "revanced_video_quality_default_wifi",
-                entriesKey = "revanced_video_quality_default_entries",
-                entryValuesKey = "revanced_video_quality_default_entry_values"
+                key = "morphe_video_quality_default_wifi",
+                entriesKey = "morphe_video_quality_default_entries",
+                entryValuesKey = "morphe_video_quality_default_entry_values"
             ),
-            SwitchPreference("revanced_remember_video_quality_last_selected"),
+            SwitchPreference("morphe_remember_video_quality_last_selected"),
 
             ListPreference(
-                key = "revanced_shorts_quality_default_mobile",
-                entriesKey = "revanced_shorts_quality_default_entries",
-                entryValuesKey = "revanced_shorts_quality_default_entry_values",
+                key = "morphe_shorts_quality_default_mobile",
+                entriesKey = "morphe_shorts_quality_default_entries",
+                entryValuesKey = "morphe_shorts_quality_default_entry_values",
             ),
             ListPreference(
-                key = "revanced_shorts_quality_default_wifi",
-                entriesKey = "revanced_shorts_quality_default_entries",
-                entryValuesKey = "revanced_shorts_quality_default_entry_values"
+                key = "morphe_shorts_quality_default_wifi",
+                entriesKey = "morphe_shorts_quality_default_entries",
+                entryValuesKey = "morphe_shorts_quality_default_entry_values"
             ),
-            SwitchPreference("revanced_remember_shorts_quality_last_selected"),
-            SwitchPreference("revanced_remember_video_quality_last_selected_toast")
+            SwitchPreference("morphe_remember_shorts_quality_last_selected"),
+            SwitchPreference("morphe_remember_video_quality_last_selected_toast")
         ))
 
         onCreateHook(EXTENSION_CLASS_DESCRIPTOR, "newVideoStarted")

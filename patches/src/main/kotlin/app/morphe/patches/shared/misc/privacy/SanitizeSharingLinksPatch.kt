@@ -42,7 +42,7 @@ internal fun sanitizeSharingLinksPatch(
 
         addResources("shared", "misc.privacy.sanitizeSharingLinksPatch")
 
-        val sanitizePreference = SwitchPreference("revanced_sanitize_sharing_links")
+        val sanitizePreference = SwitchPreference("morphe_sanitize_sharing_links")
 
         preferenceScreen.addPreferences(
             if (replaceMusicLinksWithYouTube) {
@@ -52,7 +52,7 @@ internal fun sanitizeSharingLinksPatch(
                     tag = "app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory",
                     preferences = setOf(
                         sanitizePreference,
-                        SwitchPreference("revanced_replace_music_with_youtube")
+                        SwitchPreference("morphe_replace_music_with_youtube")
                     )
                 )
             } else {

@@ -26,7 +26,7 @@ public class VotingButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_sb_voting_button",
+                    "morphe_sb_voting_button",
                     null,
                     VotingButton::isButtonEnabled,
                     v -> SponsorBlockUtils.onVotingClicked(v.getContext()),

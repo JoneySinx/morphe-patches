@@ -11,19 +11,19 @@ import app.morphe.extension.shared.Utils;
 import app.morphe.extension.shared.StringRef;
 
 public enum CategoryBehaviour {
-    SKIP_AUTOMATICALLY("skip", 2, true, sf("revanced_sb_skip_automatically")),
-    // desktop does not have skip-once behavior. Key is unique to ReVanced
-    SKIP_AUTOMATICALLY_ONCE("skip-once", 3, true, sf("revanced_sb_skip_automatically_once")),
-    MANUAL_SKIP("manual-skip", 1, false, sf("revanced_sb_skip_showbutton")),
-    SHOW_IN_SEEKBAR("seekbar-only", 0, false, sf("revanced_sb_skip_seekbaronly")),
-    // ignored categories are not exported to json, and ignore is the default behavior when importing
-    IGNORE("ignore", -1, false, sf("revanced_sb_skip_ignore"));
+    SKIP_AUTOMATICALLY("skip", 2, true, sf("morphe_sb_skip_automatically")),
+    // Desktop does not have skip-once behavior. Key is unique to Morphe.
+    SKIP_AUTOMATICALLY_ONCE("skip-once", 3, true, sf("morphe_sb_skip_automatically_once")),
+    MANUAL_SKIP("manual-skip", 1, false, sf("morphe_sb_skip_showbutton")),
+    SHOW_IN_SEEKBAR("seekbar-only", 0, false, sf("morphe_sb_skip_seekbaronly")),
+    // Ignored categories are not exported to json, and ignore is the default behavior when importing.
+    IGNORE("ignore", -1, false, sf("morphe_sb_skip_ignore"));
 
     /**
-     * ReVanced specific value.
+     * Morphe specific value.
      */
     @NonNull
-    public final String reVancedKeyValue;
+    public final String morpheKeyValue;
     /**
      * Desktop specific value.
      */
@@ -35,17 +35,17 @@ public enum CategoryBehaviour {
     @NonNull
     public final StringRef description;
 
-    CategoryBehaviour(String reVancedKeyValue, int desktopKeyValue, boolean skipAutomatically, StringRef description) {
-        this.reVancedKeyValue = Objects.requireNonNull(reVancedKeyValue);
+    CategoryBehaviour(String morpheKeyValue, int desktopKeyValue, boolean skipAutomatically, StringRef description) {
+        this.morpheKeyValue = Objects.requireNonNull(morpheKeyValue);
         this.desktopKeyValue = desktopKeyValue;
         this.skipAutomatically = skipAutomatically;
         this.description = Objects.requireNonNull(description);
     }
 
     @Nullable
-    public static CategoryBehaviour byReVancedKeyValue(@NonNull String keyValue) {
+    public static CategoryBehaviour byMorpheKeyValue(@NonNull String keyValue) {
         for (CategoryBehaviour behaviour : values()){
-            if (behaviour.reVancedKeyValue.equals(keyValue)) {
+            if (behaviour.morpheKeyValue.equals(keyValue)) {
                 return behaviour;
             }
         }
@@ -81,7 +81,7 @@ public enum CategoryBehaviour {
         int behaviorIndex = 0, behaviorHighlightIndex = 0;
         while (behaviorIndex < behaviorLength) {
             CategoryBehaviour behaviour = behaviours[behaviorIndex];
-            String value = behaviour.reVancedKeyValue;
+            String value = behaviour.morpheKeyValue;
             String description = behaviour.description.toString();
             behaviorKeyValues[behaviorIndex] = value;
             behaviorDescriptions[behaviorIndex] = description;

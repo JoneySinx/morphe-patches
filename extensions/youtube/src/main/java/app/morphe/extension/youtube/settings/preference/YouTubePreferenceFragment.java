@@ -12,7 +12,7 @@ import app.morphe.extension.shared.settings.preference.ToolbarPreferenceFragment
 import app.morphe.extension.youtube.settings.YouTubeActivityHook;
 
 /**
- * Preference fragment for ReVanced settings.
+ * Preference fragment for Morphe settings.
  */
 @SuppressWarnings("deprecation")
 public class YouTubePreferenceFragment extends ToolbarPreferenceFragment {

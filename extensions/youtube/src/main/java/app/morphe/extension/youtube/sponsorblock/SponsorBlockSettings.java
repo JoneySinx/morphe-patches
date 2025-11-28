@@ -57,7 +57,7 @@ public class SponsorBlockSettings {
                 category.setBehaviour(CategoryBehaviour.IGNORE);
                 if (barTypesObject.has(category.keyValue)) {
                     JSONObject categoryObject = barTypesObject.getJSONObject(category.keyValue);
-                    // Older ReVanced SB exports lack an opacity value.
+                    // Older Morphe SB exports lack an opacity value.
                     if (categoryObject.has("color") && categoryObject.has("opacity")) {
                         category.setColorWithOpacity(categoryObject.getString("color"));
                         category.setOpacity((float) categoryObject.getDouble("opacity"));
@@ -100,7 +100,7 @@ public class SponsorBlockSettings {
             Settings.SB_VIDEO_LENGTH_WITHOUT_SEGMENTS.save(settingsJson.getBoolean("showTimeWithSkips"));
 
             String serverAddress = settingsJson.getString("serverAddress");
-            if (isValidSBServerAddress(serverAddress)) { // Old versions of ReVanced exported wrong url format.
+            if (isValidSBServerAddress(serverAddress)) {
                 Settings.SB_API_URL.save(serverAddress);
             }
 
@@ -110,7 +110,7 @@ public class SponsorBlockSettings {
             }
             Settings.SB_SEGMENT_MIN_DURATION.save(minDuration);
 
-            if (settingsJson.has("skipCount")) { // Value not exported in old versions of ReVanced.
+            if (settingsJson.has("skipCount")) {
                 int skipCount = settingsJson.getInt("skipCount");
                 if (skipCount < 0) {
                     throw new IllegalArgumentException("invalid skipCount: " + skipCount);
@@ -126,10 +126,10 @@ public class SponsorBlockSettings {
                 Settings.SB_LOCAL_TIME_SAVED_MILLISECONDS.save((long) (minutesSaved * 60 * 1000));
             }
 
-            Utils.showToastLong(str("revanced_sb_settings_import_successful"));
+            Utils.showToastLong(str("morphe_sb_settings_import_successful"));
         } catch (Exception ex) {
             Logger.printInfo(() -> "failed to import settings", ex); // Use info level, as we are showing our own toast.
-            Utils.showToastLong(str("revanced_sb_settings_import_failed", ex.getMessage()));
+            Utils.showToastLong(str("morphe_sb_settings_import_failed", ex.getMessage()));
         }
     }
 
@@ -177,7 +177,7 @@ public class SponsorBlockSettings {
             return json.toString(2);
         } catch (Exception ex) {
             Logger.printInfo(() -> "failed to export settings", ex); // Use info level, as we are showing our own toast.
-            Utils.showToastLong(str("revanced_sb_settings_export_failed", ex));
+            Utils.showToastLong(str("morphe_sb_settings_export_failed", ex));
             return "";
         }
     }
@@ -196,12 +196,12 @@ public class SponsorBlockSettings {
             Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(
                     dialogContext,
                     null, // No title.
-                    str("revanced_sb_settings_revanced_export_user_id_warning"), // Message.
+                    str("morphe_sb_settings_morphe_export_user_id_warning"), // Message.
                     null, // No EditText.
                     null, // OK button text.
                     () -> {}, // OK button action (dismiss only).
                     null, // No cancel button action.
-                    str("revanced_sb_settings_revanced_export_user_id_warning_dismiss"), // Neutral button text.
+                    str("morphe_sb_settings_morphe_export_user_id_warning_dismiss"), // Neutral button text.
                     () -> Settings.SB_HIDE_EXPORT_WARNING.save(true), // Neutral button action.
                     true // Dismiss dialog when onNeutralClick.
             );

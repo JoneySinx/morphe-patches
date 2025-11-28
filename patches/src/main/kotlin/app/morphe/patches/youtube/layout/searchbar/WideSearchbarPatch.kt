@@ -59,7 +59,7 @@ val wideSearchbarPatch = bytecodePatch(
         addResources("youtube", "layout.searchbar.wideSearchbarPatch")
 
         PreferenceScreen.FEED.addPreferences(
-            SwitchPreference("revanced_wide_searchbar"),
+            SwitchPreference("morphe_wide_searchbar"),
         )
 
         setWordmarkHeaderFingerprint.let {

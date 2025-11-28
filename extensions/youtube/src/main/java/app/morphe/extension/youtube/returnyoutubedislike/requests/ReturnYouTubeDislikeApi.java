@@ -232,7 +232,7 @@ public class ReturnYouTubeDislikeApi {
             numberOfRateLimitRequestsEncountered++;
             fetchCallResponseTimeLast = FETCH_CALL_RESPONSE_TIME_VALUE_RATE_LIMIT;
             if (!lastApiCallFailed && Settings.RYD_TOAST_ON_CONNECTION_ERROR.get()) {
-                Utils.showToastLong(str("revanced_ryd_failure_client_rate_limit_requested"));
+                Utils.showToastLong(str("morphe_ryd_failure_client_rate_limit_requested"));
             }
             lastApiCallFailed = true;
         } else {
@@ -311,14 +311,14 @@ public class ReturnYouTubeDislikeApi {
                 }
             } else {
                 // Unexpected response code.  Most likely RYD is temporarily broken.
-                handleConnectionError(str("revanced_ryd_failure_connection_status_code", responseCode),
+                handleConnectionError(str("morphe_ryd_failure_connection_status_code", responseCode),
                         responseCode, null, Toast.LENGTH_LONG);
             }
             connection.disconnect(); // Something went wrong, might as well disconnect.
         } catch (SocketTimeoutException ex) {
-            handleConnectionError((str("revanced_ryd_failure_connection_timeout")), null, ex, Toast.LENGTH_SHORT);
+            handleConnectionError((str("morphe_ryd_failure_connection_timeout")), null, ex, Toast.LENGTH_SHORT);
         } catch (IOException ex) {
-            handleConnectionError((str("revanced_ryd_failure_generic", ex.getMessage())), null, ex, Toast.LENGTH_LONG);
+            handleConnectionError((str("morphe_ryd_failure_generic", ex.getMessage())), null, ex, Toast.LENGTH_LONG);
         } catch (Exception ex) {
             // should never happen
             Logger.printException(() -> "fetchVotes failure", ex);
@@ -360,13 +360,13 @@ public class ReturnYouTubeDislikeApi {
                 return confirmRegistration(userId, solution);
             }
 
-            handleConnectionError(str("revanced_ryd_failure_connection_status_code", responseCode),
+            handleConnectionError(str("morphe_ryd_failure_connection_status_code", responseCode),
                     responseCode, null, Toast.LENGTH_LONG);
             connection.disconnect();
         } catch (SocketTimeoutException ex) {
-            handleConnectionError(str("revanced_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
+            handleConnectionError(str("morphe_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
         } catch (IOException ex) {
-            handleConnectionError(str("revanced_ryd_failure_generic", "registration failed"), null, ex, Toast.LENGTH_LONG);
+            handleConnectionError(str("morphe_ryd_failure_generic", "registration failed"), null, ex, Toast.LENGTH_LONG);
         } catch (Exception ex) {
             Logger.printException(() -> "Failed to register user", ex); // should never happen
         }
@@ -408,12 +408,12 @@ public class ReturnYouTubeDislikeApi {
             String response = Requester.parseStringAndDisconnect(connection);
             Logger.printInfo(() -> "Failed to confirm registration for user: " + userId
                     + " solution: " + solution + " responseCode: " + responseCode + " response: '" + response + "''");
-            handleConnectionError(str("revanced_ryd_failure_connection_status_code", responseCode),
+            handleConnectionError(str("morphe_ryd_failure_connection_status_code", responseCode),
                     responseCode, null, Toast.LENGTH_LONG);
         } catch (SocketTimeoutException ex) {
-            handleConnectionError(str("revanced_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
+            handleConnectionError(str("morphe_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
         } catch (IOException ex) {
-            handleConnectionError(str("revanced_ryd_failure_generic", "confirm registration failed"),
+            handleConnectionError(str("morphe_ryd_failure_generic", "confirm registration failed"),
                     null, ex, Toast.LENGTH_LONG);
         } catch (Exception ex) {
             Logger.printException(() -> "Failed to confirm registration for user: " + userId
@@ -484,13 +484,13 @@ public class ReturnYouTubeDislikeApi {
 
             Logger.printInfo(() -> "Failed to send vote for video: " + videoId + " vote: " + vote
                     + " response code was: " + responseCode);
-            handleConnectionError(str("revanced_ryd_failure_connection_status_code", responseCode),
+            handleConnectionError(str("morphe_ryd_failure_connection_status_code", responseCode),
                     responseCode, null, Toast.LENGTH_LONG);
             connection.disconnect(); // something went wrong, might as well disconnect
         } catch (SocketTimeoutException ex) {
-            handleConnectionError(str("revanced_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
+            handleConnectionError(str("morphe_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
         } catch (IOException ex) {
-            handleConnectionError(str("revanced_ryd_failure_generic", "send vote failed"), null, ex, Toast.LENGTH_LONG);
+            handleConnectionError(str("morphe_ryd_failure_generic", "send vote failed"), null, ex, Toast.LENGTH_LONG);
         } catch (Exception ex) {
             // should never happen
             Logger.printException(() -> "Failed to send vote for video: " + videoId + " vote: " + vote, ex);
@@ -533,12 +533,12 @@ public class ReturnYouTubeDislikeApi {
             String response = Requester.parseStringAndDisconnect(connection);
             Logger.printInfo(() -> "Failed to confirm vote for video: " + videoId
                     + " solution: " + solution + " responseCode: " + responseCode + " response: '" + response + "'");
-            handleConnectionError(str("revanced_ryd_failure_connection_status_code", responseCode),
+            handleConnectionError(str("morphe_ryd_failure_connection_status_code", responseCode),
                     responseCode, null, Toast.LENGTH_LONG);
         } catch (SocketTimeoutException ex) {
-            handleConnectionError(str("revanced_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
+            handleConnectionError(str("morphe_ryd_failure_connection_timeout"), null, ex, Toast.LENGTH_SHORT);
         } catch (IOException ex) {
-            handleConnectionError(str("revanced_ryd_failure_generic", "confirm vote failed"),
+            handleConnectionError(str("morphe_ryd_failure_generic", "confirm vote failed"),
                     null, ex, Toast.LENGTH_LONG);
         } catch (Exception ex) {
             Logger.printException(() -> "Failed to confirm vote for video: " + videoId

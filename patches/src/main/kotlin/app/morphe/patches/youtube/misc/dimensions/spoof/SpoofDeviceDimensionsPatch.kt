@@ -36,7 +36,7 @@ val spoofDeviceDimensionsPatch = bytecodePatch(
         addResources("youtube", "misc.dimensions.spoof.spoofDeviceDimensionsPatch")
 
         PreferenceScreen.MISC.addPreferences(
-            SwitchPreference("revanced_spoof_device_dimensions"),
+            SwitchPreference("morphe_spoof_device_dimensions"),
         )
 
         deviceDimensionsModelToStringFingerprint

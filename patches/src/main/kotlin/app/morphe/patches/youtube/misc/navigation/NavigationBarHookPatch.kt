@@ -54,7 +54,7 @@ val navigationBarHookPatch = bytecodePatch(description = "Hooks the active navig
                     "navigationbuttons",
                     ResourceGroup(
                         "drawable",
-                        "revanced_fill_bell_cairo_black_24.xml"
+                        "morphe_fill_bell_cairo_black_24.xml"
                     )
                 )
             }

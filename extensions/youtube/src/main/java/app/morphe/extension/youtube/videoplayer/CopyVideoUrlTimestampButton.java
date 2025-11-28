@@ -20,7 +20,7 @@ public class CopyVideoUrlTimestampButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_copy_video_url_timestamp_button",
+                    "morphe_copy_video_url_timestamp_button",
                     null,
                     Settings.COPY_VIDEO_URL_TIMESTAMP::get,
                     view -> CopyVideoUrlPatch.copyUrl(true),

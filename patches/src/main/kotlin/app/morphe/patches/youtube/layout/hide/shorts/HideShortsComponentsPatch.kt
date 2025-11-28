@@ -67,9 +67,9 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
             // Ideally each group should be ordered similar to how they appear in the UI
 
             // Vertical row of buttons on right side of the screen.
-            SwitchPreference("revanced_hide_shorts_like_fountain"),
-            SwitchPreference("revanced_hide_shorts_like_button"),
-            SwitchPreference("revanced_hide_shorts_dislike_button"),
+            SwitchPreference("morphe_hide_shorts_like_fountain"),
+            SwitchPreference("morphe_hide_shorts_like_button"),
+            SwitchPreference("morphe_hide_shorts_dislike_button"),
         )
 
         if (is_20_22_or_greater) {
@@ -83,10 +83,10 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
         } else {
             preferences.addAll(
                 listOf(
-                    SwitchPreference("revanced_hide_shorts_comments_button"),
-                    SwitchPreference("revanced_hide_shorts_share_button"),
-                    SwitchPreference("revanced_hide_shorts_remix_button"),
-                    SwitchPreference("revanced_hide_shorts_sound_button")
+                    SwitchPreference("morphe_hide_shorts_comments_button"),
+                    SwitchPreference("morphe_hide_shorts_share_button"),
+                    SwitchPreference("morphe_hide_shorts_remix_button"),
+                    SwitchPreference("morphe_hide_shorts_sound_button")
                 )
             )
         }
@@ -94,45 +94,45 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
         preferences.addAll(
             listOf(
                 // Upper and middle area of the player.
-                SwitchPreference("revanced_hide_shorts_join_button"),
-                SwitchPreference("revanced_hide_shorts_subscribe_button"),
-                SwitchPreference("revanced_hide_shorts_paused_overlay_buttons"),
+                SwitchPreference("morphe_hide_shorts_join_button"),
+                SwitchPreference("morphe_hide_shorts_subscribe_button"),
+                SwitchPreference("morphe_hide_shorts_paused_overlay_buttons"),
 
                 // Suggested actions.
-                SwitchPreference("revanced_hide_shorts_preview_comment"),
-                SwitchPreference("revanced_hide_shorts_save_sound_button"),
-                SwitchPreference("revanced_hide_shorts_use_sound_button"),
-                SwitchPreference("revanced_hide_shorts_use_template_button"),
-                SwitchPreference("revanced_hide_shorts_upcoming_button"),
-                SwitchPreference("revanced_hide_shorts_effect_button"),
-                SwitchPreference("revanced_hide_shorts_green_screen_button"),
-                SwitchPreference("revanced_hide_shorts_hashtag_button"),
-                SwitchPreference("revanced_hide_shorts_new_posts_button"),
-                SwitchPreference("revanced_hide_shorts_shop_button"),
-                SwitchPreference("revanced_hide_shorts_tagged_products"),
-                SwitchPreference("revanced_hide_shorts_search_suggestions"),
-                SwitchPreference("revanced_hide_shorts_super_thanks_button"),
-                SwitchPreference("revanced_hide_shorts_stickers"),
+                SwitchPreference("morphe_hide_shorts_preview_comment"),
+                SwitchPreference("morphe_hide_shorts_save_sound_button"),
+                SwitchPreference("morphe_hide_shorts_use_sound_button"),
+                SwitchPreference("morphe_hide_shorts_use_template_button"),
+                SwitchPreference("morphe_hide_shorts_upcoming_button"),
+                SwitchPreference("morphe_hide_shorts_effect_button"),
+                SwitchPreference("morphe_hide_shorts_green_screen_button"),
+                SwitchPreference("morphe_hide_shorts_hashtag_button"),
+                SwitchPreference("morphe_hide_shorts_new_posts_button"),
+                SwitchPreference("morphe_hide_shorts_shop_button"),
+                SwitchPreference("morphe_hide_shorts_tagged_products"),
+                SwitchPreference("morphe_hide_shorts_search_suggestions"),
+                SwitchPreference("morphe_hide_shorts_super_thanks_button"),
+                SwitchPreference("morphe_hide_shorts_stickers"),
 
                 // Bottom of the screen.
-                SwitchPreference("revanced_hide_shorts_location_label"),
-                SwitchPreference("revanced_hide_shorts_channel_bar"),
-                SwitchPreference("revanced_hide_shorts_info_panel"),
-                SwitchPreference("revanced_hide_shorts_full_video_link_label"),
-                SwitchPreference("revanced_hide_shorts_video_title"),
-                SwitchPreference("revanced_hide_shorts_sound_metadata_label"),
-                SwitchPreference("revanced_hide_shorts_navigation_bar"),
+                SwitchPreference("morphe_hide_shorts_location_label"),
+                SwitchPreference("morphe_hide_shorts_channel_bar"),
+                SwitchPreference("morphe_hide_shorts_info_panel"),
+                SwitchPreference("morphe_hide_shorts_full_video_link_label"),
+                SwitchPreference("morphe_hide_shorts_video_title"),
+                SwitchPreference("morphe_hide_shorts_sound_metadata_label"),
+                SwitchPreference("morphe_hide_shorts_navigation_bar"),
             )
         )
 
         PreferenceScreen.SHORTS.addPreferences(
-            SwitchPreference("revanced_hide_shorts_home"),
-            SwitchPreference("revanced_hide_shorts_search"),
-            SwitchPreference("revanced_hide_shorts_subscriptions"),
-            SwitchPreference("revanced_hide_shorts_history"),
+            SwitchPreference("morphe_hide_shorts_home"),
+            SwitchPreference("morphe_hide_shorts_search"),
+            SwitchPreference("morphe_hide_shorts_subscriptions"),
+            SwitchPreference("morphe_hide_shorts_history"),
 
             PreferenceScreenPreference(
-                key = "revanced_shorts_player_screen",
+                key = "morphe_shorts_player_screen",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = preferences,
             )

@@ -81,14 +81,14 @@ public class ColorPickerPreference extends EditTextPreference {
     /** Whether the opacity slider is enabled. */
     private boolean opacitySliderEnabled = false;
 
-    public static final int ID_REVANCED_COLOR_PICKER_VIEW =
-            getResourceIdentifierOrThrow(ResourceType.ID, "revanced_color_picker_view");
+    public static final int ID_MORPHE_COLOR_PICKER_VIEW =
+            getResourceIdentifierOrThrow(ResourceType.ID, "morphe_color_picker_view");
     public static final int ID_PREFERENCE_COLOR_DOT =
             getResourceIdentifierOrThrow(ResourceType.ID, "preference_color_dot");
-    public static final int LAYOUT_REVANCED_COLOR_DOT_WIDGET =
-            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "revanced_color_dot_widget");
-    public static final int LAYOUT_REVANCED_COLOR_PICKER =
-            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "revanced_color_picker");
+    public static final int LAYOUT_MORPHE_COLOR_DOT_WIDGET =
+            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "morphe_color_dot_widget");
+    public static final int LAYOUT_MORPHE_COLOR_PICKER =
+            getResourceIdentifierOrThrow(ResourceType.LAYOUT, "morphe_color_picker");
 
     /**
      * Removes non valid hex characters, converts to all uppercase,
@@ -176,7 +176,7 @@ public class ColorPickerPreference extends EditTextPreference {
         }
 
         // Set the widget layout to a custom layout containing the colored dot.
-        setWidgetLayoutResource(LAYOUT_REVANCED_COLOR_DOT_WIDGET);
+        setWidgetLayoutResource(LAYOUT_MORPHE_COLOR_DOT_WIDGET);
     }
 
     /**
@@ -203,7 +203,7 @@ public class ColorPickerPreference extends EditTextPreference {
             // This code is reached if the user pastes settings json with an invalid color
             // since this preference is updated with the new setting text.
             Logger.printDebug(() -> "Parse color error: " + colorString, ex);
-            Utils.showToastShort(str("revanced_settings_color_invalid"));
+            Utils.showToastShort(str("morphe_settings_color_invalid"));
             setText(colorSetting.resetToDefault());
         } catch (Exception ex) {
             Logger.printException(() -> "setText failure: " + colorString, ex);
@@ -299,8 +299,8 @@ public class ColorPickerPreference extends EditTextPreference {
         }
 
         // Inflate color picker view.
-        View colorPicker = LayoutInflater.from(context).inflate(LAYOUT_REVANCED_COLOR_PICKER, null);
-        dialogColorPickerView = colorPicker.findViewById(ID_REVANCED_COLOR_PICKER_VIEW);
+        View colorPicker = LayoutInflater.from(context).inflate(LAYOUT_MORPHE_COLOR_PICKER, null);
+        dialogColorPickerView = colorPicker.findViewById(ID_MORPHE_COLOR_PICKER_VIEW);
         dialogColorPickerView.setOpacitySliderEnabled(opacitySliderEnabled);
         dialogColorPickerView.setColor(currentColor);
         contentContainer.addView(colorPicker);
@@ -362,7 +362,7 @@ public class ColorPickerPreference extends EditTextPreference {
         final int originalColor = currentColor;
         Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(
                 context,
-                getTitle() != null ? getTitle().toString() : str("revanced_settings_color_picker_title"),
+                getTitle() != null ? getTitle().toString() : str("morphe_settings_color_picker_title"),
                 null,
                 null,
                 null,
@@ -373,7 +373,7 @@ public class ColorPickerPreference extends EditTextPreference {
                                 ? COLOR_STRING_LENGTH_WITH_ALPHA
                                 : COLOR_STRING_LENGTH_WITHOUT_ALPHA;
                         if (colorString.length() != expectedLength) {
-                            Utils.showToastShort(str("revanced_settings_color_invalid"));
+                            Utils.showToastShort(str("morphe_settings_color_invalid"));
                             setText(getColorString(originalColor, opacitySliderEnabled));
                             return;
                         }
@@ -393,7 +393,7 @@ public class ColorPickerPreference extends EditTextPreference {
                         Logger.printException(() -> "Cancel button failure", ex);
                     }
                 },
-                str("revanced_settings_reset_color"), // Neutral button text.
+                str("morphe_settings_reset_color"), // Neutral button text.
                 this::onDialogNeutralClicked, // Neutral button action.
                 false // Do not dismiss dialog.
         );

@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.preference.Preference;
 
 /**
- * A custom preference that triggers exporting ReVanced debug logs to the clipboard when clicked.
+ * A custom preference that triggers exporting Morphe debug logs to the clipboard when clicked.
  * Invokes the {@link LogBufferManager#exportToClipboard} method.
  */
 @SuppressWarnings({"deprecation", "unused"})

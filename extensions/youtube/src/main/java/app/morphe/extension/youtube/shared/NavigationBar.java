@@ -286,7 +286,7 @@ public final class NavigationBar {
             // but YT still has not fixed the icon not associated to the enum.
             VersionCheckPatch.IS_20_31_OR_GREATER && !Settings.SETTINGS_DISABLE_BOLD_ICONS.get()
                     ? "yt_fill_experimental_bell_vd_theme_24"
-                    : "revanced_fill_bell_cairo_black_24");
+                    : "morphe_fill_bell_cairo_black_24");
 
     /**
      * Injection point.

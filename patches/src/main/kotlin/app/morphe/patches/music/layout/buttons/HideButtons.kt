@@ -62,10 +62,10 @@ val hideButtons = bytecodePatch(
         addResources("music", "layout.buttons.hideButtons")
 
         PreferenceScreen.GENERAL.addPreferences(
-            SwitchPreference("revanced_music_hide_cast_button"),
-            SwitchPreference("revanced_music_hide_history_button"),
-            SwitchPreference("revanced_music_hide_notification_button"),
-            SwitchPreference("revanced_music_hide_search_button")
+            SwitchPreference("morphe_music_hide_cast_button"),
+            SwitchPreference("morphe_music_hide_history_button"),
+            SwitchPreference("morphe_music_hide_notification_button"),
+            SwitchPreference("morphe_music_hide_search_button")
         )
 
         // Region for hide history button in the top bar.

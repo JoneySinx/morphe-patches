@@ -36,7 +36,7 @@ internal fun enableDebuggingPatch(
     additionalDebugPreferences: List<BasePreference> = emptyList()
 ) = bytecodePatch(
     name = "Enable debugging",
-    description = "Adds options for debugging and exporting ReVanced logs to the clipboard.",
+    description = "Adds options for debugging and exporting Morphe logs to the clipboard.",
 ) {
 
     dependsOn(
@@ -47,14 +47,14 @@ internal fun enableDebuggingPatch(
                     "settings",
                     ResourceGroup("drawable",
                         // Action buttons.
-                        "revanced_settings_copy_all.xml",
-                        "revanced_settings_deselect_all.xml",
-                        "revanced_settings_select_all.xml",
+                        "morphe_settings_copy_all.xml",
+                        "morphe_settings_deselect_all.xml",
+                        "morphe_settings_select_all.xml",
                         // Move buttons.
-                        "revanced_settings_arrow_left_double.xml",
-                        "revanced_settings_arrow_left_one.xml",
-                        "revanced_settings_arrow_right_double.xml",
-                        "revanced_settings_arrow_right_one.xml"
+                        "morphe_settings_arrow_left_double.xml",
+                        "morphe_settings_arrow_left_one.xml",
+                        "morphe_settings_arrow_right_double.xml",
+                        "morphe_settings_arrow_right_one.xml"
                     )
                 )
             }
@@ -69,27 +69,27 @@ internal fun enableDebuggingPatch(
         addResources("shared", "misc.debugging.enableDebuggingPatch")
 
         val preferences = mutableSetOf<BasePreference>(
-            SwitchPreference("revanced_debug"),
+            SwitchPreference("morphe_debug"),
         )
 
         preferences.addAll(additionalDebugPreferences)
 
         preferences.addAll(
             listOf(
-                SwitchPreference("revanced_debug_stacktrace"),
-                SwitchPreference("revanced_debug_toast_on_error"),
+                SwitchPreference("morphe_debug_stacktrace"),
+                SwitchPreference("morphe_debug_toast_on_error"),
                 NonInteractivePreference(
-                    "revanced_debug_export_logs_to_clipboard",
+                    "morphe_debug_export_logs_to_clipboard",
                     tag = "app.morphe.extension.shared.settings.preference.ExportLogToClipboardPreference",
                     selectable = true
                 ),
                 NonInteractivePreference(
-                    "revanced_debug_logs_clear_buffer",
+                    "morphe_debug_logs_clear_buffer",
                     tag = "app.morphe.extension.shared.settings.preference.ClearLogBufferPreference",
                     selectable = true
                 ),
                 NonInteractivePreference(
-                    "revanced_debug_feature_flags_manager",
+                    "morphe_debug_feature_flags_manager",
                     tag = "app.morphe.extension.shared.settings.preference.FeatureFlagsManagerPreference",
                     selectable = true
                 )
@@ -98,7 +98,7 @@ internal fun enableDebuggingPatch(
 
         preferenceScreen.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_debug_screen",
+                key = "morphe_debug_screen",
                 sorting = Sorting.UNSORTED,
                 preferences = preferences,
             )

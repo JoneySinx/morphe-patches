@@ -47,47 +47,47 @@ public final class NewSegmentLayout extends FrameLayout {
         super(context, attributeSet, defStyleAttr, defStyleRes);
 
         LayoutInflater.from(context).inflate(getResourceIdentifierOrThrow(context,
-                ResourceType.LAYOUT,  "revanced_sb_new_segment"), this, true
+                ResourceType.LAYOUT,  "morphe_sb_new_segment"), this, true
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_rewind",
+                "morphe_sb_new_segment_rewind",
                 () -> VideoInformation.seekToRelative(-Settings.SB_CREATE_NEW_SEGMENT_STEP.get()),
                 "Rewind button clicked"
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_forward",
+                "morphe_sb_new_segment_forward",
                 () -> VideoInformation.seekToRelative(Settings.SB_CREATE_NEW_SEGMENT_STEP.get()),
                 "Forward button clicked"
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_adjust",
+                "morphe_sb_new_segment_adjust",
                 SponsorBlockUtils::onMarkLocationClicked,
                 "Adjust button clicked"
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_compare",
+                "morphe_sb_new_segment_compare",
                 SponsorBlockUtils::onPreviewClicked,
                 "Compare button clicked"
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_edit",
+                "morphe_sb_new_segment_edit",
                 SponsorBlockUtils::onEditByHandClicked,
                 "Edit button clicked"
         );
 
         initializeButton(
                 context,
-                "revanced_sb_new_segment_publish",
+                "morphe_sb_new_segment_publish",
                 SponsorBlockUtils::onPublishClicked,
                 "Publish button clicked"
         );

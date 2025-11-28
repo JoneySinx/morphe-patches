@@ -93,7 +93,7 @@ class SwipeControlsConfigurationProvider {
         var opacity = Settings.SWIPE_OVERLAY_OPACITY.get()
 
         if (opacity !in 0..100) {
-            Utils.showToastLong(str("revanced_swipe_overlay_background_opacity_invalid_toast"))
+            Utils.showToastLong(str("morphe_swipe_overlay_background_opacity_invalid_toast"))
             opacity = Settings.SWIPE_OVERLAY_OPACITY.resetToDefault()
         }
 
@@ -128,7 +128,7 @@ class SwipeControlsConfigurationProvider {
             // If a user imports bad data, the color picker preference resets the
             // bad color before this method can be called.
             Logger.printDebug({ "Could not parse color: $setting" }, ex)
-            Utils.showToastLong(str("revanced_settings_color_invalid"))
+            Utils.showToastLong(str("morphe_settings_color_invalid"))
             setting.resetToDefault()
             return getSettingColor(setting) // Recursively return.
         }
@@ -151,7 +151,7 @@ class SwipeControlsConfigurationProvider {
     val overlayTextSize: Int by lazy {
         val size = Settings.SWIPE_OVERLAY_TEXT_SIZE.get()
         if (size !in 1..30) {
-            Utils.showToastLong(str("revanced_swipe_text_overlay_size_invalid_toast"))
+            Utils.showToastLong(str("morphe_swipe_text_overlay_size_invalid_toast"))
             return@lazy Settings.SWIPE_OVERLAY_TEXT_SIZE.resetToDefault()
         }
         size

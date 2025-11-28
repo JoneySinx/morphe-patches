@@ -17,9 +17,9 @@ public class LoopVideoButton {
     private static PlayerControlButton instance;
 
     private static final int LOOP_VIDEO_ON = Utils.getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE, "revanced_loop_video_button_on");
+            ResourceType.DRAWABLE, "morphe_loop_video_button_on");
     private static final int LOOP_VIDEO_OFF = Utils.getResourceIdentifierOrThrow(
-            ResourceType.DRAWABLE,"revanced_loop_video_button_off");
+            ResourceType.DRAWABLE,"morphe_loop_video_button_off");
 
     /**
      * Injection point.
@@ -28,7 +28,7 @@ public class LoopVideoButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_loop_video_button",
+                    "morphe_loop_video_button",
                     null,
                     Settings.LOOP_VIDEO_BUTTON::get,
                     v -> updateButtonAppearance(),
@@ -77,8 +77,8 @@ public class LoopVideoButton {
                     ? LOOP_VIDEO_ON
                     : LOOP_VIDEO_OFF);
             Utils.showToastShort(str(newState
-                    ? "revanced_loop_video_button_toast_on"
-                    : "revanced_loop_video_button_toast_off"));
+                    ? "morphe_loop_video_button_toast_on"
+                    : "morphe_loop_video_button_toast_off"));
         } catch (Exception ex) {
             Logger.printException(() -> "updateButtonAppearance failure", ex);
         }

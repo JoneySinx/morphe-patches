@@ -39,7 +39,7 @@ val playbackSpeedPatch = bytecodePatch(
     execute {
         PreferenceScreen.VIDEO.addPreferences(
             PreferenceCategory(
-                key = "revanced_zz_video_key", // Dummy key to force the speed settings last.
+                key = "morphe_zz_video_key", // Dummy key to force the speed settings last.
                 titleKey = null,
                 sorting = Sorting.UNSORTED,
                 tag = "app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory",

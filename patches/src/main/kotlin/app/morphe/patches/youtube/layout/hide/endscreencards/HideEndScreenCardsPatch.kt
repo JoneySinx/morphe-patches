@@ -36,7 +36,7 @@ private val hideEndScreenCardsResourcePatch = resourcePatch {
         addResources("youtube", "layout.hide.endscreencards.hideEndScreenCardsResourcePatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_hide_endscreen_cards"),
+            SwitchPreference("morphe_hide_endscreen_cards"),
         )
 
         fun idOf(name: String) = getResourceId(ResourceType.LAYOUT, "endscreen_element_layout_$name")

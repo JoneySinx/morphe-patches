@@ -46,11 +46,11 @@ val spoofVideoStreamsPatch = spoofVideoStreamsPatch(
 
         PreferenceScreen.MISC.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_spoof_video_streams_screen",
+                key = "morphe_spoof_video_streams_screen",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = setOf(
-                    SwitchPreference("revanced_spoof_video_streams"),
-                    ListPreference("revanced_spoof_video_streams_client_type"),
+                    SwitchPreference("morphe_spoof_video_streams"),
+                    ListPreference("morphe_spoof_video_streams_client_type"),
                 )
             )
         )

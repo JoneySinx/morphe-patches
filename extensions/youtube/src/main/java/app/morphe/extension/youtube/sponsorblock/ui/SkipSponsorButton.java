@@ -58,10 +58,10 @@ public class SkipSponsorButton extends FrameLayout {
     public SkipSponsorButton(Context context, AttributeSet attributeSet, int defStyleAttr, int defStyleRes) {
         super(context, attributeSet, defStyleAttr, defStyleRes);
 
-        LayoutInflater.from(context).inflate(getResourceIdentifierOrThrow(context, ResourceType.LAYOUT, "revanced_sb_skip_sponsor_button"), this, true);  // layout:skip_ad_button
+        LayoutInflater.from(context).inflate(getResourceIdentifierOrThrow(context, ResourceType.LAYOUT, "morphe_sb_skip_sponsor_button"), this, true);  // layout:skip_ad_button
         setMinimumHeight(getResourceDimensionPixelSize("ad_skip_ad_button_min_height"));  // dimen:ad_skip_ad_button_min_height
         skipSponsorBtnContainer = Objects.requireNonNull(findViewById(getResourceIdentifierOrThrow(
-                context, ResourceType.ID, "revanced_sb_skip_sponsor_button_container")));  // id:skip_ad_button_container
+                context, ResourceType.ID, "morphe_sb_skip_sponsor_button_container")));  // id:skip_ad_button_container
 
         background = new Paint();
         background.setColor(getResourceColor("skip_ad_button_background_color"));  // color:skip_ad_button_background_color);
@@ -72,7 +72,7 @@ public class SkipSponsorButton extends FrameLayout {
         border.setStrokeWidth(getResourceDimension("ad_skip_ad_button_border_width"));  // dimen:ad_skip_ad_button_border_width);
         border.setStyle(Paint.Style.STROKE);
 
-        skipSponsorTextView = Objects.requireNonNull(findViewById(getResourceIdentifier(context, ResourceType.ID, "revanced_sb_skip_sponsor_button_text")));  // id:skip_ad_button_text;
+        skipSponsorTextView = Objects.requireNonNull(findViewById(getResourceIdentifier(context, ResourceType.ID, "morphe_sb_skip_sponsor_button_text")));  // id:skip_ad_button_text;
         defaultBottomMargin = getResourceDimensionPixelSize("skip_button_default_bottom_margin");  // dimen:skip_button_default_bottom_margin
         ctaBottomMargin = getResourceDimensionPixelSize("skip_button_cta_bottom_margin");  // dimen:skip_button_cta_bottom_margin
 

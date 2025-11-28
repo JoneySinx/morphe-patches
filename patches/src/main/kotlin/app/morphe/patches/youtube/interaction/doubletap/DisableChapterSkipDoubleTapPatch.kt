@@ -52,7 +52,7 @@ val disableDoubleTapActionsPatch = bytecodePatch(
         addResources("youtube", "interaction.doubletap.disableDoubleTapActionsPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_disable_chapter_skip_double_tap"),
+            SwitchPreference("morphe_disable_chapter_skip_double_tap"),
         )
 
         val doubleTapInfoGetSeekSourceFingerprint = fingerprint {

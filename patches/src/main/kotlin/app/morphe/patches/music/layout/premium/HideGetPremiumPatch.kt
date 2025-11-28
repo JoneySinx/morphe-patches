@@ -38,7 +38,7 @@ val hideGetPremiumPatch = bytecodePatch(
         addResources("music", "layout.premium.hideGetPremiumPatch")
 
         PreferenceScreen.ADS.addPreferences(
-            SwitchPreference("revanced_music_hide_get_premium_label"),
+            SwitchPreference("morphe_music_hide_get_premium_label"),
         )
 
         hideGetPremiumFingerprint.method.apply {

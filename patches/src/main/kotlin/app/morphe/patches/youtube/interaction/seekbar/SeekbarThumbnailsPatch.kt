@@ -38,15 +38,15 @@ val seekbarThumbnailsPatch = bytecodePatch(
 
         if (is_19_17_or_greater) {
             PreferenceScreen.SEEKBAR.addPreferences(
-                SwitchPreference("revanced_seekbar_thumbnails_high_quality")
+                SwitchPreference("morphe_seekbar_thumbnails_high_quality")
             )
         } else {
             PreferenceScreen.SEEKBAR.addPreferences(
-                SwitchPreference("revanced_restore_old_seekbar_thumbnails"),
+                SwitchPreference("morphe_restore_old_seekbar_thumbnails"),
                 SwitchPreference(
-                    key = "revanced_seekbar_thumbnails_high_quality",
-                    summaryOnKey = "revanced_seekbar_thumbnails_high_quality_legacy_summary_on",
-                    summaryOffKey = "revanced_seekbar_thumbnails_high_quality_legacy_summary_on"
+                    key = "morphe_seekbar_thumbnails_high_quality",
+                    summaryOnKey = "morphe_seekbar_thumbnails_high_quality_legacy_summary_on",
+                    summaryOffKey = "morphe_seekbar_thumbnails_high_quality_legacy_summary_on"
                 )
             )
 

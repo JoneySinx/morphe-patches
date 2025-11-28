@@ -57,20 +57,20 @@ val spoofAppVersionPatch = bytecodePatch(
                 sorting = Sorting.UNSORTED,
                 tag = "app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory",
                 preferences = setOf(
-                    SwitchPreference("revanced_spoof_app_version"),
+                    SwitchPreference("morphe_spoof_app_version"),
                     if (is_20_14_or_greater) {
-                        ListPreference("revanced_spoof_app_version_target")
+                        ListPreference("morphe_spoof_app_version_target")
                     } else if (is_19_43_or_greater) {
                         ListPreference(
-                            key = "revanced_spoof_app_version_target",
-                            entriesKey = "revanced_spoof_app_version_target_legacy_20_13_entries",
-                            entryValuesKey = "revanced_spoof_app_version_target_legacy_20_13_entry_values"
+                            key = "morphe_spoof_app_version_target",
+                            entriesKey = "morphe_spoof_app_version_target_legacy_20_13_entries",
+                            entryValuesKey = "morphe_spoof_app_version_target_legacy_20_13_entry_values"
                         )
                     } else {
                         ListPreference(
-                            key = "revanced_spoof_app_version_target",
-                            entriesKey = "revanced_spoof_app_version_target_legacy_19_34_entries",
-                            entryValuesKey = "revanced_spoof_app_version_target_legacy_19_34_entry_values"
+                            key = "morphe_spoof_app_version_target",
+                            entriesKey = "morphe_spoof_app_version_target_legacy_19_34_entries",
+                            entryValuesKey = "morphe_spoof_app_version_target_legacy_19_34_entry_values"
                         )
                     }
                 )

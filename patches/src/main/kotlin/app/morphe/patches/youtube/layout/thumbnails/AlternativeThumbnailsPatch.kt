@@ -44,45 +44,45 @@ val alternativeThumbnailsPatch = bytecodePatch(
     execute {
         addResources("youtube", "layout.thumbnails.alternativeThumbnailsPatch")
 
-        val entries = "revanced_alt_thumbnail_options_entries"
-        val values = "revanced_alt_thumbnail_options_entry_values"
+        val entries = "morphe_alt_thumbnail_options_entries"
+        val values = "morphe_alt_thumbnail_options_entry_values"
         PreferenceScreen.ALTERNATIVE_THUMBNAILS.addPreferences(
             ListPreference(
-                key = "revanced_alt_thumbnail_home",
+                key = "morphe_alt_thumbnail_home",
                 entriesKey = entries,
                 entryValuesKey = values
             ),
             ListPreference(
-                key = "revanced_alt_thumbnail_subscription",
+                key = "morphe_alt_thumbnail_subscription",
                 entriesKey = entries,
                 entryValuesKey = values
             ),
             ListPreference(
-                key = "revanced_alt_thumbnail_library",
+                key = "morphe_alt_thumbnail_library",
                 entriesKey = entries,
                 entryValuesKey = values
             ),
             ListPreference(
-                key = "revanced_alt_thumbnail_player",
+                key = "morphe_alt_thumbnail_player",
                 entriesKey = entries,
                 entryValuesKey = values
             ),
             ListPreference(
-                key = "revanced_alt_thumbnail_search",
+                key = "morphe_alt_thumbnail_search",
                 entriesKey = entries,
                 entryValuesKey = values
             ),
             NonInteractivePreference(
-                "revanced_alt_thumbnail_dearrow_about",
+                "morphe_alt_thumbnail_dearrow_about",
                 // Custom about preference with link to the DeArrow website.
                 tag = "app.morphe.extension.youtube.settings.preference.AlternativeThumbnailsAboutDeArrowPreference",
                 selectable = true,
             ),
-            SwitchPreference("revanced_alt_thumbnail_dearrow_connection_toast"),
-            TextPreference("revanced_alt_thumbnail_dearrow_api_url"),
-            NonInteractivePreference("revanced_alt_thumbnail_stills_about"),
-            SwitchPreference("revanced_alt_thumbnail_stills_fast"),
-            ListPreference("revanced_alt_thumbnail_stills_time"),
+            SwitchPreference("morphe_alt_thumbnail_dearrow_connection_toast"),
+            TextPreference("morphe_alt_thumbnail_dearrow_api_url"),
+            NonInteractivePreference("morphe_alt_thumbnail_stills_about"),
+            SwitchPreference("morphe_alt_thumbnail_stills_fast"),
+            ListPreference("morphe_alt_thumbnail_stills_time"),
         )
 
         addImageUrlHook(EXTENSION_CLASS_DESCRIPTOR)

@@ -48,7 +48,7 @@ fun sharedExtensionPatch(
         hooks.forEach { hook -> hook()(EXTENSION_CLASS_DESCRIPTOR) }
 
         // Modify Utils method to include the patches release version.
-        revancedUtilsPatchesVersionFingerprint.method.apply {
+        morpheUtilsPatchesVersionFingerprint.method.apply {
             /**
              * @return The file path for the jar this classfile is contained inside.
              */

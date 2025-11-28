@@ -49,7 +49,7 @@ public class CustomBrandingPatch {
             if (appIndex <= 0) {
                 throw new IllegalArgumentException("App index starts at index 1");
             }
-            return packageName + ".revanced_" + name().toLowerCase(Locale.US) + '_' + appIndex;
+            return packageName + ".morphe_" + name().toLowerCase(Locale.US) + '_' + appIndex;
         }
     }
 
@@ -61,7 +61,7 @@ public class CustomBrandingPatch {
             notificationSmallIcon = 0;
         } else {
             // Original icon is quantum_ic_video_youtube_white_24
-            String iconName = "revanced_notification_icon";
+            String iconName = "morphe_notification_icon";
             if (branding == BrandingTheme.CUSTOM) {
                 iconName += "_custom";
             }

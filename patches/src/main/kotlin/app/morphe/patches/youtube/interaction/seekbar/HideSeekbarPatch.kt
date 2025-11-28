@@ -32,9 +32,9 @@ val hideSeekbarPatch = bytecodePatch(
         addResources("youtube", "layout.hide.seekbar.hideSeekbarPatch")
 
         PreferenceScreen.SEEKBAR.addPreferences(
-            SwitchPreference("revanced_hide_seekbar"),
-            SwitchPreference("revanced_hide_seekbar_thumbnail"),
-            SwitchPreference("revanced_fullscreen_large_seekbar"),
+            SwitchPreference("morphe_hide_seekbar"),
+            SwitchPreference("morphe_hide_seekbar_thumbnail"),
+            SwitchPreference("morphe_fullscreen_large_seekbar"),
         )
 
         seekbarOnDrawFingerprint.match(seekbarFingerprint.originalClassDef).method.addInstructionsWithLabels(

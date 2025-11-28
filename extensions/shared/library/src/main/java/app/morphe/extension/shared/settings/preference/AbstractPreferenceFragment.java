@@ -107,10 +107,10 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
         String preferenceResourceName;
         if (BaseSettings.SHOW_MENU_ICONS.get()) {
             preferenceResourceName = Utils.appIsUsingBoldIcons()
-                    ? "revanced_prefs_icons_bold"
-                    : "revanced_prefs_icons";
+                    ? "morphe_prefs_icons_bold"
+                    : "morphe_prefs_icons";
         } else {
-            preferenceResourceName = "revanced_prefs";
+            preferenceResourceName = "morphe_prefs";
         }
 
         final var identifier = Utils.getResourceIdentifier(ResourceType.XML, preferenceResourceName);
@@ -127,7 +127,7 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
 
         final var context = getContext();
         if (confirmDialogTitle == null) {
-            confirmDialogTitle = str("revanced_settings_confirm_user_dialog_title");
+            confirmDialogTitle = str("morphe_settings_confirm_user_dialog_title");
         }
 
         showingUserDialogMessage = true;
@@ -306,13 +306,13 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
     public static void showRestartDialog(Context context) {
         Utils.verifyOnMainThread();
         if (restartDialogTitle == null) {
-            restartDialogTitle = str("revanced_settings_restart_title");
+            restartDialogTitle = str("morphe_settings_restart_title");
         }
         if (restartDialogMessage == null) {
-            restartDialogMessage = str("revanced_settings_restart_dialog_message");
+            restartDialogMessage = str("morphe_settings_restart_dialog_message");
         }
         if (restartDialogButtonText == null) {
-            restartDialogButtonText = str("revanced_settings_restart");
+            restartDialogButtonText = str("morphe_settings_restart");
         }
 
         Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(

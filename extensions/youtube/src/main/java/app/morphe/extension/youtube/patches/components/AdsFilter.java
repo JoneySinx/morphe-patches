@@ -229,7 +229,7 @@ public final class AdsFilter extends Filter {
                     // since this functionality does not work for these devices.
                     Logger.printInfo(() -> "Could not inject back button event", ex);
                     Settings.HIDE_FULLSCREEN_ADS.save(false);
-                    Utils.showToastLong(str("revanced_hide_fullscreen_ads_feature_not_available_toast"));
+                    Utils.showToastLong(str("morphe_hide_fullscreen_ads_feature_not_available_toast"));
                 }
             });
         }, 1000);

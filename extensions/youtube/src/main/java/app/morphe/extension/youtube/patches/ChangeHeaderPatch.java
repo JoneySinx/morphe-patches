@@ -18,15 +18,9 @@ public class ChangeHeaderPatch {
         DEFAULT(null, null),
         REGULAR("ytWordmarkHeader", "yt_ringo2_wordmark_header"),
         PREMIUM("ytPremiumWordmarkHeader", "yt_ringo2_premium_wordmark_header"),
-        ROUNDED("revanced_header_rounded"),
-        MINIMAL("revanced_header_minimal"),
-        CUSTOM("revanced_header_custom"),
-
-        // Old enum names for data migration. TODO: Eventually delete these.
-        @Deprecated
-        REVANCED(ROUNDED.attributeName),
-        @Deprecated
-        REVANCED_MINIMAL(MINIMAL.attributeName);
+        ROUNDED("morphe_header_rounded"),
+        MINIMAL("morphe_header_minimal"),
+        CUSTOM("morphe_header_custom");
 
         @Nullable
         private final String attributeName;

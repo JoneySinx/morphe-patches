@@ -20,7 +20,7 @@ private val videoQualityButtonResourcePatch = resourcePatch {
             "qualitybutton",
             ResourceGroup(
                 "drawable",
-                "revanced_video_quality_dialog_button_rectangle.xml",
+                "morphe_video_quality_dialog_button_rectangle.xml",
             ),
         )
 
@@ -47,7 +47,7 @@ val videoQualityDialogButtonPatch = bytecodePatch(
         addResources("youtube", "video.quality.button.videoQualityDialogButtonPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_video_quality_dialog_button"),
+            SwitchPreference("morphe_video_quality_dialog_button"),
         )
 
         initializeBottomControl(QUALITY_BUTTON_CLASS_DESCRIPTOR)

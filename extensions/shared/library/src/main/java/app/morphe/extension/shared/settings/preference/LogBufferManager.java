@@ -61,25 +61,25 @@ public final class LogBufferManager {
     public static void exportToClipboard() {
         try {
             if (!BaseSettings.DEBUG.get()) {
-                Utils.showToastShort(str("revanced_debug_logs_disabled"));
+                Utils.showToastShort(str("morphe_debug_logs_disabled"));
                 return;
             }
 
             if (logBuffer.isEmpty()) {
-                Utils.showToastShort(str("revanced_debug_logs_none_found"));
+                Utils.showToastShort(str("morphe_debug_logs_none_found"));
                 clearLogBufferData(); // Clear toast log entry that was just created.
                 return;
             }
 
             // Most (but not all) Android 13+ devices always show a "copied to clipboard" toast
             // and there is no way to programmatically detect if a toast will show or not.
-            // Show a toast even if using Android 13+, but show ReVanced toast first (before copying to clipboard).
-            Utils.showToastShort(str("revanced_debug_logs_copied_to_clipboard"));
+            // Show a toast even if using Android 13+, but show Morphe toast first (before copying to clipboard).
+            Utils.showToastShort(str("morphe_debug_logs_copied_to_clipboard"));
 
             Utils.setClipboard(String.join("\n", logBuffer));
         } catch (Exception ex) {
             // Handle security exception if clipboard access is denied.
-            String errorMessage = String.format(str("revanced_debug_logs_failed_to_export"), ex.getMessage());
+            String errorMessage = String.format(str("morphe_debug_logs_failed_to_export"), ex.getMessage());
             Utils.showToastLong(errorMessage);
             Logger.printDebug(() -> errorMessage, ex);
         }
@@ -102,12 +102,12 @@ public final class LogBufferManager {
      */
     public static void clearLogBuffer() {
         if (!BaseSettings.DEBUG.get()) {
-            Utils.showToastShort(str("revanced_debug_logs_disabled"));
+            Utils.showToastShort(str("morphe_debug_logs_disabled"));
             return;
         }
 
         // Show toast before clearing, otherwise toast log will still remain.
-        Utils.showToastShort(str("revanced_debug_logs_clear_toast"));
+        Utils.showToastShort(str("morphe_debug_logs_clear_toast"));
         clearLogBufferData();
     }
 }

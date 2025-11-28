@@ -20,8 +20,8 @@ private val loopVideoButtonResourcePatch = resourcePatch {
             "loopvideobutton",
             ResourceGroup(
                 "drawable",
-                "revanced_loop_video_button_on.xml",
-                "revanced_loop_video_button_off.xml"
+                "morphe_loop_video_button_on.xml",
+                "morphe_loop_video_button_off.xml"
             )
         )
 
@@ -47,7 +47,7 @@ internal val loopVideoButtonPatch = bytecodePatch(
         addResources("youtube", "misc.loopvideo.button.loopVideoButtonPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_loop_video_button"),
+            SwitchPreference("morphe_loop_video_button"),
         )
 
         // Initialize the button using standard approach.

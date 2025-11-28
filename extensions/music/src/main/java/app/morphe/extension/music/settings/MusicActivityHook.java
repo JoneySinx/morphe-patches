@@ -56,7 +56,7 @@ public class MusicActivityHook extends BaseActivityHook {
         // Override the default YouTube Music theme to increase start padding of list items.
         // Custom style located in resources/music/values/style.xml
         activity.setTheme(Utils.getResourceIdentifierOrThrow(
-                ResourceType.STYLE, "Theme.ReVanced.YouTubeMusic.Settings"));
+                ResourceType.STYLE, "Theme.Morphe.YouTubeMusic.Settings"));
     }
 
     /**

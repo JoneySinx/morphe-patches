@@ -24,7 +24,7 @@ private val playbackSpeedButtonResourcePatch = resourcePatch {
             "speedbutton",
             ResourceGroup(
                 "drawable",
-                "revanced_playback_speed_dialog_button_rectangle.xml"
+                "morphe_playback_speed_dialog_button_rectangle.xml"
             )
         )
 
@@ -52,7 +52,7 @@ val playbackSpeedButtonPatch = bytecodePatch(
         addResources("youtube", "video.speed.button.playbackSpeedButtonPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_playback_speed_dialog_button"),
+            SwitchPreference("morphe_playback_speed_dialog_button"),
         )
 
         initializeBottomControl(SPEED_BUTTON_CLASS_DESCRIPTOR)

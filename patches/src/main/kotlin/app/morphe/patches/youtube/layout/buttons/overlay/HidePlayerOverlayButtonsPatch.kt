@@ -57,11 +57,11 @@ val hidePlayerOverlayButtonsPatch = bytecodePatch(
         addResources("youtube", "layout.buttons.overlay.hidePlayerOverlayButtonsPatch")
 
         PreferenceScreen.PLAYER.addPreferences(
-            SwitchPreference("revanced_hide_player_previous_next_buttons"),
-            SwitchPreference("revanced_hide_cast_button"),
-            SwitchPreference("revanced_hide_captions_button"),
-            SwitchPreference("revanced_hide_autoplay_button"),
-            SwitchPreference("revanced_hide_player_control_buttons_background"),
+            SwitchPreference("morphe_hide_player_previous_next_buttons"),
+            SwitchPreference("morphe_hide_cast_button"),
+            SwitchPreference("morphe_hide_captions_button"),
+            SwitchPreference("morphe_hide_autoplay_button"),
+            SwitchPreference("morphe_hide_player_control_buttons_background"),
         )
 
         // region Hide player next/previous button.

@@ -73,7 +73,7 @@ internal val playerControlsResourcePatch = resourcePatch {
         )
 
         // Modify the fullscreen button stub attributes for correct positioning.
-        // The fullscreen button is lower than the ReVanced buttons (unpatched app bug).
+        // The fullscreen button is lower than the Morphe buttons (unpatched app bug).
         // Issue is only present in later app targets, but this change seems to
         // do no harm to earlier releases.
         bottomTargetDocumentChildNodes.findElementByAttributeValueOrThrow(
@@ -105,7 +105,7 @@ internal val playerControlsResourcePatch = resourcePatch {
                 // FIXME: This uses hard coded values that only works with SponsorBlock.
                 // If other top buttons are added by other patches, this code must be changed.
                 // voting button id from the voting button view from the youtube_controls_layout.xml host file
-                val votingButtonId = "@+id/revanced_sb_voting_button"
+                val votingButtonId = "@+id/morphe_sb_voting_button"
                 element.attributes.getNamedItem("android:layout_toStartOf").nodeValue = votingButtonId
             }
         }

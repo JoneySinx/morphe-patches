@@ -38,7 +38,7 @@ val removeViewerDiscretionDialogPatch = bytecodePatch(
         addResources("youtube", "interaction.dialog.removeViewerDiscretionDialogPatch")
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-            SwitchPreference("revanced_remove_viewer_discretion_dialog"),
+            SwitchPreference("morphe_remove_viewer_discretion_dialog"),
         )
 
         createDialogFingerprint.let {

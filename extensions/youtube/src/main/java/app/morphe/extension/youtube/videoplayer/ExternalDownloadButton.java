@@ -21,7 +21,7 @@ public class ExternalDownloadButton {
         try {
             instance = new PlayerControlButton(
                     controlsView,
-                    "revanced_external_download_button",
+                    "morphe_external_download_button",
                     null,
                     Settings.EXTERNAL_DOWNLOADER::get,
                     ExternalDownloadButton::onDownloadClick,

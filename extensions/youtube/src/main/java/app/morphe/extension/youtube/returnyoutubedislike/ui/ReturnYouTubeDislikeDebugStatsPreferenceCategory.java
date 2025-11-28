@@ -26,7 +26,7 @@ public class ReturnYouTubeDislikeDebugStatsPreferenceCategory extends Preference
     }
 
     private static String createMillisecondStringFromNumber(long number) {
-        return String.format(str("revanced_ryd_statistics_millisecond_text"), number);
+        return String.format(str("morphe_ryd_statistics_millisecond_text"), number);
     }
 
     public ReturnYouTubeDislikeDebugStatsPreferenceCategory(Context context, AttributeSet attrs) {
@@ -62,53 +62,53 @@ public class ReturnYouTubeDislikeDebugStatsPreferenceCategory extends Preference
             removeAll();
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallResponseTimeAverage_title",
+                    "morphe_ryd_statistics_getFetchCallResponseTimeAverage_title",
                     createMillisecondStringFromNumber(ReturnYouTubeDislikeApi.getFetchCallResponseTimeAverage())
             );
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallResponseTimeMin_title",
+                    "morphe_ryd_statistics_getFetchCallResponseTimeMin_title",
                     createMillisecondStringFromNumber(ReturnYouTubeDislikeApi.getFetchCallResponseTimeMin())
             );
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallResponseTimeMax_title",
+                    "morphe_ryd_statistics_getFetchCallResponseTimeMax_title",
                     createMillisecondStringFromNumber(ReturnYouTubeDislikeApi.getFetchCallResponseTimeMax())
             );
 
             String fetchCallTimeWaitingLastSummary;
             final long fetchCallTimeWaitingLast = ReturnYouTubeDislikeApi.getFetchCallResponseTimeLast();
             if (fetchCallTimeWaitingLast == ReturnYouTubeDislikeApi.FETCH_CALL_RESPONSE_TIME_VALUE_RATE_LIMIT) {
-                fetchCallTimeWaitingLastSummary = str("revanced_ryd_statistics_getFetchCallResponseTimeLast_rate_limit_summary");
+                fetchCallTimeWaitingLastSummary = str("morphe_ryd_statistics_getFetchCallResponseTimeLast_rate_limit_summary");
             } else {
                 fetchCallTimeWaitingLastSummary = createMillisecondStringFromNumber(fetchCallTimeWaitingLast);
             }
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallResponseTimeLast_title",
+                    "morphe_ryd_statistics_getFetchCallResponseTimeLast_title",
                     fetchCallTimeWaitingLastSummary
             );
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallCount_title",
+                    "morphe_ryd_statistics_getFetchCallCount_title",
                     createSummaryText(ReturnYouTubeDislikeApi.getFetchCallCount(),
-                            "revanced_ryd_statistics_getFetchCallCount_zero_summary",
-                            "revanced_ryd_statistics_getFetchCallCount_non_zero_summary"
+                            "morphe_ryd_statistics_getFetchCallCount_zero_summary",
+                            "morphe_ryd_statistics_getFetchCallCount_non_zero_summary"
                     )
             );
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getFetchCallNumberOfFailures_title",
+                    "morphe_ryd_statistics_getFetchCallNumberOfFailures_title",
                     createSummaryText(ReturnYouTubeDislikeApi.getFetchCallNumberOfFailures(),
-                            "revanced_ryd_statistics_getFetchCallNumberOfFailures_zero_summary",
-                            "revanced_ryd_statistics_getFetchCallNumberOfFailures_non_zero_summary"
+                            "morphe_ryd_statistics_getFetchCallNumberOfFailures_zero_summary",
+                            "morphe_ryd_statistics_getFetchCallNumberOfFailures_non_zero_summary"
                     )
             );
 
             addStatisticPreference(
-                    "revanced_ryd_statistics_getNumberOfRateLimitRequestsEncountered_title",
+                    "morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_title",
                     createSummaryText(ReturnYouTubeDislikeApi.getNumberOfRateLimitRequestsEncountered(),
-                            "revanced_ryd_statistics_getNumberOfRateLimitRequestsEncountered_zero_summary",
-                            "revanced_ryd_statistics_getNumberOfRateLimitRequestsEncountered_non_zero_summary"
+                            "morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_zero_summary",
+                            "morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_non_zero_summary"
                     )
             );
         } catch (Exception ex) {

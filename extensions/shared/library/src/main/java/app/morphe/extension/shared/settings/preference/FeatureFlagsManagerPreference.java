@@ -52,20 +52,20 @@ import app.morphe.extension.shared.ui.Dim;
 @SuppressWarnings({"deprecation", "unused"})
 public class FeatureFlagsManagerPreference extends Preference {
 
-    private static final int DRAWABLE_REVANCED_SETTINGS_SELECT_ALL =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_select_all");
-    private static final int DRAWABLE_REVANCED_SETTINGS_DESELECT_ALL =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_deselect_all");
-    private static final int DRAWABLE_REVANCED_SETTINGS_COPY_ALL =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_copy_all");
-    private static final int DRAWABLE_REVANCED_SETTINGS_ARROW_RIGHT_ONE =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_arrow_right_one");
-    private static final int DRAWABLE_REVANCED_SETTINGS_ARROW_RIGHT_DOUBLE =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_arrow_right_double");
-    private static final int DRAWABLE_REVANCED_SETTINGS_ARROW_LEFT_ONE =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_arrow_left_one");
-    private static final int DRAWABLE_REVANCED_SETTINGS_ARROW_LEFT_DOUBLE =
-            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "revanced_settings_arrow_left_double");
+    private static final int DRAWABLE_MORPHE_SETTINGS_SELECT_ALL =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_select_all");
+    private static final int DRAWABLE_MORPHE_SETTINGS_DESELECT_ALL =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_deselect_all");
+    private static final int DRAWABLE_MORPHE_SETTINGS_COPY_ALL =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_copy_all");
+    private static final int DRAWABLE_MORPHE_SETTINGS_ARROW_RIGHT_ONE =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_arrow_right_one");
+    private static final int DRAWABLE_MORPHE_SETTINGS_ARROW_RIGHT_DOUBLE =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_arrow_right_double");
+    private static final int DRAWABLE_MORPHE_SETTINGS_ARROW_LEFT_ONE =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_arrow_left_one");
+    private static final int DRAWABLE_MORPHE_SETTINGS_ARROW_LEFT_DOUBLE =
+            getResourceIdentifierOrThrow(ResourceType.DRAWABLE, "morphe_settings_arrow_left_double");
 
     /**
      * Flags to hide from the UI.
@@ -116,7 +116,7 @@ public class FeatureFlagsManagerPreference extends Preference {
      */
     private void showFlagsManagerDialog() {
         if (!BaseSettings.DEBUG.get()) {
-            Utils.showToastShort(str("revanced_debug_logs_disabled"));
+            Utils.showToastShort(str("morphe_debug_logs_disabled"));
             return;
         }
 
@@ -146,10 +146,10 @@ public class FeatureFlagsManagerPreference extends Preference {
                 getTitle() != null ? getTitle().toString() : "",
                 null,
                 null,
-                str("revanced_settings_save"),
+                str("morphe_settings_save"),
                 () -> saveFlags(blockedFlags),
                 () -> {},
-                str("revanced_settings_reset"),
+                str("morphe_settings_reset"),
                 this::resetFlags,
                 true
         );
@@ -179,8 +179,8 @@ public class FeatureFlagsManagerPreference extends Preference {
         contentLayout.setOrientation(LinearLayout.VERTICAL);
 
         // Headers.
-        TextView availableHeader = createHeader(context, "revanced_debug_feature_flags_manager_active_header");
-        TextView blockedHeader = createHeader(context, "revanced_debug_feature_flags_manager_blocked_header");
+        TextView availableHeader = createHeader(context, "morphe_debug_feature_flags_manager_active_header");
+        TextView blockedHeader = createHeader(context, "morphe_debug_feature_flags_manager_blocked_header");
 
         LinearLayout headersLayout = new LinearLayout(context);
         headersLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -303,7 +303,7 @@ public class FeatureFlagsManagerPreference extends Preference {
         EditText search = new EditText(context);
         search.setInputType(InputType.TYPE_CLASS_NUMBER);
         search.setTextSize(16);
-        search.setHint(str("revanced_debug_feature_flags_manager_search_hint"));
+        search.setHint(str("morphe_debug_feature_flags_manager_search_hint"));
         search.setHapticFeedbackEnabled(false);
         search.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -346,20 +346,20 @@ public class FeatureFlagsManagerPreference extends Preference {
         row.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        ImageButton selectAll = createButton(context, DRAWABLE_REVANCED_SETTINGS_SELECT_ALL,
+        ImageButton selectAll = createButton(context, DRAWABLE_MORPHE_SETTINGS_SELECT_ALL,
                 () -> {
                     for (int i = 0, count = adapter.getCount(); i < count; i++) {
                         listView.setItemChecked(i, true);
                     }
                 });
 
-        ImageButton clearAll = createButton(context, DRAWABLE_REVANCED_SETTINGS_DESELECT_ALL,
+        ImageButton clearAll = createButton(context, DRAWABLE_MORPHE_SETTINGS_DESELECT_ALL,
                 () -> {
                     listView.clearChoices();
                     adapter.notifyDataSetChanged();
                 });
 
-        ImageButton copy = createButton(context, DRAWABLE_REVANCED_SETTINGS_COPY_ALL,
+        ImageButton copy = createButton(context, DRAWABLE_MORPHE_SETTINGS_COPY_ALL,
                 () -> {
                     List<String> items = new ArrayList<>();
                     SparseBooleanArray checked = listView.getCheckedItemPositions();
@@ -378,7 +378,7 @@ public class FeatureFlagsManagerPreference extends Preference {
 
                     Utils.setClipboard(TextUtils.join("\n", items));
 
-                    Utils.showToastShort(str("revanced_debug_feature_flags_manager_toast_copied"));
+                    Utils.showToastShort(str("morphe_debug_feature_flags_manager_toast_copied"));
                 });
 
         row.addView(selectAll);
@@ -400,11 +400,11 @@ public class FeatureFlagsManagerPreference extends Preference {
         leftButtons.setOrientation(LinearLayout.HORIZONTAL);
         leftButtons.setGravity(Gravity.CENTER);
 
-        ImageButton moveAllRight = createButton(context, DRAWABLE_REVANCED_SETTINGS_ARROW_RIGHT_DOUBLE,
+        ImageButton moveAllRight = createButton(context, DRAWABLE_MORPHE_SETTINGS_ARROW_RIGHT_DOUBLE,
                 () -> moveFlags(availableListView, blockedListView, availableFlags, blockedFlags,
                         availableCountText, blockedCountText, true));
 
-        ImageButton moveOneRight = createButton(context, DRAWABLE_REVANCED_SETTINGS_ARROW_RIGHT_ONE,
+        ImageButton moveOneRight = createButton(context, DRAWABLE_MORPHE_SETTINGS_ARROW_RIGHT_ONE,
                 () -> moveFlags(availableListView, blockedListView, availableFlags, blockedFlags,
                         availableCountText, blockedCountText, false));
 
@@ -416,11 +416,11 @@ public class FeatureFlagsManagerPreference extends Preference {
         rightButtons.setOrientation(LinearLayout.HORIZONTAL);
         rightButtons.setGravity(Gravity.CENTER);
 
-        ImageButton moveOneLeft = createButton(context, DRAWABLE_REVANCED_SETTINGS_ARROW_LEFT_ONE,
+        ImageButton moveOneLeft = createButton(context, DRAWABLE_MORPHE_SETTINGS_ARROW_LEFT_ONE,
                 () -> moveFlags(blockedListView, availableListView, blockedFlags, availableFlags,
                         blockedCountText, availableCountText, false));
 
-        ImageButton moveAllLeft = createButton(context, DRAWABLE_REVANCED_SETTINGS_ARROW_LEFT_DOUBLE,
+        ImageButton moveAllLeft = createButton(context, DRAWABLE_MORPHE_SETTINGS_ARROW_LEFT_DOUBLE,
                 () -> moveFlags(blockedListView, availableListView, blockedFlags, availableFlags,
                         blockedCountText, availableCountText, true));
 
@@ -607,7 +607,7 @@ public class FeatureFlagsManagerPreference extends Preference {
         }
 
         BaseSettings.DISABLED_FEATURE_FLAGS.save(flagsString.toString());
-        Utils.showToastShort(str("revanced_debug_feature_flags_manager_toast_saved"));
+        Utils.showToastShort(str("morphe_debug_feature_flags_manager_toast_saved"));
         Logger.printDebug(() -> "Feature flags saved. Blocked: " + blockedFlags.size());
 
         AbstractPreferenceFragment.showRestartDialog(getContext());
@@ -618,7 +618,7 @@ public class FeatureFlagsManagerPreference extends Preference {
      */
     private void resetFlags() {
         BaseSettings.DISABLED_FEATURE_FLAGS.save("");
-        Utils.showToastShort(str("revanced_debug_feature_flags_manager_toast_reset"));
+        Utils.showToastShort(str("morphe_debug_feature_flags_manager_toast_reset"));
 
         AbstractPreferenceFragment.showRestartDialog(getContext());
     }

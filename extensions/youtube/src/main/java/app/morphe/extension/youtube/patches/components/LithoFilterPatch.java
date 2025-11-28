@@ -98,7 +98,7 @@ public final class LithoFilterPatch {
      * </pre>
      *
      * Using more than 1 thread causes layout issues such as the You tab watch/playlist shelf
-     * that is sometimes incorrectly hidden (ReVanced is not hiding it), and seems to
+     * that is sometimes incorrectly hidden (Morphe is not hiding it), and seems to
      * fix a race issue if using the active navigation tab status with litho filtering.
      */
     private static final int LITHO_LAYOUT_THREAD_POOL_SIZE = 1;

@@ -50,33 +50,33 @@ val navigationButtonsPatch = bytecodePatch(
         addResources("youtube", "layout.buttons.navigation.navigationButtonsPatch")
 
         val preferences = mutableSetOf(
-            SwitchPreference("revanced_hide_home_button"),
-            SwitchPreference("revanced_hide_shorts_button"),
-            SwitchPreference("revanced_hide_create_button"),
-            SwitchPreference("revanced_hide_subscriptions_button"),
-            SwitchPreference("revanced_hide_notifications_button"),
-            SwitchPreference("revanced_switch_create_with_notifications_button"),
-            SwitchPreference("revanced_hide_navigation_button_labels"),
+            SwitchPreference("morphe_hide_home_button"),
+            SwitchPreference("morphe_hide_shorts_button"),
+            SwitchPreference("morphe_hide_create_button"),
+            SwitchPreference("morphe_hide_subscriptions_button"),
+            SwitchPreference("morphe_hide_notifications_button"),
+            SwitchPreference("morphe_switch_create_with_notifications_button"),
+            SwitchPreference("morphe_hide_navigation_button_labels"),
         )
 
         if (is_19_25_or_greater) {
-            preferences += SwitchPreference("revanced_disable_translucent_navigation_bar_light")
-            preferences += SwitchPreference("revanced_disable_translucent_navigation_bar_dark")
+            preferences += SwitchPreference("morphe_disable_translucent_navigation_bar_light")
+            preferences += SwitchPreference("morphe_disable_translucent_navigation_bar_dark")
 
             PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-                SwitchPreference("revanced_disable_translucent_status_bar")
+                SwitchPreference("morphe_disable_translucent_status_bar")
             )
         }
 
         if (is_20_15_or_greater) {
             PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-                SwitchPreference("revanced_navigation_bar_animations")
+                SwitchPreference("morphe_navigation_bar_animations")
             )
         }
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_navigation_buttons_screen",
+                key = "morphe_navigation_buttons_screen",
                 sorting = Sorting.UNSORTED,
                 preferences = preferences
             )

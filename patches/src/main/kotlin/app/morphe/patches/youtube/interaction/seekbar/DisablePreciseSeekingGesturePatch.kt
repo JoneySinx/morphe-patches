@@ -27,7 +27,7 @@ val disablePreciseSeekingGesturePatch = bytecodePatch(
         addResources("youtube", "interaction.seekbar.disablePreciseSeekingGesturePatch")
 
         PreferenceScreen.SEEKBAR.addPreferences(
-            SwitchPreference("revanced_disable_precise_seeking_gesture"),
+            SwitchPreference("morphe_disable_precise_seeking_gesture"),
         )
 
         allowSwipingUpGestureFingerprint.match(

@@ -79,7 +79,7 @@ val themePatch = baseThemePatch(
                 }
 
                 // Add a dynamic background color to the colors.xml file.
-                val splashBackgroundColorKey = "revanced_splash_background_color"
+                val splashBackgroundColorKey = "morphe_splash_background_color"
                 addColorResource(
                     "res/values/colors.xml",
                     splashBackgroundColorKey,
@@ -169,18 +169,18 @@ val themePatch = baseThemePatch(
         addResources("youtube", "layout.theme.themePatch")
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-            SwitchPreference("revanced_gradient_loading_screen")
+            SwitchPreference("morphe_gradient_loading_screen")
         )
 
         val preferences = mutableSetOf(
-            SwitchPreference("revanced_seekbar_custom_color"),
+            SwitchPreference("morphe_seekbar_custom_color"),
             TextPreference(
-                "revanced_seekbar_custom_color_primary",
+                "morphe_seekbar_custom_color_primary",
                 tag = "app.morphe.extension.shared.settings.preference.ColorPickerPreference",
                 inputType = InputType.TEXT_CAP_CHARACTERS
             ),
             TextPreference(
-                "revanced_seekbar_custom_color_accent",
+                "morphe_seekbar_custom_color_accent",
                 tag = "app.morphe.extension.shared.settings.preference.ColorPickerPreference",
                 inputType = InputType.TEXT_CAP_CHARACTERS
             )
@@ -197,7 +197,7 @@ val themePatch = baseThemePatch(
 
         if (is_19_47_or_greater) {
             PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-                ListPreference("revanced_splash_screen_animation_style")
+                ListPreference("morphe_splash_screen_animation_style")
             )
         }
 

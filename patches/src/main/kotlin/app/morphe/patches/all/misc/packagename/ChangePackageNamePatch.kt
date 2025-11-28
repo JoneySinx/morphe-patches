@@ -28,7 +28,7 @@ fun setOrGetFallbackPackageName(fallbackPackageName: String): String {
 
 val changePackageNamePatch = resourcePatch(
     name = "Change package name",
-    description = "Appends \".revanced\" to the package name by default. " +
+    description = "Appends \".morphe\" to the package name by default. " +
         "Changing the package name of the app can lead to unexpected issues.",
     use = false,
 ) {
@@ -63,7 +63,7 @@ val changePackageNamePatch = resourcePatch(
         /**
          * Apps that are confirmed to not work correctly with this patch.
          * This is not an exhaustive list, and is only the apps with
-         * ReVanced specific patches and are confirmed incompatible with this patch.
+         * Morphe specific patches and are confirmed incompatible with this patch.
          */
         val incompatibleAppPackages = setOf(
             // Cannot log in, settings menu is broken.
@@ -89,7 +89,7 @@ val changePackageNamePatch = resourcePatch(
             val newPackageName = if (replacementPackageName != packageNameOption.default) {
                 replacementPackageName!!
             } else {
-                "$packageName.revanced"
+                "$packageName.morphe"
             }
 
             manifest.setAttribute("package", newPackageName)

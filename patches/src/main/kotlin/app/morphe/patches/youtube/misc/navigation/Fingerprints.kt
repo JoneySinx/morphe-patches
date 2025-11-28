@@ -82,7 +82,7 @@ internal val navigationEnumFingerprint = fingerprint {
     )
     custom { _, classDef ->
         // Don't match our own code.
-        !classDef.type.startsWith("Lapp/revanced")
+        !classDef.type.startsWith("Lapp/morphe")
     }
 }
 

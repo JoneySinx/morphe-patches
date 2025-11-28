@@ -19,7 +19,6 @@ internal fun fileProviderPatch(
         // the package name of YouTube is used, not the package name of the YT Music.
         //
         // There is no issue in the stock YT Music, but this is an issue in the GmsCore Build.
-        // https://github.com/ReVanced/revanced-patches/issues/55
         //
         // To solve this issue, replace the package name of YouTube with YT Music's package name.
         fileProviderResolverFingerprint.method.addInstructionsWithLabels(

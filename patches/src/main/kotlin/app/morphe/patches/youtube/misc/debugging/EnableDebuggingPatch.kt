@@ -30,5 +30,5 @@ val enableDebuggingPatch = enableDebuggingPatch(
     },
     hookStringFeatureFlag = true,
     preferenceScreen = PreferenceScreen.MISC,
-    additionalDebugPreferences = listOf(SwitchPreference("revanced_debug_protobuffer"))
+    additionalDebugPreferences = listOf(SwitchPreference("morphe_debug_protobuffer"))
 )

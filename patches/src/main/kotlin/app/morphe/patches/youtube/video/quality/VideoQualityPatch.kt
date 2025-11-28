@@ -36,7 +36,7 @@ val videoQualityPatch = bytecodePatch(
         PreferenceScreen.VIDEO.addPreferences(
             // Keep the preferences organized together.
             PreferenceCategory(
-                key = "revanced_01_video_key", // Dummy key to force the quality preferences first.
+                key = "morphe_01_video_key", // Dummy key to force the quality preferences first.
                 titleKey = null,
                 sorting = Sorting.UNSORTED,
                 tag = "app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory",

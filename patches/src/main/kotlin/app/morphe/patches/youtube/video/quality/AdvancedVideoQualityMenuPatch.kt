@@ -44,7 +44,7 @@ internal val advancedVideoQualityMenuPatch = bytecodePatch {
         addResources("youtube", "video.quality.advancedVideoQualityMenuPatch")
 
         settingsMenuVideoQualityGroup.add(
-            SwitchPreference("revanced_advanced_video_quality_menu")
+            SwitchPreference("morphe_advanced_video_quality_menu")
         )
 
         // Used for the old type of the video quality menu.

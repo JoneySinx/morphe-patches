@@ -54,11 +54,11 @@ private val iconStyleNames = arrayOf(
 private const val ORIGINAL_USER_ICON_STYLE_NAME = "original"
 private const val CUSTOM_USER_ICON_STYLE_NAME = "custom"
 
-private const val LAUNCHER_RESOURCE_NAME_PREFIX = "revanced_launcher_"
-private const val LAUNCHER_ADAPTIVE_BACKGROUND_PREFIX = "revanced_adaptive_background_"
-private const val LAUNCHER_ADAPTIVE_FOREGROUND_PREFIX = "revanced_adaptive_foreground_"
-private const val LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX = "revanced_adaptive_monochrome_"
-private const val NOTIFICATION_ICON_NAME = "revanced_notification_icon"
+private const val LAUNCHER_RESOURCE_NAME_PREFIX = "morphe_launcher_"
+private const val LAUNCHER_ADAPTIVE_BACKGROUND_PREFIX = "morphe_adaptive_background_"
+private const val LAUNCHER_ADAPTIVE_FOREGROUND_PREFIX = "morphe_adaptive_foreground_"
+private const val LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX = "morphe_adaptive_monochrome_"
+private const val NOTIFICATION_ICON_NAME = "morphe_notification_icon"
 
 private val USER_CUSTOM_ADAPTIVE_FILE_NAMES = arrayOf(
     "$LAUNCHER_ADAPTIVE_BACKGROUND_PREFIX$CUSTOM_USER_ICON_STYLE_NAME.png",
@@ -196,21 +196,21 @@ internal fun baseCustomBrandingPatch(
         preferenceScreen.addPreferences(
             if (customName != null ) {
                 ListPreference(
-                    key = "revanced_custom_branding_name",
-                    entriesKey = "revanced_custom_branding_name_custom_entries",
-                    entryValuesKey = "revanced_custom_branding_name_custom_entry_values"
+                    key = "morphe_custom_branding_name",
+                    entriesKey = "morphe_custom_branding_name_custom_entries",
+                    entryValuesKey = "morphe_custom_branding_name_custom_entry_values"
                 )
             } else {
-                ListPreference("revanced_custom_branding_name")
+                ListPreference("morphe_custom_branding_name")
             },
             if (customIcon != null) {
                 ListPreference(
-                    key = "revanced_custom_branding_icon",
-                    entriesKey = "revanced_custom_branding_icon_custom_entries",
-                    entryValuesKey = "revanced_custom_branding_icon_custom_entry_values"
+                    key = "morphe_custom_branding_icon",
+                    entriesKey = "morphe_custom_branding_icon_custom_entries",
+                    entryValuesKey = "morphe_custom_branding_icon_custom_entry_values"
                 )
             } else {
-                ListPreference("revanced_custom_branding_icon")
+                ListPreference("morphe_custom_branding_icon")
             }
         )
 
@@ -285,7 +285,7 @@ internal fun baseCustomBrandingPatch(
                     // Indexing starts at 1.
                     originalAppName
                 } else {
-                    "@string/revanced_custom_branding_name_entry_$appNameIndex"
+                    "@string/morphe_custom_branding_name_entry_$appNameIndex"
                 }
                 val alias = document.createElement("activity-alias")
                 alias.setAttribute("android:name", aliasName)
@@ -330,11 +330,11 @@ internal fun baseCustomBrandingPatch(
             // use a custom name for this situation to disambiguate which app is which.
             application.setAttribute(
                 "android:label",
-                "@string/revanced_custom_branding_name_entry_2"
+                "@string/morphe_custom_branding_name_entry_2"
             )
 
             for (appNameIndex in 1 .. numberOfPresetAppNames) {
-                fun aliasName(name: String): String = ".revanced_" + name + '_' + appNameIndex
+                fun aliasName(name: String): String = ".morphe_" + name + '_' + appNameIndex
 
                 val useCustomNameLabel = (useCustomName && appNameIndex == numberOfPresetAppNames)
 

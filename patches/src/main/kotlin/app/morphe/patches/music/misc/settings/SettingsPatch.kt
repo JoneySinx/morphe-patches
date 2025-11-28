@@ -36,9 +36,9 @@ private val settingsResourcePatch = resourcePatch {
         settingsPatch(
             rootPreferences = listOf(
                 IntentPreference(
-                    titleKey = "revanced_settings_title",
+                    titleKey = "morphe_settings_title",
                     summaryKey = null,
-                    intent = newIntent("revanced_settings_intent"),
+                    intent = newIntent("morphe_settings_intent"),
                 ) to "settings_headers"
             ),
             preferences = preferences
@@ -47,7 +47,7 @@ private val settingsResourcePatch = resourcePatch {
 
     execute {
 
-        // Set the style for the ReVanced settings to follow the style of the music settings,
+        // Set the style for the Morphe settings to follow the style of the music settings,
         // namely: action bar height, menu item padding and remove horizontal dividers.
         val targetResource = "values/styles.xml"
         inputStreamFromBundledResource(
@@ -76,7 +76,7 @@ private val settingsResourcePatch = resourcePatch {
 }
 
 val settingsPatch = bytecodePatch(
-    description = "Adds settings for ReVanced to YouTube Music.",
+    description = "Adds settings for Morphe to YouTube Music.",
 ) {
     dependsOn(
         sharedExtensionPatch,
@@ -92,27 +92,27 @@ val settingsPatch = bytecodePatch(
         // Add an "About" preference to the top.
         if (false) // FIXME: Update this.
         preferences += NonInteractivePreference(
-            key = "revanced_settings_music_screen_0_about",
+            key = "morphe_settings_music_screen_0_about",
             summaryKey = null,
-            tag = "app.morphe.extension.shared.settings.preference.ReVancedAboutPreference",
+            tag = "app.morphe.extension.shared.settings.preference.MorpheAboutPreference",
             selectable = true,
         )
 
         PreferenceScreen.GENERAL.addPreferences(
-            SwitchPreference("revanced_settings_search_history"),
+            SwitchPreference("morphe_settings_search_history"),
         )
 
         if (is_8_40_or_greater) {
             PreferenceScreen.GENERAL.addPreferences(
-                SwitchPreference("revanced_settings_disable_bold_icons")
+                SwitchPreference("morphe_settings_disable_bold_icons")
             )
         }
 
         PreferenceScreen.MISC.addPreferences(
             TextPreference(
                 key = null,
-                titleKey = "revanced_pref_import_export_title",
-                summaryKey = "revanced_pref_import_export_summary",
+                titleKey = "morphe_pref_import_export_title",
+                summaryKey = "morphe_pref_import_export_summary",
                 inputType = InputType.TEXT_MULTI_LINE,
                 tag = "app.morphe.extension.shared.settings.preference.ImportExportPreference",
             )
@@ -141,7 +141,7 @@ val settingsPatch = bytecodePatch(
 }
 
 /**
- * Creates an intent to open ReVanced settings.
+ * Creates an intent to open Morphe settings.
  */
 fun newIntent(settingsName: String) = IntentPreference.Intent(
     data = settingsName,
@@ -153,19 +153,19 @@ fun newIntent(settingsName: String) = IntentPreference.Intent(
 
 object PreferenceScreen : BasePreferenceScreen() {
     val ADS = Screen(
-        key = "revanced_settings_music_screen_1_ads",
+        key = "morphe_settings_music_screen_1_ads",
         summaryKey = null
     )
     val GENERAL = Screen(
-        key = "revanced_settings_music_screen_2_general",
+        key = "morphe_settings_music_screen_2_general",
         summaryKey = null
     )
     val PLAYER = Screen(
-        key = "revanced_settings_music_screen_3_player",
+        key = "morphe_settings_music_screen_3_player",
         summaryKey = null
     )
     val MISC = Screen(
-        key = "revanced_settings_music_screen_4_misc",
+        key = "morphe_settings_music_screen_4_misc",
         summaryKey = null
     )
 

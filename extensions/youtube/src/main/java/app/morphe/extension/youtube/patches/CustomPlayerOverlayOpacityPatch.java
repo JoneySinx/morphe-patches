@@ -16,7 +16,7 @@ public class CustomPlayerOverlayOpacityPatch {
         int opacity = Settings.PLAYER_OVERLAY_OPACITY.get();
 
         if (opacity < 0 || opacity > 100) {
-            Utils.showToastLong(str("revanced_player_overlay_opacity_invalid_toast"));
+            Utils.showToastLong(str("morphe_player_overlay_opacity_invalid_toast"));
             opacity = Settings.PLAYER_OVERLAY_OPACITY.resetToDefault();
         }
 

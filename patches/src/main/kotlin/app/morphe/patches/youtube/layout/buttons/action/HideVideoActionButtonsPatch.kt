@@ -37,11 +37,11 @@ val hideVideoActionButtonsPatch = resourcePatch(
         addResources("youtube", "layout.buttons.action.hideButtonsPatch")
 
         val preferences = mutableSetOf(
-            SwitchPreference("revanced_disable_like_subscribe_glow"),
-            SwitchPreference("revanced_hide_download_button"),
-            SwitchPreference("revanced_hide_like_dislike_button"),
-            SwitchPreference("revanced_hide_comments_button"),
-            SwitchPreference("revanced_hide_save_button"),
+            SwitchPreference("morphe_disable_like_subscribe_glow"),
+            SwitchPreference("morphe_hide_download_button"),
+            SwitchPreference("morphe_hide_like_dislike_button"),
+            SwitchPreference("morphe_hide_comments_button"),
+            SwitchPreference("morphe_hide_save_button"),
         )
 
         if (is_20_22_or_greater) {
@@ -56,23 +56,23 @@ val hideVideoActionButtonsPatch = resourcePatch(
         } else {
             preferences.addAll(
                 listOf(
-                    SwitchPreference("revanced_hide_hype_button"),
-                    SwitchPreference("revanced_hide_ask_button"),
-                    SwitchPreference("revanced_hide_clip_button"),
-                    SwitchPreference("revanced_hide_promote_button"),
-                    SwitchPreference("revanced_hide_remix_button"),
-                    SwitchPreference("revanced_hide_report_button"),
-                    SwitchPreference("revanced_hide_share_button"),
-                    SwitchPreference("revanced_hide_shop_button"),
-                    SwitchPreference("revanced_hide_stop_ads_button"),
-                    SwitchPreference("revanced_hide_thanks_button"),
+                    SwitchPreference("morphe_hide_hype_button"),
+                    SwitchPreference("morphe_hide_ask_button"),
+                    SwitchPreference("morphe_hide_clip_button"),
+                    SwitchPreference("morphe_hide_promote_button"),
+                    SwitchPreference("morphe_hide_remix_button"),
+                    SwitchPreference("morphe_hide_report_button"),
+                    SwitchPreference("morphe_hide_share_button"),
+                    SwitchPreference("morphe_hide_shop_button"),
+                    SwitchPreference("morphe_hide_stop_ads_button"),
+                    SwitchPreference("morphe_hide_thanks_button"),
                 )
             )
         }
 
         PreferenceScreen.PLAYER.addPreferences(
             PreferenceScreenPreference(
-                "revanced_hide_buttons_screen",
+                "morphe_hide_buttons_screen",
                 preferences = preferences
             )
         )

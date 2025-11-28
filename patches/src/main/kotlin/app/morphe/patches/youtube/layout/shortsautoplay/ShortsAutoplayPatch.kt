@@ -56,12 +56,12 @@ val shortsAutoplayPatch = bytecodePatch(
         addResources("youtube", "layout.shortsautoplay.shortsAutoplayPatch")
 
         PreferenceScreen.SHORTS.addPreferences(
-            SwitchPreference("revanced_shorts_autoplay"),
+            SwitchPreference("morphe_shorts_autoplay"),
         )
 
         if (is_19_34_or_greater) {
             PreferenceScreen.SHORTS.addPreferences(
-                SwitchPreference("revanced_shorts_autoplay_background"),
+                SwitchPreference("morphe_shorts_autoplay_background"),
             )
         }
 

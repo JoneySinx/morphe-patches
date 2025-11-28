@@ -55,10 +55,10 @@ internal val customPlaybackSpeedPatch = bytecodePatch(
 
         settingsMenuVideoSpeedGroup.addAll(
             listOf(
-                SwitchPreference("revanced_custom_speed_menu"),
-                SwitchPreference("revanced_restore_old_speed_menu"),
+                SwitchPreference("morphe_custom_speed_menu"),
+                SwitchPreference("morphe_restore_old_speed_menu"),
                 TextPreference(
-                    "revanced_custom_playback_speeds",
+                    "morphe_custom_playback_speeds",
                     inputType = InputType.TEXT_MULTI_LINE
                 )
             )
@@ -66,7 +66,7 @@ internal val customPlaybackSpeedPatch = bytecodePatch(
 
         if (is_19_47_or_greater) {
             settingsMenuVideoSpeedGroup.add(
-                TextPreference("revanced_speed_tap_and_hold", inputType = InputType.NUMBER_DECIMAL),
+                TextPreference("morphe_speed_tap_and_hold", inputType = InputType.NUMBER_DECIMAL),
             )
         }
 

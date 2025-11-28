@@ -73,13 +73,13 @@ public class CheckWatchHistoryDomainNameResolutionPatch {
                 Utils.runOnMainThread(() -> {
                     Pair<Dialog, LinearLayout> dialogPair = CustomDialog.create(
                             context,
-                            str("revanced_check_watch_history_domain_name_dialog_title"), // Title.
-                            Html.fromHtml(str("revanced_check_watch_history_domain_name_dialog_message")), // Message (HTML).
+                            str("morphe_check_watch_history_domain_name_dialog_title"), // Title.
+                            Html.fromHtml(str("morphe_check_watch_history_domain_name_dialog_message")), // Message (HTML).
                             null, // No EditText.
                             null, // OK button text.
                             () -> {}, // OK button action (just dismiss).
                             null, // No cancel button.
-                            str("revanced_check_watch_history_domain_name_dialog_ignore"), // Neutral button text.
+                            str("morphe_check_watch_history_domain_name_dialog_ignore"), // Neutral button text.
                             () -> BaseSettings.CHECK_WATCH_HISTORY_DOMAIN_NAME.save(false),    // Neutral button action (Ignore).
                             true // Dismiss dialog on Neutral button click.
                     );

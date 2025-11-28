@@ -25,7 +25,7 @@ public class SpoofStreamingDataSideEffectsPreference extends Preference {
     private ClientType currentClientType;
 
     private final SharedPreferences.OnSharedPreferenceChangeListener listener = (sharedPreferences, str) -> {
-        // Because this listener may run before the ReVanced settings fragment updates Settings,
+        // Because this listener may run before the Morphe settings fragment updates Settings,
         // this could show the prior config and not the current.
         //
         // Push this call to the end of the main run queue,
@@ -84,23 +84,23 @@ public class SpoofStreamingDataSideEffectsPreference extends Preference {
 
         switch (clientType) {
             case ANDROID_CREATOR ->
-                    summary = str("revanced_spoof_video_streams_about_no_audio_tracks")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_stable_volume")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_av1")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_force_original_audio");
+                    summary = str("morphe_spoof_video_streams_about_no_audio_tracks")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_stable_volume")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_av1")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_force_original_audio");
             // VR 1.61 is not exposed in the UI and should never be reached here.
             case ANDROID_VR_1_43_32, ANDROID_VR_1_61_48 ->
-                    summary = str("revanced_spoof_video_streams_about_no_audio_tracks")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_stable_volume");
+                    summary = str("morphe_spoof_video_streams_about_no_audio_tracks")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_stable_volume");
             case ANDROID_NO_SDK ->
-                    summary = str("revanced_spoof_video_streams_about_playback_failure");
+                    summary = str("morphe_spoof_video_streams_about_playback_failure");
             case IPADOS ->
-                    summary = str("revanced_spoof_video_streams_about_playback_failure")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_av1");
+                    summary = str("morphe_spoof_video_streams_about_playback_failure")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_av1");
             case VISIONOS ->
-                    summary = str("revanced_spoof_video_streams_about_experimental")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_audio_tracks")
-                            + '\n' + str("revanced_spoof_video_streams_about_no_av1");
+                    summary = str("morphe_spoof_video_streams_about_experimental")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_audio_tracks")
+                            + '\n' + str("morphe_spoof_video_streams_about_no_av1");
             default -> Logger.printException(() -> "Unknown client: " + clientType);
         }
 
@@ -108,7 +108,7 @@ public class SpoofStreamingDataSideEffectsPreference extends Preference {
         // or doesn't start playback at all. List the side effect for other clients
         // since they will fall over to iPadOS.
         if (clientType != ClientType.IPADOS && clientType != ClientType.ANDROID_NO_SDK) {
-            summary += '\n' + str("revanced_spoof_video_streams_about_kids_videos");
+            summary += '\n' + str("morphe_spoof_video_streams_about_kids_videos");
         }
 
         // Use better formatting for bullet points.

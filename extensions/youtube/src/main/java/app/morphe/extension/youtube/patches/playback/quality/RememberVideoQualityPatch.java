@@ -41,10 +41,10 @@ public class RememberVideoQualityPatch {
         String networkTypeMessage;
         IntegerSetting qualitySetting;
         if (Utils.getNetworkType() == NetworkType.MOBILE) {
-            networkTypeMessage = str("revanced_remember_video_quality_mobile");
+            networkTypeMessage = str("morphe_remember_video_quality_mobile");
             qualitySetting = shortPlayerOpen ? shortsQualityMobile : videoQualityMobile;
         } else {
-            networkTypeMessage = str("revanced_remember_video_quality_wifi");
+            networkTypeMessage = str("morphe_remember_video_quality_wifi");
             qualitySetting = shortPlayerOpen ? shortsQualityWifi : videoQualityWifi;
         }
 
@@ -59,8 +59,8 @@ public class RememberVideoQualityPatch {
             String qualityLabel = qualityResolution + "p";
             Utils.showToastShort(str(
                     shortPlayerOpen
-                            ? "revanced_remember_video_quality_toast_shorts"
-                            : "revanced_remember_video_quality_toast",
+                            ? "morphe_remember_video_quality_toast_shorts"
+                            : "morphe_remember_video_quality_toast",
                     networkTypeMessage,
                     qualityLabel)
             );

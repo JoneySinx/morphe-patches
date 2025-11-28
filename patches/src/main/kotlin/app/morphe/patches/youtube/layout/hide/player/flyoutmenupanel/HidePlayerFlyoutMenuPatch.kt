@@ -39,25 +39,25 @@ val hidePlayerFlyoutMenuPatch = bytecodePatch(
 
         PreferenceScreen.PLAYER.addPreferences(
             PreferenceScreenPreference(
-                key = "revanced_hide_player_flyout",
+                key = "morphe_hide_player_flyout",
                 preferences = setOf(
-                    SwitchPreference("revanced_hide_player_flyout_captions"),
-                    SwitchPreference("revanced_hide_player_flyout_additional_settings"),
-                    SwitchPreference("revanced_hide_player_flyout_loop_video"),
-                    SwitchPreference("revanced_hide_player_flyout_ambient_mode"),
-                    SwitchPreference("revanced_hide_player_flyout_stable_volume"),
-                    SwitchPreference("revanced_hide_player_flyout_listen_with_youtube_music"),
-                    SwitchPreference("revanced_hide_player_flyout_help"),
-                    SwitchPreference("revanced_hide_player_flyout_speed"),
-                    SwitchPreference("revanced_hide_player_flyout_lock_screen"),
+                    SwitchPreference("morphe_hide_player_flyout_captions"),
+                    SwitchPreference("morphe_hide_player_flyout_additional_settings"),
+                    SwitchPreference("morphe_hide_player_flyout_loop_video"),
+                    SwitchPreference("morphe_hide_player_flyout_ambient_mode"),
+                    SwitchPreference("morphe_hide_player_flyout_stable_volume"),
+                    SwitchPreference("morphe_hide_player_flyout_listen_with_youtube_music"),
+                    SwitchPreference("morphe_hide_player_flyout_help"),
+                    SwitchPreference("morphe_hide_player_flyout_speed"),
+                    SwitchPreference("morphe_hide_player_flyout_lock_screen"),
                     SwitchPreference(
-                        key = "revanced_hide_player_flyout_audio_track",
+                        key = "morphe_hide_player_flyout_audio_track",
                         tag = "app.morphe.extension.youtube.settings.preference.HideAudioFlyoutMenuPreference"
                     ),
-                    SwitchPreference("revanced_hide_player_flyout_watch_in_vr"),
-                    SwitchPreference("revanced_hide_player_flyout_sleep_timer"),
-                    SwitchPreference("revanced_hide_player_flyout_video_quality"),
-                    SwitchPreference("revanced_hide_player_flyout_video_quality_footer"),
+                    SwitchPreference("morphe_hide_player_flyout_watch_in_vr"),
+                    SwitchPreference("morphe_hide_player_flyout_sleep_timer"),
+                    SwitchPreference("morphe_hide_player_flyout_video_quality"),
+                    SwitchPreference("morphe_hide_player_flyout_video_quality_footer"),
                 ),
             ),
         )

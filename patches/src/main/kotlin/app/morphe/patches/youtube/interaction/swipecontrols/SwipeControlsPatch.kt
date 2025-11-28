@@ -43,44 +43,44 @@ private val swipeControlsResourcePatch = resourcePatch {
         // Flag was completely removed in 20.34+
         if (is_19_43_or_greater && !is_20_22_or_greater) {
             PreferenceScreen.SWIPE_CONTROLS.addPreferences(
-                SwitchPreference("revanced_swipe_change_video")
+                SwitchPreference("morphe_swipe_change_video")
             )
         }
 
         PreferenceScreen.SWIPE_CONTROLS.addPreferences(
-            SwitchPreference("revanced_swipe_brightness"),
-            SwitchPreference("revanced_swipe_volume"),
-            SwitchPreference("revanced_swipe_press_to_engage"),
-            SwitchPreference("revanced_swipe_haptic_feedback"),
-            SwitchPreference("revanced_swipe_save_and_restore_brightness"),
-            SwitchPreference("revanced_swipe_lowest_value_enable_auto_brightness"),
-            ListPreference("revanced_swipe_overlay_style"),
-            TextPreference("revanced_swipe_overlay_background_opacity", inputType = InputType.NUMBER),
-            TextPreference("revanced_swipe_overlay_progress_brightness_color",
+            SwitchPreference("morphe_swipe_brightness"),
+            SwitchPreference("morphe_swipe_volume"),
+            SwitchPreference("morphe_swipe_press_to_engage"),
+            SwitchPreference("morphe_swipe_haptic_feedback"),
+            SwitchPreference("morphe_swipe_save_and_restore_brightness"),
+            SwitchPreference("morphe_swipe_lowest_value_enable_auto_brightness"),
+            ListPreference("morphe_swipe_overlay_style"),
+            TextPreference("morphe_swipe_overlay_background_opacity", inputType = InputType.NUMBER),
+            TextPreference("morphe_swipe_overlay_progress_brightness_color",
                 tag = "app.morphe.extension.shared.settings.preference.ColorPickerWithOpacitySliderPreference",
                 inputType = InputType.TEXT_CAP_CHARACTERS),
-            TextPreference("revanced_swipe_overlay_progress_volume_color",
+            TextPreference("morphe_swipe_overlay_progress_volume_color",
                 tag = "app.morphe.extension.shared.settings.preference.ColorPickerWithOpacitySliderPreference",
                 inputType = InputType.TEXT_CAP_CHARACTERS),
-            TextPreference("revanced_swipe_text_overlay_size", inputType = InputType.NUMBER),
-            TextPreference("revanced_swipe_overlay_timeout", inputType = InputType.NUMBER),
-            TextPreference("revanced_swipe_threshold", inputType = InputType.NUMBER),
-            TextPreference("revanced_swipe_volume_sensitivity", inputType = InputType.NUMBER),
+            TextPreference("morphe_swipe_text_overlay_size", inputType = InputType.NUMBER),
+            TextPreference("morphe_swipe_overlay_timeout", inputType = InputType.NUMBER),
+            TextPreference("morphe_swipe_threshold", inputType = InputType.NUMBER),
+            TextPreference("morphe_swipe_volume_sensitivity", inputType = InputType.NUMBER),
         )
 
         copyResources(
             "swipecontrols",
             ResourceGroup(
                 "drawable",
-                "revanced_ic_sc_brightness_auto.xml",
-                "revanced_ic_sc_brightness_full.xml",
-                "revanced_ic_sc_brightness_high.xml",
-                "revanced_ic_sc_brightness_low.xml",
-                "revanced_ic_sc_brightness_medium.xml",
-                "revanced_ic_sc_volume_high.xml",
-                "revanced_ic_sc_volume_low.xml",
-                "revanced_ic_sc_volume_mute.xml",
-                "revanced_ic_sc_volume_normal.xml",
+                "morphe_ic_sc_brightness_auto.xml",
+                "morphe_ic_sc_brightness_full.xml",
+                "morphe_ic_sc_brightness_high.xml",
+                "morphe_ic_sc_brightness_low.xml",
+                "morphe_ic_sc_brightness_medium.xml",
+                "morphe_ic_sc_volume_high.xml",
+                "morphe_ic_sc_volume_low.xml",
+                "morphe_ic_sc_volume_mute.xml",
+                "morphe_ic_sc_volume_normal.xml",
             ),
         )
     }

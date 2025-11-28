@@ -76,19 +76,19 @@ val returnYouTubeDislikePatch = bytecodePatch(
         addResources("youtube", "layout.returnyoutubedislike.returnYouTubeDislikePatch")
 
         PreferenceScreen.RETURN_YOUTUBE_DISLIKE.addPreferences(
-            SwitchPreference("revanced_ryd_enabled"),
-            SwitchPreference("revanced_ryd_shorts"),
-            SwitchPreference("revanced_ryd_dislike_percentage"),
-            SwitchPreference("revanced_ryd_compact_layout"),
-            SwitchPreference("revanced_ryd_estimated_like"),
-            SwitchPreference("revanced_ryd_toast_on_connection_error"),
+            SwitchPreference("morphe_ryd_enabled"),
+            SwitchPreference("morphe_ryd_shorts"),
+            SwitchPreference("morphe_ryd_dislike_percentage"),
+            SwitchPreference("morphe_ryd_compact_layout"),
+            SwitchPreference("morphe_ryd_estimated_like"),
+            SwitchPreference("morphe_ryd_toast_on_connection_error"),
             NonInteractivePreference(
-                key = "revanced_ryd_attribution",
+                key = "morphe_ryd_attribution",
                 tag = "app.morphe.extension.youtube.returnyoutubedislike.ui.ReturnYouTubeDislikeAboutPreference",
                 selectable = true,
             ),
             PreferenceCategory(
-                key = "revanced_ryd_statistics_category",
+                key = "morphe_ryd_statistics_category",
                 sorting = PreferenceScreenPreference.Sorting.UNSORTED,
                 preferences = emptySet(), // Preferences are added by custom class at runtime.
                 tag = "app.morphe.extension.youtube.returnyoutubedislike.ui.ReturnYouTubeDislikeDebugStatsPreferenceCategory"

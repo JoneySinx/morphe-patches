@@ -45,7 +45,7 @@ val changeFormFactorPatch = bytecodePatch(
         addResources("youtube", "layout.formfactor.changeFormFactorPatch")
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-            ListPreference("revanced_change_form_factor")
+            ListPreference("morphe_change_form_factor")
         )
 
         hookNavigationButtonCreated(EXTENSION_CLASS_DESCRIPTOR)

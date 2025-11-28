@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.preference.Preference;
 
 /**
- * A custom preference that clears the ReVanced debug log buffer when clicked.
+ * A custom preference that clears the Morphe debug log buffer when clicked.
  * Invokes the {@link LogBufferManager#clearLogBuffer} method.
  */
 @SuppressWarnings("unused")

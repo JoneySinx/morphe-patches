@@ -59,21 +59,21 @@ private val settingsResourcePatch = resourcePatch {
         settingsPatch(
             rootPreferences = listOf(
                 IntentPreference(
-                    titleKey = "revanced_settings_title",
+                    titleKey = "morphe_settings_title",
                     summaryKey = null,
-                    intent = newIntent("revanced_settings_intent")
+                    intent = newIntent("morphe_settings_intent")
                 ) to "settings_fragment",
 
                 PreferenceCategory(
-                    titleKey = "revanced_settings_title",
+                    titleKey = "morphe_settings_title",
                     layout = "@layout/preference_group_title",
                     preferences = setOf(
                         IntentPreference(
-                            titleKey = "revanced_settings_submenu_title",
+                            titleKey = "morphe_settings_submenu_title",
                             summaryKey = null,
-                            icon = "@drawable/revanced_settings_icon_dynamic",
+                            icon = "@drawable/morphe_settings_icon_dynamic",
                             layout = "@layout/preference_with_icon",
-                            intent = newIntent("revanced_settings_intent")
+                            intent = newIntent("morphe_settings_intent")
                         )
                     )
                 ) to "settings_fragment_cairo"
@@ -89,35 +89,35 @@ private val settingsResourcePatch = resourcePatch {
         copyResources(
             "settings",
             ResourceGroup("drawable",
-                "revanced_settings_icon_dynamic.xml",
-                "revanced_settings_icon.xml",
-                "revanced_settings_icon_bold.xml",
-                "revanced_settings_screen_00_about.xml",
-                "revanced_settings_screen_00_about_bold.xml",
-                "revanced_settings_screen_01_ads.xml",
-                "revanced_settings_screen_01_ads_bold.xml",
-                "revanced_settings_screen_02_alt_thumbnails.xml",
-                "revanced_settings_screen_02_alt_thumbnails_bold.xml",
-                "revanced_settings_screen_03_feed.xml",
-                "revanced_settings_screen_03_feed_bold.xml",
-                "revanced_settings_screen_04_general.xml",
-                "revanced_settings_screen_04_general_bold.xml",
-                "revanced_settings_screen_05_player.xml",
-                "revanced_settings_screen_05_player_bold.xml",
-                "revanced_settings_screen_06_shorts.xml",
-                "revanced_settings_screen_06_shorts_bold.xml",
-                "revanced_settings_screen_07_seekbar.xml",
-                "revanced_settings_screen_07_seekbar_bold.xml",
-                "revanced_settings_screen_08_swipe_controls.xml",
-                "revanced_settings_screen_08_swipe_controls_bold.xml",
-                "revanced_settings_screen_09_return_youtube_dislike.xml",
-                "revanced_settings_screen_09_return_youtube_dislike_bold.xml",
-                "revanced_settings_screen_10_sponsorblock.xml",
-                "revanced_settings_screen_10_sponsorblock_bold.xml",
-                "revanced_settings_screen_11_misc.xml",
-                "revanced_settings_screen_11_misc_bold.xml",
-                "revanced_settings_screen_12_video.xml",
-                "revanced_settings_screen_12_video_bold.xml",
+                "morphe_settings_icon_dynamic.xml",
+                "morphe_settings_icon.xml",
+                "morphe_settings_icon_bold.xml",
+                "morphe_settings_screen_00_about.xml",
+                "morphe_settings_screen_00_about_bold.xml",
+                "morphe_settings_screen_01_ads.xml",
+                "morphe_settings_screen_01_ads_bold.xml",
+                "morphe_settings_screen_02_alt_thumbnails.xml",
+                "morphe_settings_screen_02_alt_thumbnails_bold.xml",
+                "morphe_settings_screen_03_feed.xml",
+                "morphe_settings_screen_03_feed_bold.xml",
+                "morphe_settings_screen_04_general.xml",
+                "morphe_settings_screen_04_general_bold.xml",
+                "morphe_settings_screen_05_player.xml",
+                "morphe_settings_screen_05_player_bold.xml",
+                "morphe_settings_screen_06_shorts.xml",
+                "morphe_settings_screen_06_shorts_bold.xml",
+                "morphe_settings_screen_07_seekbar.xml",
+                "morphe_settings_screen_07_seekbar_bold.xml",
+                "morphe_settings_screen_08_swipe_controls.xml",
+                "morphe_settings_screen_08_swipe_controls_bold.xml",
+                "morphe_settings_screen_09_return_youtube_dislike.xml",
+                "morphe_settings_screen_09_return_youtube_dislike_bold.xml",
+                "morphe_settings_screen_10_sponsorblock.xml",
+                "morphe_settings_screen_10_sponsorblock_bold.xml",
+                "morphe_settings_screen_11_misc.xml",
+                "morphe_settings_screen_11_misc_bold.xml",
+                "morphe_settings_screen_12_video.xml",
+                "morphe_settings_screen_12_video_bold.xml",
             )
         )
 
@@ -171,7 +171,7 @@ private val settingsResourcePatch = resourcePatch {
 }
 
 val settingsPatch = bytecodePatch(
-    description = "Adds settings for ReVanced to YouTube.",
+    description = "Adds settings for Morphe to YouTube.",
 ) {
     dependsOn(
         sharedExtensionPatch,
@@ -191,23 +191,23 @@ val settingsPatch = bytecodePatch(
         // Add an "about" preference to the top.
         if (false) // FIXME: Update this.
         preferences += NonInteractivePreference(
-            key = "revanced_settings_screen_00_about",
-            icon = "@drawable/revanced_settings_screen_00_about",
-            iconBold = "@drawable/revanced_settings_screen_00_about_bold",
+            key = "morphe_settings_screen_00_about",
+            icon = "@drawable/morphe_settings_screen_00_about",
+            iconBold = "@drawable/morphe_settings_screen_00_about_bold",
             layout = "@layout/preference_with_icon",
             summaryKey = null,
-            tag = "app.morphe.extension.shared.settings.preference.ReVancedAboutPreference",
+            tag = "app.morphe.extension.shared.settings.preference.MorpheAboutPreference",
             selectable = true,
         )
 
         if (is_19_34_or_greater) {
             PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-                SwitchPreference("revanced_restore_old_settings_menus")
+                SwitchPreference("morphe_restore_old_settings_menus")
             )
         }
 
         PreferenceScreen.GENERAL_LAYOUT.addPreferences(
-            SwitchPreference("revanced_settings_search_history"),
+            SwitchPreference("morphe_settings_search_history"),
         )
 
 
@@ -218,25 +218,25 @@ val settingsPatch = bytecodePatch(
                     sorting = Sorting.UNSORTED,
                     tag = "app.morphe.extension.shared.settings.preference.NoTitlePreferenceCategory",
                     preferences = setOf(
-                        SwitchPreference("revanced_show_menu_icons"),
-                        SwitchPreference("revanced_settings_disable_bold_icons")
+                        SwitchPreference("morphe_show_menu_icons"),
+                        SwitchPreference("morphe_settings_disable_bold_icons")
                     )
                 )
             } else {
-                SwitchPreference("revanced_show_menu_icons")
+                SwitchPreference("morphe_show_menu_icons")
             }
         )
 
         PreferenceScreen.MISC.addPreferences(
             TextPreference(
                 key = null,
-                titleKey = "revanced_pref_import_export_title",
-                summaryKey = "revanced_pref_import_export_summary",
+                titleKey = "morphe_pref_import_export_title",
+                summaryKey = "morphe_pref_import_export_summary",
                 inputType = InputType.TEXT_MULTI_LINE,
                 tag = "app.morphe.extension.shared.settings.preference.ImportExportPreference",
             ),
             ListPreference(
-                key = "revanced_language",
+                key = "morphe_language",
                 tag = "app.morphe.extension.shared.settings.preference.SortedListPreference"
             )
         )
@@ -285,7 +285,7 @@ val settingsPatch = bytecodePatch(
 }
 
 /**
- * Modifies the activity to show ReVanced settings instead of it's original purpose.
+ * Modifies the activity to show Morphe settings instead of it's original purpose.
  */
 internal fun modifyActivityForSettingsInjection(
     activityOnCreateClass: MutableClass,
@@ -310,7 +310,7 @@ internal fun modifyActivityForSettingsInjection(
         methods.removeIf { it != activityOnCreateMethod && !MethodUtil.isConstructor(it) }
     }
 
-    // Override base context to allow using ReVanced specific settings.
+    // Override base context to allow using Morphe specific settings.
     ImmutableMethod(
         activityOnCreateClass.type,
         "attachBaseContext",
@@ -360,7 +360,7 @@ internal fun modifyActivityForSettingsInjection(
 }
 
 /**
- * Creates an intent to open ReVanced settings.
+ * Creates an intent to open Morphe settings.
  */
 fun newIntent(settingsName: String) = IntentPreference.Intent(
     data = settingsName,
@@ -372,94 +372,94 @@ fun newIntent(settingsName: String) = IntentPreference.Intent(
 
 object PreferenceScreen : BasePreferenceScreen() {
     // Sort screens in the root menu by key, to not scatter related items apart
-    // (sorting key is set in revanced_prefs.xml).
+    // (sorting key is set in morphe_prefs.xml).
     // If no preferences are added to a screen, the screen will not be added to the settings.
     val ADS = Screen(
-        key = "revanced_settings_screen_01_ads",
+        key = "morphe_settings_screen_01_ads",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_01_ads",
-        iconBold = "@drawable/revanced_settings_screen_01_ads_bold",
+        icon = "@drawable/morphe_settings_screen_01_ads",
+        iconBold = "@drawable/morphe_settings_screen_01_ads_bold",
         layout = "@layout/preference_with_icon",
     )
     val ALTERNATIVE_THUMBNAILS = Screen(
-        key = "revanced_settings_screen_02_alt_thumbnails",
+        key = "morphe_settings_screen_02_alt_thumbnails",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_02_alt_thumbnails",
-        iconBold = "@drawable/revanced_settings_screen_02_alt_thumbnails_bold",
+        icon = "@drawable/morphe_settings_screen_02_alt_thumbnails",
+        iconBold = "@drawable/morphe_settings_screen_02_alt_thumbnails_bold",
         layout = "@layout/preference_with_icon",
         sorting = Sorting.UNSORTED,
     )
     val FEED = Screen(
-        key = "revanced_settings_screen_03_feed",
+        key = "morphe_settings_screen_03_feed",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_03_feed",
-        iconBold = "@drawable/revanced_settings_screen_03_feed_bold",
+        icon = "@drawable/morphe_settings_screen_03_feed",
+        iconBold = "@drawable/morphe_settings_screen_03_feed_bold",
         layout = "@layout/preference_with_icon",
     )
     val GENERAL_LAYOUT = Screen(
-        key = "revanced_settings_screen_04_general",
+        key = "morphe_settings_screen_04_general",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_04_general",
-        iconBold = "@drawable/revanced_settings_screen_04_general_bold",
+        icon = "@drawable/morphe_settings_screen_04_general",
+        iconBold = "@drawable/morphe_settings_screen_04_general_bold",
         layout = "@layout/preference_with_icon",
     )
     val PLAYER = Screen(
-        key = "revanced_settings_screen_05_player",
+        key = "morphe_settings_screen_05_player",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_05_player",
-        iconBold = "@drawable/revanced_settings_screen_05_player_bold",
+        icon = "@drawable/morphe_settings_screen_05_player",
+        iconBold = "@drawable/morphe_settings_screen_05_player_bold",
         layout = "@layout/preference_with_icon",
     )
     val SHORTS = Screen(
-        key = "revanced_settings_screen_06_shorts",
+        key = "morphe_settings_screen_06_shorts",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_06_shorts",
-        iconBold = "@drawable/revanced_settings_screen_06_shorts_bold",
+        icon = "@drawable/morphe_settings_screen_06_shorts",
+        iconBold = "@drawable/morphe_settings_screen_06_shorts_bold",
         layout = "@layout/preference_with_icon",
     )
     val SEEKBAR = Screen(
-        key = "revanced_settings_screen_07_seekbar",
+        key = "morphe_settings_screen_07_seekbar",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_07_seekbar",
-        iconBold = "@drawable/revanced_settings_screen_07_seekbar_bold",
+        icon = "@drawable/morphe_settings_screen_07_seekbar",
+        iconBold = "@drawable/morphe_settings_screen_07_seekbar_bold",
         layout = "@layout/preference_with_icon",
     )
     val SWIPE_CONTROLS = Screen(
-        key = "revanced_settings_screen_08_swipe_controls",
+        key = "morphe_settings_screen_08_swipe_controls",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_08_swipe_controls",
-        iconBold = "@drawable/revanced_settings_screen_08_swipe_controls_bold",
+        icon = "@drawable/morphe_settings_screen_08_swipe_controls",
+        iconBold = "@drawable/morphe_settings_screen_08_swipe_controls_bold",
         layout = "@layout/preference_with_icon",
         sorting = Sorting.UNSORTED,
     )
     val RETURN_YOUTUBE_DISLIKE = Screen(
-        key = "revanced_settings_screen_09_return_youtube_dislike",
+        key = "morphe_settings_screen_09_return_youtube_dislike",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_09_return_youtube_dislike",
-        iconBold = "@drawable/revanced_settings_screen_09_return_youtube_dislike_bold",
+        icon = "@drawable/morphe_settings_screen_09_return_youtube_dislike",
+        iconBold = "@drawable/morphe_settings_screen_09_return_youtube_dislike_bold",
         layout = "@layout/preference_with_icon",
         sorting = Sorting.UNSORTED,
     )
     val SPONSORBLOCK = Screen(
-        key = "revanced_settings_screen_10_sponsorblock",
+        key = "morphe_settings_screen_10_sponsorblock",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_10_sponsorblock",
-        iconBold = "@drawable/revanced_settings_screen_10_sponsorblock_bold",
+        icon = "@drawable/morphe_settings_screen_10_sponsorblock",
+        iconBold = "@drawable/morphe_settings_screen_10_sponsorblock_bold",
         layout = "@layout/preference_with_icon",
         sorting = Sorting.UNSORTED,
     )
     val MISC = Screen(
-        key = "revanced_settings_screen_11_misc",
+        key = "morphe_settings_screen_11_misc",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_11_misc",
-        iconBold = "@drawable/revanced_settings_screen_11_misc_bold",
+        icon = "@drawable/morphe_settings_screen_11_misc",
+        iconBold = "@drawable/morphe_settings_screen_11_misc_bold",
         layout = "@layout/preference_with_icon",
     )
     val VIDEO = Screen(
-        key = "revanced_settings_screen_12_video",
+        key = "morphe_settings_screen_12_video",
         summaryKey = null,
-        icon = "@drawable/revanced_settings_screen_12_video",
-        iconBold = "@drawable/revanced_settings_screen_12_video_bold",
+        icon = "@drawable/morphe_settings_screen_12_video",
+        iconBold = "@drawable/morphe_settings_screen_12_video_bold",
         layout = "@layout/preference_with_icon",
         sorting = Sorting.BY_KEY,
     )

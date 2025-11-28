@@ -43,16 +43,16 @@ private val hideAdsResourcePatch = resourcePatch {
         addResources("youtube", "ad.general.hideAdsResourcePatch")
 
         PreferenceScreen.ADS.addPreferences(
-            SwitchPreference("revanced_hide_creator_store_shelf"),
-            SwitchPreference("revanced_hide_end_screen_store_banner"),
-            SwitchPreference("revanced_hide_fullscreen_ads"),
-            SwitchPreference("revanced_hide_general_ads"),
-            SwitchPreference("revanced_hide_merchandise_banners"),
-            SwitchPreference("revanced_hide_paid_promotion_label"),
-            SwitchPreference("revanced_hide_self_sponsor_ads"),
-            SwitchPreference("revanced_hide_shopping_links"),
-            SwitchPreference("revanced_hide_view_products_banner"),
-            SwitchPreference("revanced_hide_web_search_results"),
+            SwitchPreference("morphe_hide_creator_store_shelf"),
+            SwitchPreference("morphe_hide_end_screen_store_banner"),
+            SwitchPreference("morphe_hide_fullscreen_ads"),
+            SwitchPreference("morphe_hide_general_ads"),
+            SwitchPreference("morphe_hide_merchandise_banners"),
+            SwitchPreference("morphe_hide_paid_promotion_label"),
+            SwitchPreference("morphe_hide_self_sponsor_ads"),
+            SwitchPreference("morphe_hide_shopping_links"),
+            SwitchPreference("morphe_hide_view_products_banner"),
+            SwitchPreference("morphe_hide_web_search_results"),
         )
 
         addLithoFilter("Lapp/morphe/extension/youtube/patches/components/AdsFilter;")

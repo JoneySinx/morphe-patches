@@ -58,7 +58,7 @@ import java.util.regex.Pattern;
 import app.morphe.extension.shared.settings.AppLanguage;
 import app.morphe.extension.shared.settings.BaseSettings;
 import app.morphe.extension.shared.settings.BooleanSetting;
-import app.morphe.extension.shared.settings.preference.ReVancedAboutPreference;
+import app.morphe.extension.shared.settings.preference.MorpheAboutPreference;
 import app.morphe.extension.shared.ui.Dim;
 
 @SuppressWarnings("NewApi")
@@ -420,7 +420,7 @@ public class Utils {
         // Must initially set context to check the app language.
         context = appContext;
 
-        AppLanguage language = BaseSettings.REVANCED_LANGUAGE.get();
+        AppLanguage language = BaseSettings.MORPHE_LANGUAGE.get();
         if (language != AppLanguage.DEFAULT) {
             // Create a new context with the desired language.
             Logger.printDebug(() -> "Using app language: " + language);
@@ -436,7 +436,7 @@ public class Utils {
     public static void setClipboard(CharSequence text) {
         ClipboardManager clipboard = (ClipboardManager) context
                 .getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("ReVanced", text);
+        ClipData clip = ClipData.newPlainText("Morphe", text);
         clipboard.setPrimaryClip(clip);
     }
 
@@ -449,10 +449,10 @@ public class Utils {
 
     /**
      * @return If the device language uses right to left text layout (Hebrew, Arabic, etc).
-     *         If this should match any ReVanced language override then instead use
-     *         {@link #isRightToLeftLocale(Locale)} with {@link BaseSettings#REVANCED_LANGUAGE}.
+     *         If this should match any Morphe language override then instead use
+     *         {@link #isRightToLeftLocale(Locale)} with {@link BaseSettings#MORPHE_LANGUAGE}.
      *         This is the default locale of the device, which may differ if
-     *         {@link BaseSettings#REVANCED_LANGUAGE} is set to a different language.
+     *         {@link BaseSettings#MORPHE_LANGUAGE} is set to a different language.
      */
     public static boolean isRightToLeftLocale() {
         if (isRightToLeftTextLayout == null) {
@@ -471,9 +471,9 @@ public class Utils {
 
     /**
      * @return A UTF8 string containing a left-to-right or right-to-left
-     *         character of the device locale. If this should match any ReVanced language
+     *         character of the device locale. If this should match any Morphe language
      *         override then instead use {@link #getTextDirectionString(Locale)} with
-     *         {@link BaseSettings#REVANCED_LANGUAGE}.
+     *         {@link BaseSettings#MORPHE_LANGUAGE}.
      */
     public static String getTextDirectionString() {
         return  getTextDirectionString(isRightToLeftLocale());
@@ -983,7 +983,7 @@ public class Utils {
     public static String removePunctuationToLowercase(@Nullable CharSequence original) {
         if (original == null) return "";
         return PUNCTUATION_PATTERN.matcher(original).replaceAll("")
-                .toLowerCase(BaseSettings.REVANCED_LANGUAGE.get().getLocale());
+                .toLowerCase(BaseSettings.MORPHE_LANGUAGE.get().getLocale());
     }
 
     /**
@@ -1000,7 +1000,7 @@ public class Utils {
      * Returns a cached Collator for the current locale, or creates a new one if locale changed.
      */
     private static Collator getCollator() {
-        Locale currentLocale = BaseSettings.REVANCED_LANGUAGE.get().getLocale();
+        Locale currentLocale = BaseSettings.MORPHE_LANGUAGE.get().getLocale();
 
         if (cachedCollator == null || !currentLocale.equals(cachedCollatorLocale)) {
             cachedCollatorLocale = currentLocale;
@@ -1072,7 +1072,7 @@ public class Utils {
             Preference pref = pair.second;
 
             // Move any screens, intents, and the one off About preference to the top.
-            if (pref instanceof PreferenceScreen || pref instanceof ReVancedAboutPreference
+            if (pref instanceof PreferenceScreen || pref instanceof MorpheAboutPreference
                     || pref.getIntent() != null) {
                 // Any arbitrary large number.
                 order -= 1000;
@@ -1096,8 +1096,8 @@ public class Utils {
             return;
         }
 
-        String revancedLocale = Utils.getContext().getResources().getConfiguration().locale.getLanguage();
-        if (revancedLocale.equals(Locale.ENGLISH.getLanguage())) {
+        String morpheLocale = Utils.getContext().getResources().getConfiguration().locale.getLanguage();
+        if (morpheLocale.equals(Locale.ENGLISH.getLanguage())) {
             return;
         }
 
