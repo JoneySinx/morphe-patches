@@ -168,22 +168,30 @@ val returnYouTubeDislikePatch = bytecodePatch(
                 charSequenceRegister = getInstruction<TwoRegisterInstruction>(charSequenceIndex).registerA
             }
 
-            val free1 = findFreeRegister(insertIndex, charSequenceRegister)
-            val free2 = findFreeRegister(insertIndex, charSequenceRegister, free1)
+            val conversionContext = findFreeRegister(insertIndex, charSequenceRegister)
+            val free2 = findFreeRegister(insertIndex, charSequenceRegister, conversionContext)
+
+            var checkConversionContextSmali = if (is_20_41_or_greater) {
+                """
+                    # 20.41 field is the abstract superclass.
+                    # Verify it's the expected subclass just in case.
+                    instance-of v$free2, v$conversionContext, ${textComponentConversionContextField.type}
+                    if-eqz v$free2, :ignore
+                    check-cast v$conversionContext, $conversionContextClass
+                """
+            } else {
+                "iget-object v$conversionContext, v$conversionContext, $textComponentConversionContextField"
+            }
 
             addInstructionsAtControlFlowLabel(
                 insertIndex,
                 """
                     # Copy conversion context.
-                    move-object/from16 v$free1, p0
+                    move-object/from16 v$conversionContext, p0
                     
-                    # 20.41 field is the abstract superclass.
-                    # Verify it's the expected subclass just in case. 
-                    instance-of v$free2, v$free1, ${textComponentConversionContextField.type}
-                    if-eqz v$free2, :ignore
+                    $checkConversionContextSmali
                     
-                    check-cast v$free1, $conversionContextClass
-                    invoke-static { v$free1, v$charSequenceRegister }, $EXTENSION_CLASS_DESCRIPTOR->onLithoTextLoaded(Ljava/lang/Object;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+                    invoke-static { v$conversionContext, v$charSequenceRegister }, $EXTENSION_CLASS_DESCRIPTOR->onLithoTextLoaded(Ljava/lang/Object;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
                     move-result-object v$charSequenceRegister
                     
                     :ignore

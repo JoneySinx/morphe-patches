@@ -9,15 +9,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.GuardedBy;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.Objects;
-import java.util.Set;
 
 import app.morphe.extension.shared.Logger;
 import app.morphe.extension.shared.Utils;
-import app.morphe.extension.shared.settings.BaseSettings;
 import app.morphe.extension.youtube.patches.components.ReturnYouTubeDislikeFilter;
 import app.morphe.extension.youtube.returnyoutubedislike.ReturnYouTubeDislike;
 import app.morphe.extension.youtube.settings.Settings;
@@ -105,9 +102,8 @@ public class ReturnYouTubeDislikePatch {
      *
      * For Litho segmented buttons and Litho Shorts player.
      */
-    @NonNull
-    public static CharSequence onLithoTextLoaded(@NonNull Object conversionContext,
-                                                 @NonNull CharSequence original) {
+    public static CharSequence onLithoTextLoaded(Object conversionContext,
+                                                 CharSequence original) {
         return onLithoTextLoaded(conversionContext, original, false);
     }
 
@@ -122,20 +118,17 @@ public class ReturnYouTubeDislikePatch {
      * @param isRollingNumber If the span is for a Rolling Number.
      * @return The original char sequence (if nothing should change), or a replacement char sequence that contains dislikes.
      */
-    @NonNull
-    private static CharSequence onLithoTextLoaded(@NonNull Object conversionContext,
-                                                  @NonNull CharSequence original,
+    private static CharSequence onLithoTextLoaded(Object conversionContext,
+                                                  CharSequence original,
                                                   boolean isRollingNumber) {
+        Logger.printDebug(() -> "litho text: " + conversionContext);
+
         try {
             if (!Settings.RYD_ENABLED.get()) {
                 return original;
             }
 
             String conversionContextString = conversionContext.toString();
-
-            if (Settings.RYD_ENABLED.get()) { // FIXME: Remove this.
-                Logger.printDebug(() -> "RYD conversion context: " + conversionContext);
-            }
 
             if (isRollingNumber && !conversionContextString.contains("video_action_bar.e")) {
                 return original;
@@ -178,7 +171,7 @@ public class ReturnYouTubeDislikePatch {
         return original;
     }
 
-    private static CharSequence getShortsSpan(@NonNull CharSequence original, boolean isDislikesSpan) {
+    private static CharSequence getShortsSpan(CharSequence original, boolean isDislikesSpan) {
         // Litho Shorts player.
         if (!Settings.RYD_SHORTS.get() || (isDislikesSpan && Settings.HIDE_SHORTS_DISLIKE_BUTTON.get())
                 || (!isDislikesSpan && Settings.HIDE_SHORTS_LIKE_BUTTON.get())) {
@@ -219,8 +212,7 @@ public class ReturnYouTubeDislikePatch {
     /**
      * Injection point.
      */
-    public static String onRollingNumberLoaded(@NonNull Object conversionContext,
-                                               @NonNull String original) {
+    public static String onRollingNumberLoaded(Object conversionContext, String original) {
         try {
             CharSequence replacement = onLithoTextLoaded(conversionContext, original, true);
 
@@ -361,7 +353,7 @@ public class ReturnYouTubeDislikePatch {
     /**
      * Injection point.  Uses 'playback response' video id hook to preload RYD.
      */
-    public static void preloadVideoId(@NonNull String videoId, boolean isShortAndOpeningOrPlaying) {
+    public static void preloadVideoId(String videoId, boolean isShortAndOpeningOrPlaying) {
         try {
             if (!Settings.RYD_ENABLED.get()) {
                 return;
@@ -410,7 +402,7 @@ public class ReturnYouTubeDislikePatch {
     /**
      * Injection point.  Uses 'current playing' video id hook.  Always called on main thread.
      */
-    public static void newVideoLoaded(@NonNull String videoId) {
+    public static void newVideoLoaded(String videoId) {
         try {
             if (!Settings.RYD_ENABLED.get()) return;
             Objects.requireNonNull(videoId);
