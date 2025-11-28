@@ -6,8 +6,6 @@ import java.nio.file.Files
 
 /**
  * Copies a branding license text file to the target apk.
- *
- * This patch must be a dependency for all patches that add Morphe branding to the target app.
  */
 internal val addBrandLicensePatch = rawResourcePatch {
     execute {
