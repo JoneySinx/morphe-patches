@@ -87,8 +87,7 @@ internal fun baseCustomBrandingPatch(
     block: ResourcePatchBuilder.() -> Unit,
     executeBlock: ResourcePatchContext.() -> Unit = {}
 ): ResourcePatch = resourcePatch(
-    // FIXME
-    // name = "Custom branding",
+    name = "Custom branding",
     description = "Adds options to change the app icon and app name. " +
             "Branding cannot be changed for mounted (root) installations."
 ) {

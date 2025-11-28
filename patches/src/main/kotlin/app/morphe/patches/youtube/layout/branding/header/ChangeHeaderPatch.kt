@@ -93,8 +93,7 @@ private val changeHeaderBytecodePatch = bytecodePatch {
 
 @Suppress("unused")
 val changeHeaderPatch = resourcePatch(
-    // FIXME: Add header icons.
-    //name = "Change header",
+    name = "Change header",
     description = "Adds an option to change the header logo in the top left corner of the app.",
 ) {
     dependsOn(addResourcesPatch, changeHeaderBytecodePatch)
