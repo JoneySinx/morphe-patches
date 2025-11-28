@@ -22,15 +22,8 @@ Second \"item\" text"</string>
   <app id="shared">
   <patch id="layout.branding.baseCustomBrandingPatch">
   <string name="morphe_custom_branding_name_title">Appnavn</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_5 -->
-  <string name="morphe_custom_branding_name_entry_5">Tilpasset</string>
   <string name="morphe_custom_branding_icon_title">Appikon</string>
   <string name="morphe_custom_branding_icon_entry_1">Original</string>
-  <!-- Translation of this should be identical to morphe_header_logo_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_3">Morphe minimal</string>
-  <string name="morphe_custom_branding_icon_entry_4">Morphe skaleret</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_5">Tilpasset</string>
   </patch>
   <patch id="misc.checks.checkEnvironmentPatch">
   <string name="morphe_check_environment_failed_title">Kontrol mislykkedes</string>

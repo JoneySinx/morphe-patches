@@ -37,9 +37,8 @@ public class CustomBrandingPatch {
          * Original unpatched icon.
          */
         ORIGINAL,
-        ROUNDED,
-        MINIMAL,
-        SCALED,
+        LIGHT,
+        DARK,
         /**
          * User provided custom icon.
          */

@@ -22,15 +22,8 @@ Second \"item\" text"</string>
   <app id="shared">
   <patch id="layout.branding.baseCustomBrandingPatch">
   <string name="morphe_custom_branding_name_title">ชื่อแอป</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_5 -->
-  <string name="morphe_custom_branding_name_entry_5">กำหนดเอง</string>
   <string name="morphe_custom_branding_icon_title">ไอคอนแอป</string>
   <string name="morphe_custom_branding_icon_entry_1">ต้นฉบับ</string>
-  <!-- Translation of this should be identical to morphe_header_logo_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_3">Morphe เรียบง่าย</string>
-  <string name="morphe_custom_branding_icon_entry_4">Morphe ปรับขนาด</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_5">กำหนดเอง</string>
   </patch>
   <patch id="misc.checks.checkEnvironmentPatch">
   <string name="morphe_check_environment_failed_title">การตรวจสอบล้มเหลว</string>

@@ -22,15 +22,8 @@ Second \"item\" text"</string>
   <app id="shared">
   <patch id="layout.branding.baseCustomBrandingPatch">
   <string name="morphe_custom_branding_name_title">Uygulama adı</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_5 -->
-  <string name="morphe_custom_branding_name_entry_5">Özel</string>
   <string name="morphe_custom_branding_icon_title">Uygulama simgesi</string>
   <string name="morphe_custom_branding_icon_entry_1">Orijinal</string>
-  <!-- Translation of this should be identical to morphe_header_logo_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_3">Morphe minimal</string>
-  <string name="morphe_custom_branding_icon_entry_4">Morphe ölçeklendirilmiş</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_5">Özel</string>
   </patch>
   <patch id="misc.checks.checkEnvironmentPatch">
   <string name="morphe_check_environment_failed_title">Denetimler başarısız</string>

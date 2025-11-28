@@ -22,15 +22,8 @@ Second \"item\" text"</string>
   <app id="shared">
   <patch id="layout.branding.baseCustomBrandingPatch">
   <string name="morphe_custom_branding_name_title">Հավելվածի անվանումը</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_5 -->
-  <string name="morphe_custom_branding_name_entry_5">Մաքսային</string>
   <string name="morphe_custom_branding_icon_title">Հավելվածի պատկերակը</string>
   <string name="morphe_custom_branding_icon_entry_1">Բնօրինակ</string>
-  <!-- Translation of this should be identical to morphe_header_logo_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_3">Morphe մինիմալ</string>
-  <string name="morphe_custom_branding_icon_entry_4">Morphe սանդղակավորված</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_5">Անհատականացված</string>
   </patch>
   <patch id="misc.checks.checkEnvironmentPatch">
   <string name="morphe_check_environment_failed_title">Վերահսկումները ձախողվել են</string>

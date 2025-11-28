@@ -22,15 +22,8 @@ Second \"item\" text"</string>
   <app id="shared">
   <patch id="layout.branding.baseCustomBrandingPatch">
   <string name="morphe_custom_branding_name_title">Emri i aplikacionit</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_5 -->
-  <string name="morphe_custom_branding_name_entry_5">Personalizuar</string>
   <string name="morphe_custom_branding_icon_title">Ikona e aplikacionit</string>
   <string name="morphe_custom_branding_icon_entry_1">Origjinal</string>
-  <!-- Translation of this should be identical to morphe_header_logo_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_3">Morphe minimal</string>
-  <string name="morphe_custom_branding_icon_entry_4">Morphe i shkallëzuar</string>
-  <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
-  <string name="morphe_custom_branding_icon_entry_5">Personalizuar</string>
   </patch>
   <patch id="misc.checks.checkEnvironmentPatch">
   <string name="morphe_check_environment_failed_title">Kontrollat ​​dështu</string>

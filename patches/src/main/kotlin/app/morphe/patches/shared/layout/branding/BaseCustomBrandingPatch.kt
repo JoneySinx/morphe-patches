@@ -46,9 +46,8 @@ private val mipmapDirectories = mapOf(
 )
 
 private val iconStyleNames = arrayOf(
-    "rounded",
-    "minimal",
-    "scaled"
+    "light",
+    "dark",
 )
 
 private const val ORIGINAL_USER_ICON_STYLE_NAME = "original"
@@ -57,7 +56,7 @@ private const val CUSTOM_USER_ICON_STYLE_NAME = "custom"
 private const val LAUNCHER_RESOURCE_NAME_PREFIX = "morphe_launcher_"
 private const val LAUNCHER_ADAPTIVE_BACKGROUND_PREFIX = "morphe_adaptive_background_"
 private const val LAUNCHER_ADAPTIVE_FOREGROUND_PREFIX = "morphe_adaptive_foreground_"
-private const val LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX = "morphe_adaptive_monochrome_"
+private const val LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX = "morphe_adaptive_monochrome"
 private const val NOTIFICATION_ICON_NAME = "morphe_notification_icon"
 
 private val USER_CUSTOM_ADAPTIVE_FILE_NAMES = arrayOf(
@@ -65,7 +64,7 @@ private val USER_CUSTOM_ADAPTIVE_FILE_NAMES = arrayOf(
     "$LAUNCHER_ADAPTIVE_FOREGROUND_PREFIX$CUSTOM_USER_ICON_STYLE_NAME.png"
 )
 
-private const val USER_CUSTOM_MONOCHROME_FILE_NAME = "$LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX$CUSTOM_USER_ICON_STYLE_NAME.xml"
+private const val USER_CUSTOM_MONOCHROME_FILE_NAME = "${LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX}_$CUSTOM_USER_ICON_STYLE_NAME.xml"
 private const val USER_CUSTOM_NOTIFICATION_ICON_FILE_NAME = "${NOTIFICATION_ICON_NAME}_$CUSTOM_USER_ICON_STYLE_NAME.xml"
 
 internal const val EXTENSION_CLASS_DESCRIPTOR = "Lapp/morphe/extension/shared/patches/CustomBrandingPatch;"
@@ -222,7 +221,6 @@ internal fun baseCustomBrandingPatch(
                     "drawable",
                     "$LAUNCHER_ADAPTIVE_BACKGROUND_PREFIX$style.xml",
                     "$LAUNCHER_ADAPTIVE_FOREGROUND_PREFIX$style.xml",
-                    "$LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX$style.xml",
                 ),
                 ResourceGroup(
                     "mipmap-anydpi",
@@ -237,6 +235,12 @@ internal fun baseCustomBrandingPatch(
             ResourceGroup(
                 "drawable",
                 "$NOTIFICATION_ICON_NAME.xml"
+            ),
+
+            // Monochrome launcher icon.
+            ResourceGroup(
+                "drawable",
+                "$LAUNCHER_ADAPTIVE_MONOCHROME_PREFIX.xml",
             ),
 
             // Copy template user icon, because the aliases must be added even if no user icon is provided.
