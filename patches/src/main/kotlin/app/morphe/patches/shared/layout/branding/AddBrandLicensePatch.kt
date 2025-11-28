@@ -11,18 +11,14 @@ import java.nio.file.Files
  */
 internal val addBrandLicensePatch = rawResourcePatch {
     execute {
-        // FIXME:
-        if (true) return@execute
-
-        // FIXME
-        val brandingLicenseFileName = "LICENSE_TODO.TXT"
+        val sourceFileName = "LICENSE_MORPHE.TXT"
 
         val inputFileStream = inputStreamFromBundledResource(
             "branding-license",
-            brandingLicenseFileName
+            sourceFileName
         )!!
 
-        val targetFile = get(brandingLicenseFileName, false).toPath()
+        val targetFile = get(sourceFileName, false).toPath()
 
         Files.copy(inputFileStream, targetFile)
     }

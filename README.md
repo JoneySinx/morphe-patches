@@ -4,9 +4,9 @@ Morphe Patches
 ## 📜 Licence
 
 Morphe Patches are licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html),
-with additional conditions under GPL section 7 that requires attribution and limits usage to the code but not the identity of the project.
+with additional conditions under GPL section 7 that requires attribution and restricts using the identity of the project.
 
-This project also includes additional conditions under GPL section 7:
+This project has additional conditions under GPL section 7:
 
 - **Attribution (7b):** Any application or derivative work using code from this repository must display the following user‑facing message in an easily accessible way (e.g., clickable link, UI button):
 
