@@ -22,6 +22,15 @@ repositories {
 
     // Use same copy pasted hack fix used by CLI. Without this it won't resolve patcher dependencies.
     maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/MorpheApp/registry")
+        credentials {
+            username = providers.gradleProperty("gpr.user").getOrElse(System.getenv("GITHUB_ACTOR"))
+            password = providers.gradleProperty("gpr.key").getOrElse(System.getenv("GITHUB_TOKEN"))
+        }
+    }
+    // FIXME: Required for old apktool repo.
+    maven {
         url = uri("https://maven.pkg.github.com/revanced/registry")
         credentials {
             username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
