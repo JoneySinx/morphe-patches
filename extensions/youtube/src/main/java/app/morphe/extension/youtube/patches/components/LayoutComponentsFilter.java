@@ -424,24 +424,23 @@ public final class LayoutComponentsFilter extends Filter {
                 return descriptionFilterResult.get();
             }
 
-            final boolean hidePlayerShoppingShelf = Settings.HIDE_CREATOR_STORE_SHELF.get();
-            if (playerShoppingShelfBuffer.check(buffer).isFiltered()) return hidePlayerShoppingShelf;
-
             // Check if others are off before searching.
             final boolean hideShelves = Settings.HIDE_HORIZONTAL_SHELVES.get();
             final boolean hideTickets = Settings.HIDE_TICKET_SHELF.get();
             final boolean hidePlayables = Settings.HIDE_PLAYABLES.get();
-            if (!hideShelves && !hideTickets && !hidePlayables) return false;
+            final boolean hidePlayerShoppingShelf = Settings.HIDE_CREATOR_STORE_SHELF.get();
+            if (!hideShelves && !hideTickets && !hidePlayables && !hidePlayerShoppingShelf) return false;
 
             if (ticketShelfBuffer.check(buffer).isFiltered()) return hideTickets;
             if (playablesBuffer.check(buffer).isFiltered()) return hidePlayables;
+            if (playerShoppingShelfBuffer.check(buffer).isFiltered()) return hidePlayerShoppingShelf;
 
             // 20.31+ when exiting fullscreen after watching for a while or when resuming the app,
             // then sometimes the buffer isn't correct and the player shopping shelf is shown.
             // If filtering reaches this point then there are no more shelves that could be in the player.
             // If shopping shelves are set to hidden and the player is active, then assume
             // its the shopping shelf.
-            if (hidePlayerShoppingShelf && PlayerType.getCurrent().isMaximizedOrFullscreen()) {
+            if (hidePlayerShoppingShelf && PlayerType.getCurrent() == PlayerType.WATCH_WHILE_MAXIMIZED) {
                 return true;
             }
 
